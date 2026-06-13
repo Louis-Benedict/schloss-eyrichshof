@@ -1,0 +1,275 @@
+import Link from 'next/link'
+import Image from 'next/image'
+import type { Metadata } from 'next'
+import HeroSwiper from '@/components/HeroSwiper'
+import EventPanels from '@/components/EventPanels'
+
+export const metadata: Metadata = {
+  title: 'Schloss Eyrichshof — Landschloss in Unterfranken',
+}
+
+const events = [
+  {
+    title: 'Rösler Open Air',
+    eyebrow: 'Juli 2027',
+    tag: 'Vorverkauf',
+    description:
+      'Klassik, Jazz und Weltmusik unter freiem Himmel — ein musikalisches Highlight im Schlosspark Eyrichshof.',
+    image: '/images/hero-roesler-open-air.jpg',
+    href: '/veranstaltungen/roesler-open-air',
+  },
+  {
+    title: 'Winterszeit',
+    eyebrow: '5.–8. November 2026',
+    tag: null,
+    description:
+      'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
+    image: '/images/hero-winterszeit.jpg',
+    href: '/veranstaltungen/winterszeit',
+  },
+  {
+    title: 'Gartenfest',
+    eyebrow: 'Juni 2027',
+    tag: null,
+    description:
+      'Kunst, Handwerk und fränkische Gastlichkeit — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
+    image: '/images/hero-gartenfest.jpg',
+    href: '/veranstaltungen/gartenfest',
+  },
+]
+
+const apartmentHighlights = [
+  'Vier exklusive Wohnungen im historischen Ensemble',
+  'Moderner Komfort trifft fränkisches Fachwerk',
+  'Direkt am Schlosspark — Natur pur',
+  'Haustiere herzlich willkommen',
+]
+
+export default function HomePage() {
+  return (
+    <>
+      {/* Hero */}
+      <div className="-mt-[116px]">
+        <HeroSwiper />
+      </div>
+
+      {/* ── Veranstaltungen ─────────────────────────────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <header className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Auf dem Schloss</p>
+            <h2 className="font-heading text-4xl font-normal text-brand">Veranstaltungen</h2>
+          </div>
+          <Link
+            href="/veranstaltungen"
+            className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors shrink-0"
+          >
+            Alle Veranstaltungen →
+          </Link>
+        </header>
+
+        {/* Magazine grid: 1 large featured + 2 stacked */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
+
+          {/* Featured card */}
+          <Link
+            href={events[0].href}
+            className="group relative overflow-hidden lg:col-span-3 min-h-[420px] lg:min-h-[540px] flex"
+          >
+            <Image
+              src={events[0].image}
+              alt={events[0].title}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 1024px) 100vw, 60vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/30 to-transparent" />
+            <div className="relative z-10 mt-auto p-8 lg:p-10">
+              <div className="flex items-center gap-2 mb-4">
+                <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].eyebrow}</span>
+                {events[0].tag && (
+                  <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{events[0].tag}</span>
+                )}
+              </div>
+              <h3 className="font-heading text-4xl lg:text-5xl font-normal text-white mb-4 leading-snug">
+                {events[0].title}
+              </h3>
+              <p className="text-warm-300 text-sm leading-relaxed mb-6 max-w-sm">{events[0].description}</p>
+              <span className="text-xs uppercase tracking-widest font-semibold text-accent">
+                Mehr erfahren →
+              </span>
+            </div>
+          </Link>
+
+          {/* Two stacked cards */}
+          <div className="lg:col-span-2 flex flex-col gap-4">
+            {events.slice(1).map((event) => (
+              <Link
+                key={event.href}
+                href={event.href}
+                className="group relative overflow-hidden flex-1 min-h-[220px] flex"
+              >
+                <Image
+                  src={event.image}
+                  alt={event.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/20 to-transparent" />
+                <div className="relative z-10 mt-auto p-6">
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.eyebrow}</span>
+                    {event.tag && (
+                      <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
+                    )}
+                  </div>
+                  <h3 className="font-heading text-2xl font-normal text-white mb-3 leading-snug">
+                    {event.title}
+                  </h3>
+                  <span className="text-xs uppercase tracking-widest font-semibold text-accent">
+                    Mehr erfahren →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── Veranstaltungen variant 2: expanding panels ─────────────── */}
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Auf dem Schloss</p>
+            <h2 className="font-heading text-4xl font-normal text-brand">Veranstaltungen</h2>
+          </div>
+          <Link
+            href="/veranstaltungen"
+            className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors shrink-0"
+          >
+            Alle Veranstaltungen →
+          </Link>
+        </div>
+
+        {/* Panels — each expands on hover via flex-grow transition */}
+        <EventPanels events={events} />
+      </section>
+
+      {/* ── Das Landschloss ─────────────────────────────────────────── */}
+      <section className="bg-warm-100">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="relative min-h-[360px] lg:min-h-[580px]">
+            <Image
+              src="/images/schloss-exterior.jpg"
+              alt="Das Landschloss Eyrichshof"
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+          <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24">
+            <div className="max-w-md">
+              <Image
+                src="/images/wappen.png"
+                alt="Wappen derer von Rotenhan"
+                width={56}
+                height={72}
+                className="mb-6 opacity-75"
+              />
+              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">700 Jahre Geschichte</p>
+              <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
+                Das Landschloss Eyrichshof
+              </h2>
+              <p className="text-warm-600 leading-relaxed mb-8 text-base">
+                Eingebettet in die sanfte Hügellandschaft Unterfrankens vereint Schloss Eyrichshof
+                Jahrhunderte alter Geschichte mit der Lebendigkeit zeitgenössischer Kultur.
+                Ein Ort, der bleibt.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link
+                  href="/landschloss/geschichte"
+                  className="inline-block px-6 py-3 bg-brand text-warm-50 text-sm uppercase tracking-widest hover:bg-brand/80 transition-colors text-center"
+                >
+                  Geschichte entdecken
+                </Link>
+                <Link
+                  href="/landschloss/impressionen"
+                  className="inline-block px-6 py-3 border border-brand text-sm uppercase tracking-widest text-brand hover:bg-brand hover:text-warm-50 transition-colors text-center"
+                >
+                  Impressionen
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Ferienwohnungen ─────────────────────────────────────────── */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
+            <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
+              Ferienwohnungen
+            </h2>
+            <p className="text-warm-600 leading-relaxed mb-8 text-base">
+              Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
+              in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
+              Unterfranken von seiner schönsten Seite.
+            </p>
+            <ul className="space-y-3 mb-10">
+              {apartmentHighlights.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm text-warm-700">
+                  <span className="text-accent mt-px shrink-0">—</span>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/ferienwohnungen"
+              className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
+            >
+              Wohnungen ansehen
+            </Link>
+          </div>
+          <div className="relative overflow-hidden order-first lg:order-last" style={{ aspectRatio: '4/3' }}>
+            <Image
+              src="/images/hero-ferienwohnungen.jpg"
+              alt="Ferienwohnungen auf Schloss Eyrichshof"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* ── Newsletter CTA ──────────────────────────────────────────── */}
+      <section className="py-20 px-4" style={{ backgroundColor: '#4C4440' }}>
+        <div className="max-w-xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
+          <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>
+          <p className="text-warm-300 text-base mb-8 leading-relaxed">
+            Erhalten Sie als Erste Informationen zu kommenden Veranstaltungen, exklusiven Angeboten
+            und Neuigkeiten vom Schloss.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="Ihre E-Mail-Adresse"
+              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-warm-100 placeholder:text-warm-500 text-sm focus:outline-none focus:border-accent"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors shrink-0"
+            >
+              Anmelden
+            </button>
+          </form>
+        </div>
+      </section>
+    </>
+  )
+}

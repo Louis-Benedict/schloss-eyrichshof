@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colours */
+  --color-brand: #4C4440;
+  --color-brand-light: #6b5e5a;
+  --color-brand-dark: #2a2220;
+  --color-accent: #EF5A2A;
+  --color-accent-hover: #d94c20;
+
+  /* Warm neutrals */
+  --color-warm-50:  #faf8f6;
+  --color-warm-100: #f0ebe8;
+  --color-warm-200: #e0d8d4;
+  --color-warm-300: #c8bcb7;
+  --color-warm-400: #a89590;
+  --color-warm-500: #8a7570;
+  --color-warm-600: #6e5e59;
+  --color-warm-700: #56403b;
+  --color-warm-800: #3d2d29;
+  --color-warm-900: #2a1f1e;
+
+  /* Typography */
+  --font-heading: var(--font-playfair), Georgia, "Times New Roman", serif;
+  --font-body:    var(--font-source-sans), system-ui, sans-serif;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-warm-50);
+  color: var(--color-warm-900);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* ── Swiper hero pagination bullets ── */
+.hero-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.4);
+  opacity: 1;
+  border-radius: 0;
+  transition: background 0.3s;
+}
+.hero-pagination .swiper-pagination-bullet-active {
+  background: #EF5A2A;
+  width: 24px;
+}
