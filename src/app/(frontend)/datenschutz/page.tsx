@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import PageHeader from '@/components/PageHeader'
 
 export const metadata: Metadata = { title: 'Datenschutz' }
 
@@ -144,12 +145,9 @@ type Block = {
 
 export default function DatenschutzPage() {
   return (
-    <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <div className="mb-12">
-        <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Schloss Eyrichshof</p>
-        <h1 className="font-heading text-4xl font-normal text-brand">Datenschutzbestimmungen</h1>
-      </div>
-
+    <>
+      <PageHeader eyebrow="Schloss Eyrichshof" title="Datenschutzbestimmungen" />
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
       <div className="space-y-12">
         {sections.map((section) => (
           <div key={section.heading}>
@@ -194,5 +192,6 @@ export default function DatenschutzPage() {
         ))}
       </div>
     </div>
+    </>
   )
 }

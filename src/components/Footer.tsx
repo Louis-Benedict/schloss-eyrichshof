@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
+import { events } from '@/data/events'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
@@ -12,7 +13,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#2a2220' }} className="text-warm-400 mt-auto font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
           <div>
             <Link href="/" className="inline-block mb-5">
@@ -43,6 +44,19 @@ export default function Footer() {
                 <li key={href}>
                   <Link href={href} className="hover:text-accent transition-colors">
                     {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-warm-200 text-xs uppercase tracking-widest mb-4">Veranstaltungen</h3>
+            <ul className="space-y-2 text-sm">
+              {events.map(({ title, href }) => (
+                <li key={href}>
+                  <Link href={href} className="hover:text-accent transition-colors">
+                    {title}
                   </Link>
                 </li>
               ))}

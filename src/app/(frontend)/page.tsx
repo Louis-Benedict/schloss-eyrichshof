@@ -3,40 +3,15 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSwiper from '@/components/HeroSwiper'
 import EventPanels from '@/components/EventPanels'
+import { events as allEvents } from '@/data/events'
 
 export const metadata: Metadata = {
   title: 'Schloss Eyrichshof — Landschloss in Unterfranken',
 }
 
-const events = [
-  {
-    title: 'Rösler Open Air',
-    eyebrow: 'Juli 2027',
-    tag: 'Vorverkauf',
-    description:
-      'Klassik, Jazz und Weltmusik unter freiem Himmel — ein musikalisches Highlight im Schlosspark Eyrichshof.',
-    image: '/images/hero-roesler-open-air.jpg',
-    href: '/veranstaltungen/roesler-open-air',
-  },
-  {
-    title: 'Winterszeit',
-    eyebrow: '5.–8. November 2026',
-    tag: null,
-    description:
-      'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
-    image: '/images/hero-winterszeit.jpg',
-    href: '/veranstaltungen/winterszeit',
-  },
-  {
-    title: 'Gartenfest',
-    eyebrow: 'Juni 2027',
-    tag: null,
-    description:
-      'Kunst, Handwerk und fränkische Gastlichkeit — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
-    image: '/images/hero-gartenfest.jpg',
-    href: '/veranstaltungen/gartenfest',
-  },
-]
+// Homepage features 3 seasonal events in a specific visual order
+const homepageSlugs = ['roesler-open-air', 'winterszeit', 'gartenfest']
+const events = homepageSlugs.map(slug => allEvents.find(e => e.slug === slug)!)
 
 const apartmentHighlights = [
   'Vier exklusive Wohnungen im historischen Ensemble',
@@ -52,6 +27,66 @@ export default function HomePage() {
       <div className="-mt-[116px]">
         <HeroSwiper />
       </div>
+
+      {/* ── Statement ───────────────────────────────────────────────── */}
+      <section className="border-b border-warm-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_2px_1fr] gap-0 items-stretch">
+
+            {/* Left — quote */}
+            <div className="flex flex-col justify-center pr-0 lg:pr-16 pb-12 lg:pb-0">
+              <Image
+                src="/images/wappen.png"
+                alt="Wappen derer von Rotenhan"
+                width={40}
+                height={52}
+                className="mb-8 opacity-60"
+              />
+              <blockquote className="font-heading text-3xl lg:text-4xl font-normal text-brand leading-snug">
+                Eine Destination für inspirierende Momente — die kleinen und großen, an die Sie
+                sich gerne erinnern.
+              </blockquote>
+            </div>
+
+            {/* Divider */}
+            <div className="hidden lg:block bg-warm-200 mx-0" />
+
+            {/* Right — text */}
+            <div className="flex flex-col justify-center pl-0 lg:pl-16 pt-12 lg:pt-0 border-t border-warm-200 lg:border-t-0">
+              <p className="text-[10px] uppercase tracking-[0.22em] text-accent mb-6">
+                Landschloss in Familienbesitz · Seit dem 14. Jahrhundert
+              </p>
+              <div className="space-y-4 text-warm-600 leading-relaxed text-base">
+                <p>
+                  Eyrichshof liegt im Herzen Frankens. Schon seit mehr als 700 Jahren empfängt man
+                  hier gerne Gäste — heute führt Hermann Freiherr von Rotenhan diese Tradition mit
+                  seinem Team zeitgemäß fort.
+                </p>
+                <p>
+                  Ob Gartenfest, Winterszeit oder Rösler Open-Air, ob Hochzeitsfeier, Firmenevent
+                  oder ein stiller Aufenthalt in den Ferienwohnungen: Gäste sind hier stets herzlich
+                  willkommen.
+                </p>
+              </div>
+              <div className="flex flex-wrap gap-4 mt-10">
+                <Link
+                  href="/landschloss/geschichte"
+                  className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors"
+                >
+                  Geschichte entdecken →
+                </Link>
+                <Link
+                  href="/landschloss/impressionen"
+                  className="text-xs uppercase tracking-widest font-semibold text-warm-500 hover:text-brand transition-colors"
+                >
+                  Impressionen →
+                </Link>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       {/* ── Veranstaltungen ─────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -86,7 +121,7 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/30 to-transparent" />
             <div className="relative z-10 mt-auto p-8 lg:p-10">
               <div className="flex items-center gap-2 mb-4">
-                <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].eyebrow}</span>
+                <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].dates}</span>
                 {events[0].tag && (
                   <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{events[0].tag}</span>
                 )}
@@ -119,7 +154,7 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/20 to-transparent" />
                 <div className="relative z-10 mt-auto p-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.eyebrow}</span>
+                    <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
                     {event.tag && (
                       <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
                     )}

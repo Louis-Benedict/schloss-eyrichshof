@@ -41,20 +41,22 @@ const team = [
 export default function KontaktPage() {
   return (
     <>
-      {/* Hero */}
+      {/* Header */}
       <section
-        className="py-20 px-4 text-center"
+        className="-mt-[116px] pt-[116px] pb-14 px-4 text-center"
         style={{ backgroundColor: '#4C4440' }}
       >
-        <p className="text-xs uppercase tracking-[0.22em] mb-4" style={{ color: '#EF5A2A' }}>
-          Schloss Eyrichshof
-        </p>
-        <h1 className="font-heading text-5xl font-normal text-warm-50 mb-4">
-          Ihr Team
-        </h1>
-        <p className="text-warm-300 text-base max-w-lg mx-auto leading-relaxed">
-          Sechs Menschen, ein Schloss — leidenschaftlich, persönlich und immer für Sie da.
-        </p>
+        <div className="pt-10">
+          <p className="text-[10px] uppercase tracking-[0.16em] mb-4" style={{ color: '#EF5A2A' }}>
+            Schloss Eyrichshof
+          </p>
+          <h1 className="font-heading text-5xl font-normal text-warm-50 mb-4">
+            Ihr Team
+          </h1>
+          <p className="text-warm-300 text-base max-w-lg mx-auto leading-relaxed">
+            Sechs Menschen, ein Schloss — leidenschaftlich, persönlich und immer für Sie da.
+          </p>
+        </div>
       </section>
 
       {/* Team grid */}

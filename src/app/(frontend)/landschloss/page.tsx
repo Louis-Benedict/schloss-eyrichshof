@@ -1,34 +1,123 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 
-export const metadata: Metadata = { title: 'Landschloss Eyrichshof' }
+export const metadata: Metadata = { title: 'Das Landschloss' }
 
 const subpages = [
-  { label: 'Geschichte', href: '/landschloss/geschichte', description: '700 Jahre fränkische Adelsgeschichte' },
-  { label: 'Anspruch', href: '/landschloss/anspruch', description: 'Unsere Werte und unser Verständnis von Gastfreundschaft' },
-  { label: 'Umgebung', href: '/landschloss/umgebung', description: 'Natur, Ausflugsziele und die Region' },
-  { label: 'Impressionen', href: '/landschloss/impressionen', description: 'Bilder und Eindrücke' },
+  {
+    label: 'Geschichte',
+    description: '700 Jahre fränkische Adelsgeschichte — vom mittelalterlichen Burgstall zur lebendigen Kulturstätte.',
+    href: '/landschloss/geschichte',
+    image: '/images/hero-schloss.jpg',
+  },
+  {
+    label: 'Anspruch',
+    description: 'Was uns antreibt: inspirierende Momente schaffen, historisches Erbe bewahren, aufrichtig gastfreundlich sein.',
+    href: '/landschloss/anspruch',
+    image: '/images/schloss-exterior.jpg',
+  },
+  {
+    label: 'Umgebung',
+    description: 'UNESCO-Welterbe, Barockschlösser, Kurstädte — die Region Franken ist eine der kulturreichsten Deutschlands.',
+    href: '/landschloss/umgebung',
+    image: '/umgebung/bamberg.jpg',
+  },
+  {
+    label: 'Impressionen',
+    description: 'Bilder vom Schloss, den Veranstaltungen und dem Leben auf dem Gut — zu jeder Jahreszeit.',
+    href: '/landschloss/impressionen',
+    image: '/images/hero-gartenfest.jpg',
+  },
 ]
 
 export default function LandschlossPage() {
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      <h1 className="text-4xl font-light mb-4">Landschloss Eyrichshof</h1>
-      <p className="text-warm-600 text-lg mb-12 max-w-2xl">
-        Entdecken Sie die Geschichte, die Werte und die einzigartige Atmosphäre des Landschloss Eyrichshof in Unterfranken.
-      </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {subpages.map((page) => (
-          <Link
-            key={page.href}
-            href={page.href}
-            className="block p-6 border border-warm-200 hover:border-accent hover:bg-accent/10 transition-colors group"
-          >
-            <h2 className="font-semibold text-lg group-hover:text-accent mb-2">{page.label}</h2>
-            <p className="text-warm-500 text-sm">{page.description}</p>
-          </Link>
-        ))}
+    <>
+      {/* Hero */}
+      <div className="relative h-[520px] lg:h-[600px] -mt-[116px]">
+        <Image
+          src="/images/schloss-exterior.jpg"
+          alt="Schloss Eyrichshof"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
+          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+            Familiensitz seit dem 14. Jahrhundert
+          </span>
+          <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">
+            Das Landschloss
+          </h1>
+        </div>
       </div>
-    </div>
+
+      {/* Intro */}
+      <section className="border-b border-warm-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[auto_1fr] gap-10 lg:gap-20 items-start">
+            <div className="flex flex-col items-center gap-3 lg:pt-1">
+              <Image
+                src="/images/wappen.png"
+                alt="Wappen derer von Rotenhan"
+                width={48}
+                height={62}
+                className="opacity-70"
+              />
+              <p className="text-[10px] uppercase tracking-[0.18em] text-warm-400 text-center leading-relaxed">
+                von<br />Rotenhan
+              </p>
+            </div>
+            <div className="space-y-4 text-warm-600 leading-relaxed text-base max-w-2xl">
+              <p>
+                Eyrichshof ist ein Landschloss in Familienbesitz im Herzen von Franken. Schon seit
+                mehr als 700 Jahren empfängt man hier gerne Gäste — heute führt Hermann Freiherr von
+                Rotenhan diese Tradition mit seinem Team zeitgemäß fort.
+              </p>
+              <p>
+                Das Schloss verbindet Jahrhunderte alter Geschichte mit der Lebendigkeit
+                zeitgenössischer Kultur: als Veranstaltungsort, als Ort der Begegnung und als
+                stiller Rückzugsort inmitten der fränkischen Hügellandschaft.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Subpage grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+          {subpages.map((page) => (
+            <Link
+              key={page.href}
+              href={page.href}
+              className="group relative overflow-hidden min-h-[340px] lg:min-h-[400px] flex flex-col justify-end"
+            >
+              <Image
+                src={page.image}
+                alt={page.label}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-brand/5 transition-opacity duration-300 group-hover:from-brand/95" />
+              <div className="relative z-10 p-8 lg:p-10">
+                <h2 className="font-heading text-3xl lg:text-4xl font-normal text-white mb-3 leading-tight">
+                  {page.label}
+                </h2>
+                <p className="text-warm-300 text-sm leading-relaxed mb-5 max-w-sm">
+                  {page.description}
+                </p>
+                <span className="text-xs uppercase tracking-widest font-semibold text-accent group-hover:text-accent-hover transition-colors">
+                  Mehr erfahren →
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+    </>
   )
 }
