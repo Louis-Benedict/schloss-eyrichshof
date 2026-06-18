@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSwiper from '@/components/HeroSwiper'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 import EventPanels from '@/components/EventPanels'
 import { events as allEvents } from '@/data/events'
 
@@ -13,12 +14,6 @@ export const metadata: Metadata = {
 const homepageSlugs = ['roesler-open-air', 'winterszeit', 'gartenfest']
 const events = homepageSlugs.map(slug => allEvents.find(e => e.slug === slug)!)
 
-const apartmentHighlights = [
-  'Vier exklusive Wohnungen im historischen Ensemble',
-  'Moderner Komfort trifft fränkisches Fachwerk',
-  'Direkt am Schlosspark — Natur pur',
-  'Haustiere herzlich willkommen',
-]
 
 export default function HomePage() {
   return (
@@ -115,6 +110,8 @@ export default function HomePage() {
               src={events[0].image}
               alt={events[0].title}
               fill
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 1024px) 100vw, 60vw"
             />
@@ -148,6 +145,8 @@ export default function HomePage() {
                   src={event.image}
                   alt={event.title}
                   fill
+                  placeholder="blur"
+                  blurDataURL={BLUR_PLACEHOLDER}
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
@@ -192,14 +191,86 @@ export default function HomePage() {
         <EventPanels events={events} />
       </section>
 
-      {/* ── Das Landschloss ─────────────────────────────────────────── */}
-      <section className="bg-warm-100">
+      {/* ── Hochzeiten & Feste · Ferienwohnungen · Landschloss ─────── */}
+      <div className="max-w-7xl mx-auto py-20 space-y-4">
+
+      {/* Hochzeiten & Feste */}
+      <section className="overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24 bg-warm-100">
+            <div className="max-w-md">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Unvergessliche Momente</p>
+              <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
+                Hochzeiten & Feste
+              </h2>
+              <p className="text-warm-600 leading-relaxed mb-8 text-base">
+                Historische Säle, ein weitläufiger Schlosspark und jahrhundertealte Mauern — Schloss
+                Eyrichshof bildet den perfekten Rahmen für Ihre Hochzeit, Ihr Jubiläum oder Ihren
+                ganz persönlichen Festtag.
+              </p>
+              <Link
+                href="/veranstaltungen/hochzeiten-feste"
+                className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
+              >
+                Mehr erfahren
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-[360px] lg:min-h-[520px]">
+            <Image
+              src="/images/hero-schloss.jpg"
+              alt="Hochzeiten & Feste auf Schloss Eyrichshof"
+              fill
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Ferienwohnungen */}
+      <section className="relative min-h-[480px] flex items-end overflow-hidden">
+        <Image
+          src="/images/hero-ferienwohnungen.jpg"
+          alt="Ferienwohnungen auf Schloss Eyrichshof"
+          fill
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
+          className="object-cover object-center"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent" />
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-14 lg:px-16 xl:px-20 pb-16 lg:pb-20">
+          <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
+          <h2 className="font-heading text-4xl font-normal text-white mb-4 leading-snug">
+            Ferienwohnungen
+          </h2>
+          <p className="text-warm-300 leading-relaxed mb-8 text-base max-w-lg">
+            Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
+            in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
+            Unterfranken von seiner schönsten Seite.
+          </p>
+          <Link
+            href="/ferienwohnungen"
+            className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
+          >
+            Wohnungen ansehen
+          </Link>
+        </div>
+      </section>
+
+      {/* Das Landschloss */}
+      <section className="bg-warm-100 overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative min-h-[360px] lg:min-h-[580px]">
             <Image
               src="/images/schloss-exterior.jpg"
               alt="Das Landschloss Eyrichshof"
               fill
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
@@ -241,45 +312,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Ferienwohnungen ─────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
-            <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
-              Ferienwohnungen
-            </h2>
-            <p className="text-warm-600 leading-relaxed mb-8 text-base">
-              Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
-              in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
-              Unterfranken von seiner schönsten Seite.
-            </p>
-            <ul className="space-y-3 mb-10">
-              {apartmentHighlights.map((feature) => (
-                <li key={feature} className="flex items-start gap-3 text-sm text-warm-700">
-                  <span className="text-accent mt-px shrink-0">—</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href="/ferienwohnungen"
-              className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
-            >
-              Wohnungen ansehen
-            </Link>
-          </div>
-          <div className="relative overflow-hidden order-first lg:order-last" style={{ aspectRatio: '4/3' }}>
-            <Image
-              src="/images/hero-ferienwohnungen.jpg"
-              alt="Ferienwohnungen auf Schloss Eyrichshof"
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
+      </div>{/* end max-w-5xl wrapper */}
 
       {/* ── Newsletter CTA ──────────────────────────────────────────── */}
       <section className="py-20 px-4" style={{ backgroundColor: '#4C4440' }}>

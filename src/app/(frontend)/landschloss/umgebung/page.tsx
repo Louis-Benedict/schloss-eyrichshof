@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 
 export const metadata: Metadata = { title: 'Umgebung' }
 
@@ -88,10 +89,14 @@ export default function UmgebungPage() {
           src="/umgebung/bamberg.jpg"
           alt="Bamberg — Blick auf das Alte Rathaus"
           fill
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           className="object-cover object-center"
           priority
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-brand/25 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Landschloss Eyrichshof
@@ -147,6 +152,8 @@ export default function UmgebungPage() {
                   src={dest.image}
                   alt={dest.name}
                   fill
+                  placeholder="blur"
+                  blurDataURL={BLUR_PLACEHOLDER}
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />

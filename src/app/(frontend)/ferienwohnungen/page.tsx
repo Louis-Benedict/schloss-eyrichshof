@@ -6,49 +6,45 @@ import ApartmentGallery from '@/components/ApartmentGallery'
 export const metadata: Metadata = { title: 'Ferienwohnungen' }
 
 // ── Dekanshaus ────────────────────────────────────────────────────────────────
-const DEKANSHAUS_MAIN =
-  'https://static.wixstatic.com/media/690192_ac08757274874f70b7f1eba491a73deb~mv2.jpg'
+const DEKANSHAUS_MAIN = '/images/ferienwohnungen/dekanshaus/main.jpg'
 
 const DEKANSHAUS_GALLERY = [
-  'https://static.wixstatic.com/media/690192_09370981bebb499281eaaefeba8c2c00~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_9a9165e7e0dc41d5b830e6abf9bb4605~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_b6ce7cd2c45942229d01288a759d4b40~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_cecb564e2ade4f34abaefa4385ba4ba9~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_dcfdb675047043a8b04b78f6b2bd3fa9~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_15a396a12cb4417c86c60a37a69be41f~mv2.jpg',
+  '/images/ferienwohnungen/dekanshaus/01.jpg',
+  '/images/ferienwohnungen/dekanshaus/02.jpg',
+  '/images/ferienwohnungen/dekanshaus/03.jpg',
+  '/images/ferienwohnungen/dekanshaus/04.jpg',
+  '/images/ferienwohnungen/dekanshaus/05.jpg',
+  '/images/ferienwohnungen/dekanshaus/06.jpg',
 ]
 
 // ── Zum Brunnen ───────────────────────────────────────────────────────────────
-const ZUM_BRUNNEN_MAIN =
-  'https://static.wixstatic.com/media/690192_8a3e69e3180141cda2d9448756042948~mv2.jpg'
+const ZUM_BRUNNEN_MAIN = '/images/ferienwohnungen/zum-brunnen/main.jpg'
 
 const ZUM_BRUNNEN_GALLERY = [
-  'https://static.wixstatic.com/media/690192_d767e0015e184229b8cabb952d062188~mv2.jpg',
-  'https://static.wixstatic.com/media/fa0fbb_ff96eed91567451e84c3f5c6a05a48d7~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_17366d05b09540b08e4bf3ab28428429~mv2.jpg',
+  '/images/ferienwohnungen/zum-brunnen/01.jpg',
+  '/images/ferienwohnungen/zum-brunnen/02.jpg',
+  '/images/ferienwohnungen/zum-brunnen/03.jpg',
 ]
 
 // ── Turm ──────────────────────────────────────────────────────────────────────
-const TURM_MAIN =
-  'https://static.wixstatic.com/media/690192_33c531f93e914ed0997f6a456c08cf48~mv2.jpg'
+const TURM_MAIN = '/images/ferienwohnungen/turm/main.jpg'
 
 const TURM_GALLERY = [
-  'https://static.wixstatic.com/media/690192_de316774ed4d4512be6d874561593c28~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_0547e0fb9820463a9781e60f5edf5001~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_7cdd458f62db460c939f657ecf4e2e1e~mv2.jpg',
+  '/images/ferienwohnungen/turm/01.jpg',
+  '/images/ferienwohnungen/turm/02.jpg',
+  '/images/ferienwohnungen/turm/03.jpg',
 ]
 
 // ── Brennmeister ──────────────────────────────────────────────────────────────
-const BRENNMEISTER_MAIN =
-  'https://static.wixstatic.com/media/690192_6db3f95368004003b5883485cd3cdf06~mv2.jpg'
+const BRENNMEISTER_MAIN = '/images/ferienwohnungen/brennmeister/main.jpg'
 
 const BRENNMEISTER_GALLERY = [
-  'https://static.wixstatic.com/media/690192_877e07c54be8454cbc64e38326e15c6e~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_8be6c5ac173448cb82ec7436c62b4c7a~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_4d82e9b5cac8439687dc340abcfc91f1~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_ee2aa537d8e34911a6b2faed0fc07670~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_51b26e1c42524902a3386bbc551f1baa~mv2.jpg',
-  'https://static.wixstatic.com/media/690192_905738f24780492bbaab07dcd357c76f~mv2.jpg',
+  '/images/ferienwohnungen/brennmeister/01.jpg',
+  '/images/ferienwohnungen/brennmeister/02.jpg',
+  '/images/ferienwohnungen/brennmeister/03.jpg',
+  '/images/ferienwohnungen/brennmeister/04.jpg',
+  '/images/ferienwohnungen/brennmeister/05.jpg',
+  '/images/ferienwohnungen/brennmeister/06.jpg',
 ]
 
 

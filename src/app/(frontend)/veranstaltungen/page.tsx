@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { events } from '@/data/events'
 
 export const metadata: Metadata = { title: 'Veranstaltungen' }
@@ -15,21 +16,8 @@ export default function VeranstaltungenPage() {
         description="Von Pfingstfest bis Winterzeit — das ganze Jahr Anlass für einen Besuch."
       />
 
-      {/* Tickets CTA bar */}
-      <div className="bg-warm-100 border-b border-warm-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between gap-4">
-          <p className="text-sm text-warm-600">Tickets für alle Veranstaltungen</p>
-          <Link
-            href="/veranstaltungen/tickets"
-            className="shrink-0 px-5 py-2 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
-          >
-            Tickets buchen
-          </Link>
-        </div>
-      </div>
-
       {/* Event list */}
-      <div className="divide-y divide-warm-200">
+      <div className="max-w-6xl mx-auto divide-y divide-warm-200">
         {events.map((event, i) => (
           <Link
             key={event.slug}
@@ -42,6 +30,8 @@ export default function VeranstaltungenPage() {
                 src={event.image}
                 alt={event.title}
                 fill
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />

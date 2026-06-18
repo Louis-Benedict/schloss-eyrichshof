@@ -1,21 +1,20 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react'
 import { events } from '@/data/events'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
   { icon: IconBrandFacebook, label: 'Facebook', href: '#' },
-  { icon: IconBrandYoutube, label: 'YouTube', href: '#' },
 ]
 
 export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#2a2220' }} className="text-warm-400 mt-auto font-body">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/images/logo.png"

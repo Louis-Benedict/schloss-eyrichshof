@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
   { icon: IconBrandFacebook, label: 'Facebook', href: '#' },
-  { icon: IconBrandYoutube, label: 'YouTube', href: '#' },
 ]
 
 export default function TopBar() {
@@ -18,12 +17,6 @@ export default function TopBar() {
 
         {/* Right — quick links + social */}
         <div className="flex items-center gap-5 ml-auto">
-          <Link
-            href="/veranstaltungen/tickets"
-            className="text-[11px] uppercase tracking-widest hover:text-white/70 transition-colors"
-          >
-            Tickets
-          </Link>
           <Link
             href="/kontakt/newsletter"
             className="text-[11px] uppercase tracking-widest hover:text-white/70 transition-colors"

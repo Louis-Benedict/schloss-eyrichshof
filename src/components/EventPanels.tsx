@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 
 interface EventPanelItem {
   title: string
@@ -28,6 +29,8 @@ export default function EventPanels({ events }: { events: EventPanelItem[] }) {
             src={event.image}
             alt={event.title}
             fill
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
             className="object-cover scale-105 group-hover:scale-100 transition-transform duration-700"
             sizes="(max-width: 640px) 100vw, 33vw"
           />

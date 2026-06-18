@@ -25,7 +25,6 @@ const navItems = [
       { label: 'Rösler Open Air', href: '/veranstaltungen/roesler-open-air' },
       { label: 'Hochzeiten & Feste', href: '/veranstaltungen/hochzeiten-feste' },
       { label: 'Firmenevents', href: '/veranstaltungen/firmenevents' },
-      { label: 'Tickets buchen', href: '/veranstaltungen/tickets' },
     ],
   },
   { label: 'Ferienwohnungen', href: '/ferienwohnungen' },
@@ -34,9 +33,6 @@ const navItems = [
     label: 'Kontakt',
     href: '/kontakt',
     children: [
-      { label: 'Unser Team', href: '/kontakt/team' },
-      { label: 'Kontaktformular', href: '/kontakt/formular' },
-      { label: 'FeWo-Reservierung', href: '/kontakt/fewo-reservierung' },
       { label: 'Newsletter', href: '/kontakt/newsletter' },
       { label: 'Anfahrt & Parken', href: '/kontakt/anfahrt' },
     ],
@@ -58,14 +54,14 @@ export default function Navigation() {
       className="fixed top-0 left-0 right-0 z-50"
       style={{
         transition: 'box-shadow 0.35s ease, background-color 0.35s ease',
-        backgroundColor: scrolled ? '#faf8f6' : 'transparent',
-        boxShadow: scrolled ? '0 1px 8px rgba(0,0,0,0.10)' : 'none',
+        backgroundColor: mobileOpen ? '#2a2220' : (scrolled ? '#faf8f6' : 'transparent'),
+        boxShadow: scrolled && !mobileOpen ? '0 1px 8px rgba(0,0,0,0.10)' : 'none',
       }}
     >
       {/* TopBar collapses its own height to 0 — no clipping artifact */}
       <div
         style={{
-          maxHeight: scrolled ? 0 : '36px',
+          maxHeight: scrolled || mobileOpen ? 0 : '36px',
           overflow: 'hidden',
           transition: 'max-height 0.35s ease',
         }}
@@ -83,7 +79,7 @@ export default function Navigation() {
               alt="Eyrichshof — Landschloss der Inspiration"
               width={210}
               height={108}
-              className={`h-[60px] w-auto object-contain transition-all duration-350${scrolled ? '' : ' brightness-0 invert'}`}
+              className={`h-[60px] w-auto object-contain transition-all duration-350${scrolled && !mobileOpen ? '' : ' brightness-0 invert'}`}
               priority
             />
           </Link>
@@ -94,7 +90,7 @@ export default function Navigation() {
               <div key={item.href} className="relative group">
                 <Link
                   href={item.href}
-                  className={`text-xs tracking-widest uppercase hover:text-accent transition-colors py-2 ${scrolled ? 'text-brand' : 'text-warm-200'}`}
+                  className={`text-xs tracking-widest uppercase hover:text-accent transition-colors py-2 ${scrolled ? 'text-brand' : 'text-warm-100 [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]'}`}
                 >
                   {item.label}
                 </Link>
@@ -125,45 +121,48 @@ export default function Navigation() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menü öffnen"
           >
-            <span className={`block w-6 h-px mb-1.5 ${scrolled ? 'bg-brand' : 'bg-warm-200'}`} />
-            <span className={`block w-6 h-px mb-1.5 ${scrolled ? 'bg-brand' : 'bg-warm-200'}`} />
-            <span className={`block w-6 h-px ${scrolled ? 'bg-brand' : 'bg-warm-200'}`} />
+            <span className={`block w-6 h-0.5 mb-1.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
+            <span className={`block w-6 h-0.5 mb-1.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
+            <span className={`block w-6 h-0.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
           </button>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <nav
-          className="lg:hidden border-t"
-          style={{
-            backgroundColor: scrolled ? '#faf8f6' : '#4C4440',
-            borderColor: scrolled ? '#e5e0dc' : 'rgba(255,255,255,0.1)',
-          }}
-        >
-          {navItems.map((item) => (
-            <div key={item.href}>
-              <Link
-                href={item.href}
-                className={`block px-4 py-3 text-xs uppercase tracking-widest hover:text-accent transition-colors ${scrolled ? 'text-brand hover:bg-brand/5' : 'text-warm-200 hover:bg-white/5'}`}
-                onClick={() => setMobileOpen(false)}
-              >
-                {item.label}
-              </Link>
-              {item.children?.map((child) => (
+      {/* Mobile menu — grid trick for smooth height animation */}
+      <div
+        className="lg:hidden"
+        style={{
+          display: 'grid',
+          gridTemplateRows: mobileOpen ? '1fr' : '0fr',
+          transition: 'grid-template-rows 0.35s ease',
+        }}
+      >
+        <div style={{ overflow: 'hidden' }}>
+          <nav className="border-t border-white/10 pb-4">
+            {navItems.map((item) => (
+              <div key={item.href}>
                 <Link
-                  key={child.href}
-                  href={child.href}
-                  className={`block pl-8 pr-4 py-2 text-xs hover:text-accent transition-colors ${scrolled ? 'text-warm-500 hover:bg-brand/5' : 'text-warm-400 hover:bg-white/5'}`}
+                  href={item.href}
+                  className="block px-4 py-3 text-xs uppercase tracking-widest text-warm-200 hover:text-accent transition-colors"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {child.label}
+                  {item.label}
                 </Link>
-              ))}
-            </div>
-          ))}
-        </nav>
-      )}
+                {item.children?.map((child) => (
+                  <Link
+                    key={child.href}
+                    href={child.href}
+                    className="block pl-8 pr-4 py-2 text-xs text-warm-400 hover:text-accent transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {child.label}
+                  </Link>
+                ))}
+              </div>
+            ))}
+          </nav>
+        </div>
+      </div>
     </header>
   )
 }

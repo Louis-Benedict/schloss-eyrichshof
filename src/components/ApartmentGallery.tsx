@@ -3,6 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { IconX, IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 
 interface ApartmentGalleryProps {
   mainImage: string
@@ -60,6 +61,8 @@ export default function ApartmentGallery({
             src={mainImage}
             alt={mainAlt}
             fill
+            placeholder="blur"
+            blurDataURL={BLUR_PLACEHOLDER}
             className="object-cover transition-transform duration-500 group-hover:scale-105"
             sizes="(max-width: 1024px) 100vw, calc(100vw - 420px)"
             priority
@@ -80,6 +83,8 @@ export default function ApartmentGallery({
                 src={src}
                 alt={`${apartmentName} Interieur ${i + 2}`}
                 fill
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
                 sizes="(max-width: 640px) 33vw, (max-width: 1024px) 33vw, 20vw"
               />

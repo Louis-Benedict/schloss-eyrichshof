@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { BLUR_PLACEHOLDER } from '@/lib/image'
 
 export const metadata: Metadata = { title: 'Das Landschloss' }
 
@@ -40,10 +41,14 @@ export default function LandschlossPage() {
           src="/images/schloss-exterior.jpg"
           alt="Schloss Eyrichshof"
           fill
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
           className="object-cover object-center"
           priority
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
           <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Familiensitz seit dem 14. Jahrhundert
@@ -99,6 +104,8 @@ export default function LandschlossPage() {
                 src={page.image}
                 alt={page.label}
                 fill
+                placeholder="blur"
+                blurDataURL={BLUR_PLACEHOLDER}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 100vw, 50vw"
               />

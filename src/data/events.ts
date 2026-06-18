@@ -46,7 +46,7 @@ export const events: Event[] = [
     tag: null,
     description:
       'Historische Säle voller Geschichte und Atmosphäre — für den schönsten Tag Ihres Lebens.',
-    image: '/images/hero-schloss.jpg',
+    image: '/images/hero-hochzeiten.jpg',
     href: '/veranstaltungen/hochzeiten-feste',
   },
   {
@@ -56,7 +56,7 @@ export const events: Event[] = [
     tag: null,
     description:
       'Workshops, Teamfeiern und Großveranstaltungen im historischen Schlossambiente — flexibel und unvergesslich.',
-    image: '/images/hero-schloss.jpg',
+    image: '/images/hero-firmenevents.jpg',
     href: '/veranstaltungen/firmenevents',
   },
 ]
