@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import AnfahrtBanner from '@/components/AnfahrtBanner'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
+import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 
 export const metadata: Metadata = { title: 'Hochzeiten & Feste' }
 
@@ -23,7 +24,7 @@ export default function HochzeitenFestePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Ganzjährig verfügbar
           </span>
@@ -36,7 +37,7 @@ export default function HochzeitenFestePage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-5">
             <p className="text-warm-600 leading-relaxed text-base">
@@ -78,7 +79,7 @@ export default function HochzeitenFestePage() {
 
       {/* Impressionen */}
       <section className="border-t border-warm-200 py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Hochzeiten & Feste</p>
           <h2 className="font-heading text-3xl font-normal text-brand mb-8">Impressionen</h2>
           <ImageGallery
@@ -91,6 +92,7 @@ export default function HochzeitenFestePage() {
       </section>
 
       <AnfahrtBanner />
+      <VeranstaltungenNav currentHref="/veranstaltungen/hochzeiten-feste" />
     </>
   )
 }

@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
+import LandschlossNav from '@/components/LandschlossNav'
 
 export const metadata: Metadata = { title: 'Geschichte' }
 
@@ -62,12 +63,6 @@ export default function GeschichtePage() {
               weht mit ihm als Gastgeber von Hochzeitsfeiern sowie Veranstalter des Gartenfests, der
               Winterszeit und des Rösler Open Air frischer Wind durch das steinerne Erbe.
             </p>
-            <p>
-              Mehr zur Baugeschichte des Ensembles und der Familienhistorie finden Sie auch im
-              Sachbuch{' '}
-              <em>Steinernes Erbe</em> von Hermann von Rotenhan.
-            </p>
-
             <div className="pt-4">
               <Link
                 href="/landschloss"
@@ -96,6 +91,50 @@ export default function GeschichtePage() {
 
         </div>
       </section>
+
+      {/* Buch: Steinernes Erbe */}
+      <section className="border-t border-warm-200 py-16 lg:py-20">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-12 lg:gap-20 items-center">
+
+            {/* Book cover */}
+            <div className="relative mx-auto lg:mx-0 w-48 lg:w-full" style={{ aspectRatio: '3/4' }}>
+              <Image
+                src="/images/buch-steinernes-erbe.png"
+                alt="Steinernes Erbe — von Hermann von Rotenhan"
+                fill
+                className="object-contain drop-shadow-xl"
+                sizes="(max-width: 1024px) 192px, 240px"
+              />
+            </div>
+
+            {/* Text */}
+            <div className="space-y-5 text-warm-600 leading-relaxed text-base">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent">Das Buch zum Schloss</p>
+              <h2 className="font-heading text-3xl font-normal text-brand">Steinernes Erbe</h2>
+              <p>
+                Den ganzen Großteil seines Lebens hat Hermann Freiherr von Rotenhan auf Schloss
+                Eyrichshof verbracht — und in diesem Sachbuch festgehalten, was es bedeutet, ein
+                solches Erbe zu tragen. Auf sehr persönliche Weise beschreibt er seine Beziehung zu
+                dem Schloss, das seit Jahrhunderten im Besitz seiner Familie ist: die schönen Seiten
+                ebenso wie die nicht immer leichten Momente.
+              </p>
+              <p>
+                Das Buch gibt Einblicke in die Lebensstationen eines fränkischen Adeligen und in das
+                heutige Landleben — in Zeiten von Waldsterben und Klimawandel, von gesellschaftlichem
+                Wandel und der Frage, wie ein lebendiges Erbe in die Zukunft geführt werden kann.
+              </p>
+              <p>
+                Mehr zur Baugeschichte des Ensembles und der Familienhistorie finden Sie ebenfalls
+                in diesem Buch.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <LandschlossNav currentHref="/landschloss/geschichte" />
     </>
   )
 }

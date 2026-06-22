@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
+import LandschlossNav from '@/components/LandschlossNav'
 
 export const metadata: Metadata = { title: 'Umgebung' }
 
@@ -175,15 +175,7 @@ export default function UmgebungPage() {
         </div>
       </section>
 
-      {/* Back link */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-        <Link
-          href="/landschloss"
-          className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors"
-        >
-          ← Zurück zum Landschloss
-        </Link>
-      </div>
+      <LandschlossNav currentHref="/landschloss/umgebung" />
     </>
   )
 }

@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import AnfahrtBanner from '@/components/AnfahrtBanner'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
+import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 
 const impressionen = [
   '01.jpg','02.jpg','03.jpg','04.jpg','05.jpg',
@@ -31,7 +32,7 @@ export default function FirmeneventsPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
           <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Ganzjährig verfügbar
           </span>
@@ -44,7 +45,7 @@ export default function FirmeneventsPage() {
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-5">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-5">
         <p className="text-warm-600 leading-relaxed text-base">
           Große und kleine Räume, umgeben von wunderschöner Natur: Unser Schloss ist ideal für
           konzentriertes Arbeiten im Workshop, Team-Building in Kombination mit Wanderungen und
@@ -68,7 +69,7 @@ export default function FirmeneventsPage() {
 
       {/* Impressionen */}
       <section className="border-t border-warm-200 py-16">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Firmenevents</p>
           <h2 className="font-heading text-3xl font-normal text-brand mb-8">Impressionen</h2>
           <ImageGallery images={impressionen} />
@@ -76,6 +77,7 @@ export default function FirmeneventsPage() {
       </section>
 
       <AnfahrtBanner />
+      <VeranstaltungenNav currentHref="/veranstaltungen/firmenevents" />
     </>
   )
 }

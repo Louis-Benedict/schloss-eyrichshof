@@ -1,15 +1,13 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 
 export const metadata: Metadata = { title: 'Kontakt' }
 
-const team = [
+const team: { name: string; role: string; src: string; email?: string }[] = [
   {
     name: 'Hermann von Rotenhan',
     role: 'Eigentümer und Veranstalter',
-    email: 'h.vonrotenhan@schlosseyrichshof.de',
     src: '/images/kontakt/01.jpg',
   },
   {
@@ -85,10 +83,9 @@ export default function KontaktPage() {
             Schloss Eyrichshof
           </p>
           <h1 className="font-heading text-5xl font-normal text-warm-50 mb-4">
-            Ihr Team
+            Kontakt
           </h1>
           <p className="text-warm-300 text-base max-w-lg mx-auto leading-relaxed">
-            Sechs Menschen, ein Schloss — leidenschaftlich, persönlich und immer für Sie da.
           </p>
         </div>
       </section>
@@ -185,36 +182,28 @@ export default function KontaktPage() {
         </div>
       </section>
 
-      <div className="border-t border-warm-200" />
-
-      {/* Contact strip */}
-      <section className="bg-warm-100 py-16 px-4">
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
-          <div>
-            <p className="text-xs uppercase tracking-widest text-warm-500 mb-2">Adresse</p>
-            <p className="font-heading text-lg text-brand mb-1">Schloss Eyrichshof</p>
-            <p className="text-warm-600 text-sm leading-relaxed">
-              96126 Eyrichshof<br />Unterfranken, Bayern
-            </p>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-widest text-warm-500 mb-2">Schreiben Sie uns</p>
-            <a
-              href="#kontaktformular"
-              className="inline-block mt-1 px-6 py-2 border border-brand text-sm uppercase tracking-widest text-brand hover:bg-brand hover:text-warm-50 transition-colors"
+      {/* Newsletter CTA */}
+      <section className="py-20 px-4" style={{ backgroundColor: '#4C4440' }}>
+        <div className="max-w-xl mx-auto text-center">
+          <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
+          <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>
+          <p className="text-warm-300 text-base mb-8 leading-relaxed">
+            Erhalten Sie als Erste Informationen zu kommenden Veranstaltungen, exklusiven Angeboten
+            und Neuigkeiten vom Schloss.
+          </p>
+          <form className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              placeholder="Ihre E-Mail-Adresse"
+              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-warm-100 placeholder:text-warm-500 text-sm focus:outline-none focus:border-accent"
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors shrink-0"
             >
-              Kontaktformular
-            </a>
-          </div>
-          <div>
-            <p className="text-xs uppercase tracking-widest text-warm-500 mb-2">Anfahrt</p>
-            <Link
-              href="/kontakt/anfahrt"
-              className="inline-block mt-1 px-6 py-2 border border-brand text-sm uppercase tracking-widest text-brand hover:bg-brand hover:text-warm-50 transition-colors"
-            >
-              Wegbeschreibung
-            </Link>
-          </div>
+              Anmelden
+            </button>
+          </form>
         </div>
       </section>
     </>
