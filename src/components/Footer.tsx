@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
 import { events } from '@/data/events'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
   { icon: IconBrandFacebook, label: 'Facebook', href: '#' },
+  { icon: IconBrandYoutube, label: 'YouTube', href: '#' },
 ]
 
 export default function Footer() {
@@ -24,6 +25,20 @@ export default function Footer() {
                 className="h-16 w-auto object-contain brightness-0 invert opacity-90"
               />
             </Link>
+            <div className="flex items-center gap-4 mb-5">
+              {socialLinks.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="text-warm-400 hover:text-accent transition-colors"
+                >
+                  <Icon size={28} stroke={1.5} />
+                </a>
+              ))}
+            </div>
             <address className="not-italic text-sm leading-relaxed text-warm-400">
               96126 Eyrichshof
               <br />
@@ -80,24 +95,10 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-warm-500">
+        <div className="border-t border-white/10 pt-8">
+          <p className="text-xs text-warm-500 text-center sm:text-left">
             © {new Date().getFullYear()} Schloss Eyrichshof. Alle Rechte vorbehalten.
           </p>
-          <div className="flex items-center gap-5">
-            {socialLinks.map(({ icon: Icon, label, href }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="text-warm-400 hover:text-accent transition-colors"
-              >
-                <Icon size={20} stroke={1.5} />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
