@@ -76,10 +76,10 @@ export default function KontaktPage() {
       {/* Header */}
       <section
         className="-mt-[116px] pt-[116px] pb-14 px-4 text-center"
-        style={{ backgroundColor: '#4C4440' }}
+        style={{ backgroundColor: 'var(--color-brand)' }}
       >
         <div className="pt-10">
-          <p className="text-[10px] uppercase tracking-[0.16em] mb-4" style={{ color: '#EF5A2A' }}>
+          <p className="text-[10px] uppercase tracking-[0.16em] mb-4" style={{ color: 'var(--color-accent)' }}>
             Schloss Eyrichshof
           </p>
           <h1 className="font-heading text-5xl font-normal text-warm-50 mb-4">
@@ -183,7 +183,7 @@ export default function KontaktPage() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 px-4" style={{ backgroundColor: '#4C4440' }}>
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--color-brand)' }}>
         <div className="max-w-xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
           <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>

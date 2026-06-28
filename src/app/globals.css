@@ -1,16 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  /* Brand colours */
-  --color-brand: #4C4440;
+  /* CI primary colours (Landschloss Eyrichshof brand guide v1.1) */
+  --color-white: #ffffff;         /* Reinweiß */
+  --color-dark: #4b443f;          /* Dunkelgrau */
+  --color-cream: #faf8f4;         /* Cremeweiß */
+
+  /* CI accent colours */
+  --color-accent: #ff5509;        /* Rotenhan-Rot */
+  --color-accent-hover: #e04a08;
+  --color-accent-yellow: #ffff37; /* Rotenhan-Gelb */
+
+  /* Brand aliases */
+  --color-brand: #4b443f;
   --color-brand-light: #6b5e5a;
   --color-brand-dark: #2a2220;
-  --color-accent: #EF5A2A;
-  --color-accent-hover: #d94c20;
 
-  /* Warm neutrals */
-  --color-warm-50:  #faf8f6;
-  --color-warm-100: #f0ebe8;
+  /* Warm neutrals (anchored to Cremeweiß #faf8f4) */
+  --color-warm-50:  #faf8f4;
+  --color-warm-100: #f0ebe6;
   --color-warm-200: #e0d8d4;
   --color-warm-300: #c8bcb7;
   --color-warm-400: #a89590;
@@ -50,6 +58,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 0.3s;
 }
 .hero-pagination .swiper-pagination-bullet-active {
-  background: #EF5A2A;
+  background: #ff5509;
   width: 24px;
 }

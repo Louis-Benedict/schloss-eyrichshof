@@ -27,7 +27,7 @@ export default function CookieBanner() {
   return (
     <div
       className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10"
-      style={{ backgroundColor: '#4C4440' }}
+      style={{ backgroundColor: 'var(--color-brand)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <p className="text-warm-300 text-xs leading-relaxed flex-1">

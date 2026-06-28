@@ -315,7 +315,7 @@ export default function HomePage() {
       </div>{/* end max-w-5xl wrapper */}
 
       {/* ── Newsletter CTA ──────────────────────────────────────────── */}
-      <section className="py-20 px-4" style={{ backgroundColor: '#4C4440' }}>
+      <section className="py-20 px-4" style={{ backgroundColor: 'var(--color-brand)' }}>
         <div className="max-w-xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
           <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>

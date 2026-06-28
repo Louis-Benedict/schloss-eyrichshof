@@ -103,7 +103,7 @@ export default function HeroSwiper() {
               {/* Content */}
               <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="max-w-xl mx-auto sm:mx-0 text-center sm:text-left">
-                <p className="text-xs uppercase tracking-[0.22em] mb-5" style={{ color: '#EF5A2A' }}>
+                <p className="text-xs uppercase tracking-[0.22em] mb-5" style={{ color: 'var(--color-accent)' }}>
                   {slide.eyebrow}
                 </p>
                 <h2 className="font-heading text-5xl sm:text-6xl lg:text-7xl font-normal leading-[1.08] mb-2 text-white">

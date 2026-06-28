@@ -29,7 +29,7 @@ export default function SchlossMap() {
       }).addTo(map)
 
       const markerIcon = L.divIcon({
-        html: `<div style="width:14px;height:14px;background:#EF5A2A;border-radius:50%;border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,0.4)"></div>`,
+        html: `<div style="width:14px;height:14px;background:#ff5509;border-radius:50%;border:2.5px solid white;box-shadow:0 1px 5px rgba(0,0,0,0.4)"></div>`,
         iconSize: [14, 14],
         iconAnchor: [7, 7],
         className: '',

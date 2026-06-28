@@ -287,7 +287,7 @@ export default function FerienwohnungenPage() {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div
           className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 p-10 lg:p-14"
-          style={{ backgroundColor: '#4C4440' }}
+          style={{ backgroundColor: 'var(--color-brand)' }}
         >
           <div>
             <p className="text-[10px] uppercase tracking-[0.16em] text-accent mb-3">

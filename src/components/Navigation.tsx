@@ -54,7 +54,7 @@ export default function Navigation() {
       className="fixed top-0 left-0 right-0 z-50"
       style={{
         transition: 'box-shadow 0.35s ease, background-color 0.35s ease',
-        backgroundColor: mobileOpen ? '#2a2220' : (scrolled ? '#faf8f6' : 'transparent'),
+        backgroundColor: mobileOpen ? 'var(--color-brand-dark)' : (scrolled ? 'var(--color-cream)' : 'transparent'),
         boxShadow: scrolled && !mobileOpen ? '0 1px 8px rgba(0,0,0,0.10)' : 'none',
       }}
     >
@@ -98,7 +98,7 @@ export default function Navigation() {
                 {item.children && (
                   <div
                     className="absolute top-full left-0 min-w-52 shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
-                    style={{ backgroundColor: '#ffffff', borderTop: '2px solid #EF5A2A' }}
+                    style={{ backgroundColor: 'var(--color-white)', borderTop: '2px solid var(--color-accent)' }}
                   >
                     {item.children.map((child) => (
                       <Link

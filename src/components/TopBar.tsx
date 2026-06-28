@@ -8,7 +8,7 @@ const socialLinks = [
 
 export default function TopBar() {
   return (
-    <div className="w-full text-white" style={{ backgroundColor: '#EF5A2A' }}>
+    <div className="w-full text-white" style={{ backgroundColor: 'var(--color-accent)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9">
         {/* Left — announcement */}
         <p className="text-[11px] tracking-wider hidden sm:block">
