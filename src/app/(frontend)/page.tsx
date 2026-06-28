@@ -3,7 +3,6 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSwiper from '@/components/HeroSwiper'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
-import EventPanels from '@/components/EventPanels'
 import { events as allEvents } from '@/data/events'
 
 export const metadata: Metadata = {
@@ -116,7 +115,7 @@ export default function HomePage() {
               sizes="(max-width: 1024px) 100vw, 60vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/30 to-transparent" />
-            <div className="relative z-10 mt-auto p-8 lg:p-10">
+            <div className="relative z-10 mt-auto p-8 lg:p-10 pb-16 lg:pb-18">
               <div className="flex items-center gap-2 mb-4">
                 <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].dates}</span>
                 {events[0].tag && (
@@ -126,11 +125,11 @@ export default function HomePage() {
               <h3 className="font-heading text-4xl lg:text-5xl font-normal text-white mb-4 leading-snug">
                 {events[0].title}
               </h3>
-              <p className="text-warm-300 text-sm leading-relaxed mb-6 max-w-sm">{events[0].description}</p>
-              <span className="text-xs uppercase tracking-widest font-semibold text-accent">
-                Mehr erfahren →
-              </span>
+              <p className="text-warm-300 text-sm leading-relaxed max-w-sm">{events[0].description}</p>
             </div>
+            <span className="absolute bottom-8 left-8 lg:left-10 z-10 text-xs uppercase tracking-widest font-semibold text-accent">
+              Mehr erfahren →
+            </span>
           </Link>
 
           {/* Two stacked cards */}
@@ -151,44 +150,25 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/20 to-transparent" />
-                <div className="relative z-10 mt-auto p-6">
+                <div className="relative z-10 mt-auto p-6 pb-14">
                   <div className="flex items-center gap-2 mb-3">
                     <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
                     {event.tag && (
                       <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
                     )}
                   </div>
-                  <h3 className="font-heading text-2xl font-normal text-white mb-3 leading-snug">
+                  <h3 className="font-heading text-2xl font-normal text-white leading-snug">
                     {event.title}
                   </h3>
-                  <span className="text-xs uppercase tracking-widest font-semibold text-accent">
-                    Mehr erfahren →
-                  </span>
                 </div>
+                <span className="absolute bottom-8 left-6 z-10 text-xs uppercase tracking-widest font-semibold text-accent">
+                  Mehr erfahren →
+                </span>
               </Link>
             ))}
           </div>
 
         </div>
-      </section>
-
-      {/* ── Veranstaltungen variant 2: expanding panels ─────────────── */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Auf dem Schloss</p>
-            <h2 className="font-heading text-4xl font-normal text-brand">Veranstaltungen</h2>
-          </div>
-          <Link
-            href="/veranstaltungen"
-            className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors shrink-0"
-          >
-            Alle Veranstaltungen →
-          </Link>
-        </div>
-
-        {/* Panels — each expands on hover via flex-grow transition */}
-        <EventPanels events={events} />
       </section>
 
       {/* ── Hochzeiten & Feste · Ferienwohnungen · Landschloss ─────── */}
