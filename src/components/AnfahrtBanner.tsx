@@ -20,12 +20,22 @@ export default function AnfahrtBanner() {
               <p>Parkplätze stehen auf dem Schlossgelände kostenlos zur Verfügung.</p>
             </div>
           </div>
-          <Link
-            href="/kontakt/anfahrt"
-            className="self-start inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-sm uppercase tracking-widest transition-colors"
-          >
-            Zur Anfahrt
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link
+              href="/kontakt/anfahrt"
+              className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-sm uppercase tracking-widest transition-colors"
+            >
+              Zur Anfahrt
+            </Link>
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=50.1083766,10.7830404"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-6 py-3 border border-brand text-brand hover:bg-brand hover:text-white text-sm uppercase tracking-widest transition-colors"
+            >
+              Route anzeigen
+            </a>
+          </div>
         </div>
 
         {/* Mobile map — in flow */}

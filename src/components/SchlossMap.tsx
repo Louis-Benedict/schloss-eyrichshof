@@ -4,8 +4,8 @@ import 'leaflet/dist/leaflet.css'
 import { useEffect, useRef } from 'react'
 import type { Map } from 'leaflet'
 
-const LAT = 50.0810
-const LNG = 10.8072
+const LAT = 50.1083766
+const LNG = 10.7830404
 
 export default function SchlossMap() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -19,7 +19,7 @@ export default function SchlossMap() {
 
       const map = L.map(containerRef.current!, {
         center: [LAT, LNG],
-        zoom: 14,
+        zoom: 17,
         scrollWheelZoom: false,
       })
       mapRef.current = map
