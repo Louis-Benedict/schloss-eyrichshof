@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Playfair_Display, Source_Sans_3 } from 'next/font/google'
+import { Playfair_Display, Rubik } from 'next/font/google'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -8,10 +8,10 @@ const playfair = Playfair_Display({
   display: 'swap',
 })
 
-const sourceSans = Source_Sans_3({
+const rubik = Rubik({
   subsets: ['latin'],
-  variable: '--font-source-sans',
-  weight: ['300', '400', '600'],
+  variable: '--font-rubik',
+  weight: ['300', '400', '500', '600'],
   display: 'swap',
 })
 
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${playfair.variable} ${sourceSans.variable}`}>
+    <html lang="de" className={`${playfair.variable} ${rubik.variable}`}>
       <body>{children}</body>
     </html>
   )

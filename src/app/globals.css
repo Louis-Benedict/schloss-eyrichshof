@@ -30,7 +30,7 @@
 
   /* Typography */
   --font-heading: var(--font-playfair), Georgia, "Times New Roman", serif;
-  --font-body:    var(--font-source-sans), system-ui, sans-serif;
+  --font-body:    var(--font-rubik), system-ui, sans-serif;
 }
 
 html {
