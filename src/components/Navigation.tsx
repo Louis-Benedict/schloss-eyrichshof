@@ -7,7 +7,7 @@ import TopBar from '@/components/TopBar'
 
 const navItems = [
   {
-    label: 'Landschloss Eyrichshof',
+    label: 'Das Schloss',
     href: '/landschloss',
     children: [
       { label: 'Geschichte', href: '/landschloss/geschichte' },

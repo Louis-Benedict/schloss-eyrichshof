@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import HeroSwiper from '@/components/HeroSwiper'
+import HeroAltA from '@/components/HeroAltA'
+import HeroAltC from '@/components/HeroAltC'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { events as allEvents } from '@/data/events'
 
@@ -21,6 +23,17 @@ export default function HomePage() {
       <div className="-mt-[116px]">
         <HeroSwiper />
       </div>
+
+      {/* ── Hero alternatives (for client review) ───────────────────── */}
+      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Variante A — Geteiltes Layout: Textpanel links, Bild rechts ohne Overlay</p>
+      </div>
+      <HeroAltA />
+
+<div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Variante C — Vollbild ohne Overlay, zentrierte schwebende Karte mit weißem Hintergrund</p>
+      </div>
+      <HeroAltC />
 
       {/* ── Statement ───────────────────────────────────────────────── */}
       <section className="border-b border-warm-200">
