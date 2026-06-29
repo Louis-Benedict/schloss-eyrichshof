@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* CI primary colours (Landschloss Eyrichshof brand guide v1.1) */
+  /* CI primary colours (Schloss Eyrichshof brand guide v1.1) */
   --color-white: #ffffff;         /* Reinweiß */
   --color-dark: #4b443f;          /* Dunkelgrau */
   --color-cream: #faf8f4;         /* Cremeweiß */

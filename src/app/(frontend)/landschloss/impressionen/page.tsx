@@ -61,7 +61,7 @@ export default function ImpressionsPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Landschloss Eyrichshof"
+        eyebrow="Schloss Eyrichshof"
         title="Impressionen"
         description="Bilder und Eindrücke vom Schloss, den Veranstaltungen und der Umgebung."
       />

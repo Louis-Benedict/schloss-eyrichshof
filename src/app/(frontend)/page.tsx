@@ -6,6 +6,7 @@ import HeroAltA from '@/components/HeroAltA'
 import HeroAltC from '@/components/HeroAltC'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { events as allEvents } from '@/data/events'
+import { apartments } from '@/data/ferienwohnungen'
 
 export const metadata: Metadata = {
   title: 'Schloss Eyrichshof — Landschloss in Unterfranken',
@@ -223,10 +224,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Ferienwohnungen · Landschloss ───────────────────────────── */}
+      {/* ── Ferienwohnungen alternatives ────────────────────────────── */}
 
-      {/* Ferienwohnungen */}
-      <section className="relative min-h-[480px] flex items-end overflow-hidden">
+      {/* Variante A — Vollbild, dunkleres Overlay damit das Bild atmet */}
+      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante A — Vollbild mit dunklem Overlay (weniger Farbstich)</p>
+      </div>
+      <section className="relative min-h-[520px] flex items-end overflow-hidden">
         <Image
           src="/images/hero-ferienwohnungen.jpg"
           alt="Ferienwohnungen auf Schloss Eyrichshof"
@@ -236,23 +240,91 @@ export default function HomePage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-14 lg:px-16 xl:px-20 pb-16 lg:pb-20">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
-          <h2 className="font-heading text-4xl font-normal text-white mb-4 leading-snug">
-            Ferienwohnungen
-          </h2>
+          <h2 className="font-heading text-4xl font-normal text-white mb-4 leading-snug">Ferienwohnungen</h2>
           <p className="text-warm-300 leading-relaxed mb-8 text-base max-w-lg">
             Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
             in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
             Unterfranken von seiner schönsten Seite.
           </p>
-          <Link
-            href="/ferienwohnungen"
-            className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
-          >
+          <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
             Wohnungen ansehen
           </Link>
+        </div>
+      </section>
+
+      {/* Variante B — Split: Textpanel links auf Brandfarbe, Bild rechts */}
+      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante B — Split: Textpanel links, Bild rechts ungekürzt</p>
+      </div>
+      <section className="overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24" style={{ backgroundColor: 'var(--color-brand)' }}>
+            <div className="max-w-md">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
+              <h2 className="font-heading text-4xl font-normal text-white mb-6 leading-snug">Ferienwohnungen</h2>
+              <p className="text-warm-300 leading-relaxed mb-8 text-base">
+                Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
+                in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
+                Unterfranken von seiner schönsten Seite.
+              </p>
+              <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
+                Wohnungen ansehen
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-[400px] lg:min-h-[580px]">
+            <Image
+              src="/images/hero-ferienwohnungen.jpg"
+              alt="Ferienwohnungen auf Schloss Eyrichshof"
+              fill
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Variante C — Collage: 4 Apartment-Bilder als Grid, Text daneben */}
+      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante C — Apartment-Collage als Grid, Text links</p>
+      </div>
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
+            <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">Ferienwohnungen</h2>
+            <p className="text-warm-600 leading-relaxed mb-8 text-base">
+              Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
+              in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
+              Unterfranken von seiner schönsten Seite.
+            </p>
+            <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
+              Wohnungen ansehen
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-2">
+            {apartments.map((apt) => (
+              <div key={apt.id} className="relative overflow-hidden group" style={{ aspectRatio: '4/3' }}>
+                <Image
+                  src={apt.mainImage}
+                  alt={apt.name}
+                  fill
+                  placeholder="blur"
+                  blurDataURL={BLUR_PLACEHOLDER}
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/70 to-transparent p-3">
+                  <span className="text-[10px] uppercase tracking-widest text-white font-medium">{apt.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -262,7 +334,7 @@ export default function HomePage() {
           <div className="relative min-h-[360px] lg:min-h-[580px]">
             <Image
               src="/images/schloss-exterior.jpg"
-              alt="Das Landschloss Eyrichshof"
+              alt="Das Schloss Eyrichshof"
               fill
               placeholder="blur"
               blurDataURL={BLUR_PLACEHOLDER}
@@ -281,7 +353,7 @@ export default function HomePage() {
               />
               <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">700 Jahre Geschichte</p>
               <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
-                Das Landschloss Eyrichshof
+                Das Schloss Eyrichshof
               </h2>
               <p className="text-warm-600 leading-relaxed mb-8 text-base">
                 Eingebettet in die sanfte Hügellandschaft Unterfrankens vereint Schloss Eyrichshof
