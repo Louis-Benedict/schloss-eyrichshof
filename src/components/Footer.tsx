@@ -83,6 +83,7 @@ export default function Footer() {
               {[
                 { label: 'Impressum', href: '/impressum' },
                 { label: 'Datenschutz', href: '/datenschutz' },
+                { label: 'Cookie-Richtlinien', href: '/cookie-richtlinien' },
                 { label: 'AGB', href: '/agb' },
               ].map(({ label, href }) => (
                 <li key={href}>

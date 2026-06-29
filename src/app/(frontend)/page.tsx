@@ -36,7 +36,7 @@ export default function HomePage() {
       <HeroAltC />
 
       {/* ── Statement ───────────────────────────────────────────────── */}
-      <section className="border-b border-warm-200">
+      <section>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_2px_1fr] gap-0 items-stretch">
 
@@ -91,6 +91,45 @@ export default function HomePage() {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* ── Hochzeiten & Feste ──────────────────────────────────────── */}
+      <section className="overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2">
+          <div
+            className="flex items-center py-16 lg:py-24 pr-8 sm:pr-14 lg:pr-16 bg-warm-100"
+            style={{ paddingLeft: 'max(2rem, calc((100vw - 80rem) / 2 + 2rem))' }}
+          >
+            <div className="max-w-md">
+              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Unvergessliche Momente</p>
+              <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
+                Hochzeiten & Feste
+              </h2>
+              <p className="text-warm-600 leading-relaxed mb-8 text-base">
+                Historische Säle, ein weitläufiger Schlosspark und jahrhundertealte Mauern — Schloss
+                Eyrichshof bildet den perfekten Rahmen für Ihre Hochzeit, Ihr Jubiläum oder Ihren
+                ganz persönlichen Festtag.
+              </p>
+              <Link
+                href="/veranstaltungen/hochzeiten-feste"
+                className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
+              >
+                Mehr erfahren
+              </Link>
+            </div>
+          </div>
+          <div className="relative min-h-[360px] lg:min-h-[520px]">
+            <Image
+              src="/images/hero-hochzeiten.jpg"
+              alt="Hochzeiten & Feste auf Schloss Eyrichshof"
+              fill
+              placeholder="blur"
+              blurDataURL={BLUR_PLACEHOLDER}
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+            />
           </div>
         </div>
       </section>
@@ -184,44 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Hochzeiten & Feste · Ferienwohnungen · Landschloss ─────── */}
-      <div className="max-w-7xl mx-auto py-20 space-y-4">
-
-      {/* Hochzeiten & Feste */}
-      <section className="overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24 bg-warm-100">
-            <div className="max-w-md">
-              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Unvergessliche Momente</p>
-              <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
-                Hochzeiten & Feste
-              </h2>
-              <p className="text-warm-600 leading-relaxed mb-8 text-base">
-                Historische Säle, ein weitläufiger Schlosspark und jahrhundertealte Mauern — Schloss
-                Eyrichshof bildet den perfekten Rahmen für Ihre Hochzeit, Ihr Jubiläum oder Ihren
-                ganz persönlichen Festtag.
-              </p>
-              <Link
-                href="/veranstaltungen/hochzeiten-feste"
-                className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors"
-              >
-                Mehr erfahren
-              </Link>
-            </div>
-          </div>
-          <div className="relative min-h-[360px] lg:min-h-[520px]">
-            <Image
-              src="/images/hero-schloss.jpg"
-              alt="Hochzeiten & Feste auf Schloss Eyrichshof"
-              fill
-              placeholder="blur"
-              blurDataURL={BLUR_PLACEHOLDER}
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
+      {/* ── Ferienwohnungen · Landschloss ───────────────────────────── */}
 
       {/* Ferienwohnungen */}
       <section className="relative min-h-[480px] flex items-end overflow-hidden">
@@ -304,8 +306,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      </div>{/* end max-w-5xl wrapper */}
 
       {/* ── Newsletter CTA ──────────────────────────────────────────── */}
       <section className="py-20 px-4" style={{ backgroundColor: 'var(--color-brand)' }}>
