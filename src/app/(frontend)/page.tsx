@@ -30,7 +30,7 @@ export default function HomePage() {
       </div>
       <HeroAltA />
 
-<div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
+      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
         <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Variante C — Vollbild ohne Overlay, zentrierte schwebende Karte mit weißem Hintergrund</p>
       </div>
       <HeroAltC />
