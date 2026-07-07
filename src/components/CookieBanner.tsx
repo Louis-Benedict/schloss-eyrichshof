@@ -2,23 +2,24 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
+import { COOKIE_CONSENT_KEY, setCookieConsent } from '@/lib/cookieConsent'
 
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    if (!localStorage.getItem('cookie-consent')) {
+    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {
       setVisible(true)
     }
   }, [])
 
   function accept() {
-    localStorage.setItem('cookie-consent', 'accepted')
+    setCookieConsent('accepted')
     setVisible(false)
   }
 
   function decline() {
-    localStorage.setItem('cookie-consent', 'declined')
+    setCookieConsent('declined')
     setVisible(false)
   }
 
@@ -30,7 +31,7 @@ export default function CookieBanner() {
       style={{ backgroundColor: 'var(--color-brand)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-        <p className="text-warm-300 text-xs leading-relaxed flex-1">
+        <p className="text-warm-100 text-xs leading-relaxed flex-1">
           Wir verwenden Cookies, um Ihnen die bestmögliche Erfahrung auf unserer Website zu bieten.
           Weitere Informationen finden Sie in unserer{' '}
           <Link href="/datenschutz" className="text-warm-100 underline underline-offset-2 hover:text-accent transition-colors">

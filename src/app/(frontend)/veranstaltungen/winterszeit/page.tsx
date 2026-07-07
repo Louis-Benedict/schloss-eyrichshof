@@ -6,8 +6,32 @@ import AnfahrtBanner from '@/components/AnfahrtBanner'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
+import JsonLd from '@/components/JsonLd'
+import { SITE_URL } from '@/lib/site'
+import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
 export const metadata: Metadata = { title: 'Winterszeit' }
+
+const winterszeitJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Winterszeit 2026',
+  startDate: '2026-11-05',
+  endDate: '2026-11-08',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: ORGANIZATION_PLACE,
+  organizer: ORGANIZATION_REF,
+  image: [`${SITE_URL}/images/hero-winterszeit.jpg`],
+  description:
+    'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
+  offers: {
+    '@type': 'Offer',
+    url: 'https://www.kartenkiosk-bamberg.de',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'EUR',
+  },
+}
 
 const quickLinks = [
   { label: 'Impressionen', href: '#impressionen' },
@@ -27,6 +51,7 @@ const sidebarDownloads = [
 export default function WinterzeitPage() {
   return (
     <>
+      <JsonLd data={winterszeitJsonLd} />
       {/* Hero */}
       <div className="relative h-[480px] lg:h-[560px] -mt-[116px]">
         <Image
@@ -42,13 +67,13 @@ export default function WinterzeitPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+          <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             5.–8. November 2026
           </span>
           <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">
             Winterszeit
           </h1>
-          <p className="mt-3 text-lg text-warm-200 font-light leading-snug">
+          <p className="mt-3 text-lg text-warm-100 font-normal leading-snug">
             Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre
           </p>
           <a
@@ -110,7 +135,7 @@ export default function WinterzeitPage() {
           <aside className="hidden lg:block w-64 shrink-0">
             <div className="sticky top-24 bg-warm-100 p-6">
               {/* Ticket box */}
-              <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-1">Herbst 2026</p>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-1">Herbst 2026</p>
               <p className="font-heading text-xl text-brand mb-5">5.–8. November 2026</p>
 
               <a
@@ -121,11 +146,11 @@ export default function WinterzeitPage() {
               >
                 Tickets kaufen
               </a>
-              <p className="text-xs text-warm-500 text-center mb-6">Kinder bis 12 Jahre haben freien Eintritt.</p>
+              <p className="text-xs text-warm-500 text-center mb-6">Kinder bis 12 Jahre haben gratis Eintritt.</p>
 
               {/* Downloads */}
               <div className="border-t border-warm-200 pt-5 mb-5">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-4">Downloads</p>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-4">Downloads</p>
                 <div className="flex flex-col gap-3">
                   {sidebarDownloads.map((item) =>
                     item.disabled ? (
@@ -154,7 +179,7 @@ export default function WinterzeitPage() {
 
               {/* Navigation */}
               <div className="border-t border-warm-200 pt-5">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-4">Auf dieser Seite</p>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-4">Auf dieser Seite</p>
                 <nav className="flex flex-col gap-3 mb-5">
                   <a
                     href="#impressionen"
@@ -194,7 +219,7 @@ export default function WinterzeitPage() {
         <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Dabei sein</p>
         <h2 className="font-heading text-3xl font-normal text-brand mb-6">Tickets sichern</h2>
         <p className="text-warm-600 text-sm mb-8 max-w-md mx-auto leading-relaxed">
-          Tagestickets sind im Vorverkauf erhältlich. Kinder bis 12 Jahre haben freien Eintritt.
+          Tagestickets sind im Vorverkauf erhältlich. Kinder bis 12 Jahre haben gratis Eintritt.
         </p>
         <a
           href="https://www.kartenkiosk-bamberg.de"

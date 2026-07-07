@@ -23,7 +23,7 @@ export default function AnspruchPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/80 via-brand/25 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+          <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Schloss Eyrichshof
           </span>
           <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">

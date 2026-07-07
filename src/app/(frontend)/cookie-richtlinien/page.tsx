@@ -70,27 +70,27 @@ export default function CookieRichtlinienPage() {
               {/* Table header */}
               <div className="hidden sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-x-4 border-b border-warm-200 pb-2 mb-1">
                 {['Name', 'Anbieter', 'Zweck', 'Speicherdauer'].map(h => (
-                  <span key={h} className="text-[10px] uppercase tracking-widest text-warm-400 font-medium">{h}</span>
+                  <span key={h} className="text-[11px] uppercase tracking-widest text-warm-400 font-medium">{h}</span>
                 ))}
               </div>
 
               {/* Row */}
               <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr_1fr] gap-x-4 gap-y-1 py-3 border-b border-warm-100">
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Name</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Name</span>
                   <code className="text-xs bg-warm-100 px-1.5 py-0.5 text-brand font-mono">cookie-consent</code>
                   <span className="block text-[10px] text-warm-400 mt-1">Lokaler Speicher</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Anbieter</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Anbieter</span>
                   <span className="text-sm text-warm-600">schlosseyrichshof.de</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Zweck</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Zweck</span>
                   <span className="text-sm text-warm-600">Speichert, ob der Nutzer der Cookie-Verwendung zugestimmt oder sie abgelehnt hat.</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Speicherdauer</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Speicherdauer</span>
                   <span className="text-sm text-warm-600">Dauerhaft (bis Browser-Daten geleert werden)</span>
                 </div>
               </div>
@@ -108,26 +108,26 @@ export default function CookieRichtlinienPage() {
               {/* Table header */}
               <div className="hidden sm:grid grid-cols-[1fr_1fr_1fr_1fr] gap-x-4 border-b border-warm-200 pb-2 mb-1">
                 {['Dienst', 'Anbieter', 'Zweck', 'Datenschutz'].map(h => (
-                  <span key={h} className="text-[10px] uppercase tracking-widest text-warm-400 font-medium">{h}</span>
+                  <span key={h} className="text-[11px] uppercase tracking-widest text-warm-400 font-medium">{h}</span>
                 ))}
               </div>
 
               {/* Row */}
               <div className="grid grid-cols-1 sm:grid-cols-[1fr_1fr_1fr_1fr] gap-x-4 gap-y-1 py-3 border-b border-warm-100">
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Dienst</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Dienst</span>
                   <span className="text-sm text-warm-600">OpenStreetMap (Leaflet)</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Anbieter</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Anbieter</span>
                   <span className="text-sm text-warm-600">OpenStreetMap Foundation, 132 Maney Hill Road, Sutton Coldfield, B72 1JU, UK</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Zweck</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Zweck</span>
                   <span className="text-sm text-warm-600">Interaktive Karte auf der Anfahrtsseite — zeigt den Standort des Schlosses.</span>
                 </div>
                 <div>
-                  <span className="sm:hidden text-[10px] uppercase tracking-widest text-warm-400 block mb-0.5">Datenschutz</span>
+                  <span className="sm:hidden text-[11px] uppercase tracking-widest text-warm-400 block mb-0.5">Datenschutz</span>
                   <a
                     href="https://wiki.osmfoundation.org/wiki/Privacy_Policy"
                     target="_blank"

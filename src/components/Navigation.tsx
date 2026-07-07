@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import TopBar from '@/components/TopBar'
+import { SHOP_URL } from '@/lib/site'
 
 const navItems = [
   {
@@ -28,7 +29,7 @@ const navItems = [
     ],
   },
   { label: 'Ferienwohnungen', href: '/ferienwohnungen' },
-  { label: 'Shop', href: '/shop' },
+  { label: 'Shop', href: SHOP_URL, external: true },
   {
     label: 'Kontakt',
     href: '/kontakt',
@@ -53,8 +54,8 @@ export default function Navigation() {
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        transition: 'box-shadow 0.35s ease, background-color 0.35s ease',
-        backgroundColor: mobileOpen ? 'var(--color-brand-dark)' : (scrolled ? 'var(--color-cream)' : 'transparent'),
+        transition: 'box-shadow 0.35s ease',
+        backgroundColor: mobileOpen ? 'var(--color-brand-dark)' : 'var(--color-cream)',
         boxShadow: scrolled && !mobileOpen ? '0 1px 8px rgba(0,0,0,0.10)' : 'none',
       }}
     >
@@ -79,7 +80,7 @@ export default function Navigation() {
               alt="Eyrichshof — Landschloss der Inspiration"
               width={210}
               height={108}
-              className={`h-[60px] w-auto object-contain transition-all duration-350${scrolled && !mobileOpen ? '' : ' brightness-0 invert'}`}
+              className="h-[60px] w-auto object-contain"
               priority
             />
           </Link>
@@ -88,12 +89,23 @@ export default function Navigation() {
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
               <div key={item.href} className="relative group">
-                <Link
-                  href={item.href}
-                  className={`text-xs tracking-widest uppercase hover:text-accent transition-colors py-2 ${scrolled ? 'text-brand' : 'text-warm-100 [text-shadow:0_1px_6px_rgba(0,0,0,0.5)]'}`}
-                >
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs tracking-widest uppercase hover:text-accent transition-colors py-2 text-brand"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="text-xs tracking-widest uppercase hover:text-accent transition-colors py-2 text-brand"
+                  >
+                    {item.label}
+                  </Link>
+                )}
 
                 {item.children && (
                   <div
@@ -121,9 +133,9 @@ export default function Navigation() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menü öffnen"
           >
-            <span className={`block w-6 h-0.5 mb-1.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
-            <span className={`block w-6 h-0.5 mb-1.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
-            <span className={`block w-6 h-0.5 transition-colors ${scrolled && !mobileOpen ? 'bg-brand' : 'bg-warm-200'}`} />
+            <span className="block w-6 h-0.5 mb-1.5 bg-brand" />
+            <span className="block w-6 h-0.5 mb-1.5 bg-brand" />
+            <span className="block w-6 h-0.5 bg-brand" />
           </button>
         </div>
       </div>
@@ -141,13 +153,25 @@ export default function Navigation() {
           <nav className="border-t border-white/10 pb-4">
             {navItems.map((item) => (
               <div key={item.href}>
-                <Link
-                  href={item.href}
-                  className="block px-4 py-3 text-xs uppercase tracking-widest text-warm-200 hover:text-accent transition-colors"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                {item.external ? (
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 text-xs uppercase tracking-widest text-warm-200 hover:text-accent transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="block px-4 py-3 text-xs uppercase tracking-widest text-warm-200 hover:text-accent transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                )}
                 {item.children?.map((child) => (
                   <Link
                     key={child.href}

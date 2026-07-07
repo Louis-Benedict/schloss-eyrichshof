@@ -44,7 +44,7 @@ const slides = [
     eyebrow: '5.–8. November 2026',
     heading: 'Winterszeit',
     subheading: 'auf Schloss Eyrichshof',
-    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
+    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
     primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
     secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
   },
@@ -55,7 +55,7 @@ type Slide = typeof slides[0]
 function SlideContent({ slide }: { slide: Slide }) {
   return (
     <>
-      <p className="text-[10px] uppercase tracking-[0.22em] text-accent mb-5">
+      <p className="text-[11px] uppercase tracking-[0.22em] text-accent mb-5">
         {slide.eyebrow}
       </p>
       <h2 className="font-heading text-4xl lg:text-5xl font-normal text-brand leading-[1.1] mb-3">
@@ -144,7 +144,7 @@ export default function HeroAltC() {
               <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/25 to-transparent" />
               <div className="absolute inset-0 flex items-center">
                 <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                  <div className="w-full max-w-md bg-white/80 backdrop-blur-sm px-12 py-12">
+                  <div className="w-full max-w-md bg-cream px-12 py-12">
                     <SlideContent slide={slide} />
                   </div>
                 </div>

@@ -28,7 +28,7 @@ export default function VeranstaltungenNav({ currentHref }: { currentHref: strin
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/40 to-brand/5" />
               <div className="relative z-10 p-5 lg:p-6">
-                <p className="text-[10px] uppercase tracking-[0.16em] text-accent mb-1">{event.dates}</p>
+                <p className="text-[11px] uppercase tracking-[0.16em] text-accent mb-1">{event.dates}</p>
                 <h3 className="font-heading text-xl lg:text-2xl font-normal text-white mb-2 leading-tight">
                   {event.title}
                 </h3>

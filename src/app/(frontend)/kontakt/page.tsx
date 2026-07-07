@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
+import NewsletterInlineForm from '@/components/NewsletterInlineForm'
 
 export const metadata: Metadata = { title: 'Kontakt' }
 
@@ -130,9 +131,9 @@ export default function KontaktPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-14">
-          <p className="text-[10px] uppercase tracking-[0.16em] text-accent mb-4">Schloss Eyrichshof</p>
+          <p className="text-[11px] uppercase tracking-[0.16em] text-accent mb-4">Schloss Eyrichshof</p>
           <h1 className="font-heading text-5xl font-normal text-white leading-tight">
-            Das Landschloss der Inspiration<br />heißt Sie herzlich willkommen
+            Das Schloss Eyrichshof<br />heißt Sie herzlich willkommen
           </h1>
         </div>
       </div>
@@ -155,7 +156,7 @@ export default function KontaktPage() {
                   </div>
                   <div className="min-w-0">
                     <p className="font-heading text-xl text-brand leading-snug">{person.name}</p>
-                    <p className="text-[10px] uppercase tracking-[0.18em] text-warm-500 mt-1">{person.role}</p>
+                    <p className="text-[11px] uppercase tracking-[0.18em] text-warm-500 mt-1">{person.role}</p>
                     {person.email && (
                       <a href={`mailto:${person.email}`} className="inline-block mt-2 text-xs text-accent hover:text-accent-hover transition-colors truncate">
                         {person.email}
@@ -177,23 +178,11 @@ export default function KontaktPage() {
         <div className="max-w-xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
           <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>
-          <p className="text-warm-300 text-base mb-8 leading-relaxed">
+          <p className="text-warm-100 text-base mb-8 leading-relaxed">
             Erhalten Sie als Erste Informationen zu kommenden Veranstaltungen, exklusiven Angeboten
             und Neuigkeiten vom Schloss.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-warm-100 placeholder:text-warm-500 text-sm focus:outline-none focus:border-accent"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors shrink-0"
-            >
-              Anmelden
-            </button>
-          </form>
+          <NewsletterInlineForm />
         </div>
       </section>
     </>

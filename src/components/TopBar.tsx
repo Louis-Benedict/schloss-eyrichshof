@@ -11,8 +11,8 @@ export default function TopBar() {
     <div className="w-full text-white" style={{ backgroundColor: 'var(--color-accent)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-9">
         {/* Left — announcement */}
-        <p className="text-[11px] tracking-wider hidden sm:block">
-          Wunderbare Tage liegen hinter uns. Vielen Dank für Ihren Besuch auf dem Gartenfest.
+        <p className="text-xs uppercase tracking-wider font-medium hidden sm:block">
+          Wunderbare Tage liegen hinter uns. Vielen Dank für Ihren Besuch auf dem Gartenfest 2026
         </p>
 
         {/* Right — quick links + social */}

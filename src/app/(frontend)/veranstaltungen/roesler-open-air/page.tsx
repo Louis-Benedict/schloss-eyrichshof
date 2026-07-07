@@ -5,12 +5,16 @@ import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ConcertEventList from '@/components/ConcertEventList'
 import ImageGallery from '@/components/ImageGallery'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
+import JsonLd from '@/components/JsonLd'
+import { SITE_URL } from '@/lib/site'
+import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
 export const metadata: Metadata = { title: 'Rösler Open Air' }
 
 const concertEvents = [
   {
     date: 'Do, 30. Juli 2026, 20:00 Uhr',
+    isoDate: '2026-07-30T20:00:00+02:00',
     title: 'NENA – LIVE',
     description:
       'Nach wie vor ist NENA eine der authentischsten Sängerinnen unserer Zeit und ein großes Stück Popkultur made in Germany. NENA muss man einfach live erlebt haben! Ihre energiegeladene Bühnenpräsenz ist ebenso unverwechselbar und mitreißend wie ihre Stimme. Das Publikum darf sich auf eine mehr als zweistündige Live-Show mit Hits und Perlen aus dem riesigen NENA-Repertoire freuen. Musik aus über vier Jahrzehnten, die sie mit ihrer 10-köpfigen Band auf die Bühne bringt. Jedes Live-Konzert: ein einzigartiges Rock\'n\'Roll-Erlebnis mit viel Gefühl und Herz.',
@@ -20,6 +24,7 @@ const concertEvents = [
   },
   {
     date: 'Fr, 31. Juli 2026, 20:00 Uhr',
+    isoDate: '2026-07-31T20:00:00+02:00',
     title: 'IN EXTREMO – Carpe Noctem – Burgentour',
     description:
       'In Extremo zählen zu den großen Innovatoren der modernen Musikgeschichte: Als erste Band, die mittelalterliche Instrumente, archaische Kraft und wuchtige Rockenergie miteinander verschmolz, haben sie ein eigenes Genre erschaffen – kompromisslos, unverwechselbar und seit Jahrzehnten stilprägend. Und wer In Extremo live erlebt hat, weiß: Diese Band baut nicht einfach Bühnen, sie erschafft Welten. Mit ihrer legendären BURGENTOUR haben In Extremo schon früh ein Open-Air-Erlebnis definiert, das weit über ein Konzert hinausgeht: ein Spektakel aus Feuer, Geschichte und Klanggewalt.',
@@ -29,6 +34,7 @@ const concertEvents = [
   },
   {
     date: 'Sa, 01. August 2026, 20:00 Uhr',
+    isoDate: '2026-08-01T20:00:00+02:00',
     title: 'SCHMIDBAUER, KÄLBERER, RINGLSTETTER',
     description:
       '„DIE NEUE SUPERGROUP!" – so titelte die SZ im Sommer 2023 nach dem umjubelten und ausverkauften Konzert von Werner Schmidbauer, Martin Kälberer & Hannes Ringlstetter am Münchner Tollwood. Nachdem das sofort anberaumte Zusatzkonzert am Tollwood im Sommer 2024 ebenfalls nach kurzer Zeit ausverkauft war, nahmen\'s die drei Herren als Aufforderung, noch ein paar weitere Konzerte zu spielen… Überzeugen Sie sich von der urigen Heimeligkeit von Schmidbauer, Kälberer und Ringlstetter. Lassen Sie sich einhüllen von der bayerischen Leichtigkeit ihrer Stimmen.',
@@ -37,6 +43,7 @@ const concertEvents = [
   },
   {
     date: 'So, 02. August 2026, 20:00 Uhr',
+    isoDate: '2026-08-02T20:00:00+02:00',
     title: 'NINO DE ANGELO',
     description:
       'Nino de Angelo kündigt für den Sommer 2026 eine ausgedehnte Open Air Tour auf den schönsten Freilichtbühnen Deutschlands an. Im Zentrum der Open Airs steht das Album „Un Momento Italiano" von 2004. Seine Fans dürfen sich auf neue Live-Interpretationen und den Klassiker „Tornerò" freuen. Natürlich wird Nino de Angelo auch seine legendären Songs performen – von „Jenseits bis Eden" bis zu aktuellen Stücken. Ein Set, das Vergangenheit und Gegenwart musikalisch verbindet.',
@@ -45,6 +52,7 @@ const concertEvents = [
   },
   {
     date: 'Mo, 03. August 2026, 20:00 Uhr',
+    isoDate: '2026-08-03T20:00:00+02:00',
     title: 'MARTIN FRANK – Grüße aus Allegro Süd',
     description:
       'Sie sehnen sich nach einem Kurzurlaub aus dem Wahnsinn der Welt? Dann kommen Sie für einen zweistündigen Comedyabend nach Allegro Süd. Der 33-jährige Comedian hat alles im Gepäck, was der Name „Allegro Süd" verspricht: authentische Gags, mitreißendes Tempo, genussvolle Musik und einen unvergleichlichen bayerischen Charme. In seinem fünften Soloprogramm redet sich Martin Frank in seiner unverwechselbaren Art alles von der Seele, was ihn gerade so bewegt.',
@@ -53,6 +61,7 @@ const concertEvents = [
   },
   {
     date: 'Di, 04. August 2026, 20:00 Uhr',
+    isoDate: '2026-08-04T20:00:00+02:00',
     title: 'GERHARD POLT & DIE WELL-BRÜDER – Apropos / Noch EINMAL in Unterfranken',
     description:
       'Im Zusammenspiel von Gerhard Polt und den Wellbrüdern entsteht ein unterhaltsamer „Bairischer Abend" der besonderen Art, fernab von weiß-blauer Weißwurstidylle und Bierseligkeit. Der Menschenkenner Polt bespiegelt in seinem Panoptikum Bavaricum die Abgründe des „Bayern an sich". Die drei Brüder Stofferl, Michael und Karl Well besingen Bayern und den Rest der Welt – mit virtuos bespielten Instrumenten, bairischem Rap, herzergreifendem Jodler und satirisch-scharfen Texten im heimatlichen Dialekt.',
@@ -60,6 +69,33 @@ const concertEvents = [
     ticketUrl: 'https://www.kartenkiosk-bamberg.de/event_info.cfm?id=16645',
   },
 ]
+
+const roeslerOpenAirJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EventSeries',
+  name: 'Rösler Open Air 2026',
+  url: `${SITE_URL}/veranstaltungen/roesler-open-air`,
+  description: 'Live Musik in einzigartiger Kulisse — sechs Abende im Sommer 2026 im Schlosspark Eyrichshof.',
+  location: ORGANIZATION_PLACE,
+  organizer: ORGANIZATION_REF,
+  subEvent: concertEvents.map((concert) => ({
+    '@type': 'Event',
+    name: concert.title,
+    startDate: concert.isoDate,
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: ORGANIZATION_PLACE,
+    organizer: ORGANIZATION_REF,
+    image: [`${SITE_URL}${concert.image}`],
+    description: concert.description,
+    offers: {
+      '@type': 'Offer',
+      url: concert.ticketUrl,
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'EUR',
+    },
+  })),
+}
 
 const galleryImages = Array.from({ length: 37 }, (_, i) => ({
   src: `/images/roesler-open-air/${String(i + 1).padStart(2, '0')}.jpg`,
@@ -76,6 +112,7 @@ const sidebarLinks = [
 export default function RoeslerOpenAirPage() {
   return (
     <>
+      <JsonLd data={roeslerOpenAirJsonLd} />
       {/* Hero */}
       <div className="relative h-[480px] lg:h-[560px] -mt-[116px]">
         <Image
@@ -91,13 +128,13 @@ export default function RoeslerOpenAirPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+          <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             6 Abende im Sommer 2026
           </span>
           <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">
             Rösler Open Air
           </h1>
-          <p className="mt-3 text-lg text-warm-200 font-light leading-snug">
+          <p className="mt-3 text-lg text-warm-100 font-normal leading-snug">
             Live Musik in einzigartiger Kulisse — sechs Abende im Sommer 2026
           </p>
         </div>
@@ -133,7 +170,7 @@ export default function RoeslerOpenAirPage() {
           {/* Desktop sidebar — sticky stops when this flex container ends */}
           <aside className="hidden lg:block w-48 shrink-0">
             <div className="sticky top-24 border-l-2 border-warm-200 pl-6">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-5">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-5">
                 Auf dieser Seite
               </p>
               <nav className="flex flex-col gap-3">

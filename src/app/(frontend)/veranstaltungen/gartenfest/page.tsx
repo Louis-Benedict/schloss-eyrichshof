@@ -7,8 +7,27 @@ import AnfahrtBanner from '@/components/AnfahrtBanner'
 import ImageGallery from '@/components/ImageGallery'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 import GartenfestSchedule, { ScheduleRow, type ScheduleEntry, type ScheduleDay } from '@/components/GartenfestSchedule'
+import JsonLd from '@/components/JsonLd'
+import { SITE_URL } from '@/lib/site'
+import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
 export const metadata: Metadata = { title: 'Gartenfest' }
+
+// Next edition's exact date isn't set yet (see "Tickets für das Gartenfest 2027
+// folgen in Kürze" below) — using month precision rather than guessing a day.
+const gartenfestJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Event',
+  name: 'Gartenfest 2027',
+  startDate: '2027-06',
+  eventStatus: 'https://schema.org/EventScheduled',
+  eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: ORGANIZATION_PLACE,
+  organizer: ORGANIZATION_REF,
+  image: [`${SITE_URL}/images/hero-gartenfest.jpg`],
+  description:
+    'Kunst, Handwerk und fränkische Gastlichkeit — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
+}
 
 const ganztags: ScheduleEntry[] = [
   {
@@ -330,6 +349,7 @@ const sidebarDownloads = [
 export default function GartenfestPage() {
   return (
     <>
+      <JsonLd data={gartenfestJsonLd} />
       {/* Hero */}
       <div className="relative h-[480px] lg:h-[560px] -mt-[116px]">
         <Image
@@ -345,13 +365,13 @@ export default function GartenfestPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+          <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             23.–25. Mai 2026 · Pfingstwochenende
           </span>
           <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">
             Gartenfest
           </h1>
-          <p className="mt-3 text-lg text-warm-200 font-light leading-snug">
+          <p className="mt-3 text-lg text-warm-100 font-normal leading-snug">
             Über 150 Aussteller, tägliche Livemusik und ein vielfältiges Rahmenprogramm
           </p>
           <span className="lg:hidden mt-6 inline-block px-8 py-3 bg-warm-400 text-white text-sm uppercase tracking-widest cursor-not-allowed">
@@ -396,7 +416,7 @@ export default function GartenfestPage() {
           <aside className="hidden lg:block w-64 shrink-0">
             <div className="sticky top-24 bg-warm-100 p-6">
               {/* Ticket box */}
-              <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-1">Pfingstwochenende 2026</p>
+              <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-1">Pfingstwochenende 2026</p>
               <p className="font-heading text-xl text-brand mb-5">23.–25. Mai 2026</p>
 
               <span className="block w-full text-center py-3 bg-warm-400 text-white text-sm uppercase tracking-widest cursor-not-allowed mb-3">
@@ -406,7 +426,7 @@ export default function GartenfestPage() {
 
               {/* Navigation */}
               <div className="border-t border-warm-200 pt-5">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-warm-400 mb-4">Auf dieser Seite</p>
+                <p className="text-[11px] uppercase tracking-[0.2em] text-warm-400 mb-4">Auf dieser Seite</p>
                 <nav className="flex flex-col gap-3 mb-5">
                   {quickLinks.slice(0, 3).map((link) => (
                     <a

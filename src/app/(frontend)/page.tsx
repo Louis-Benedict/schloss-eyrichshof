@@ -1,9 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
-import HeroSwiper from '@/components/HeroSwiper'
-import HeroAltA from '@/components/HeroAltA'
 import HeroAltC from '@/components/HeroAltC'
+import NewsletterInlineForm from '@/components/NewsletterInlineForm'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { events as allEvents } from '@/data/events'
 import { apartments } from '@/data/ferienwohnungen'
@@ -21,19 +20,6 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <div className="-mt-[116px]">
-        <HeroSwiper />
-      </div>
-
-      {/* ── Hero alternatives (for client review) ───────────────────── */}
-      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
-        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Variante A — Geteiltes Layout: Textpanel links, Bild rechts ohne Overlay</p>
-      </div>
-      <HeroAltA />
-
-      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
-        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Variante C — Vollbild ohne Overlay, zentrierte schwebende Karte mit weißem Hintergrund</p>
-      </div>
       <HeroAltC />
 
       {/* ── Statement ───────────────────────────────────────────────── */}
@@ -44,15 +30,14 @@ export default function HomePage() {
             {/* Left — quote */}
             <div className="flex flex-col justify-center pr-0 lg:pr-16 pb-12 lg:pb-0">
               <Image
-                src="/images/wappen.png"
-                alt="Wappen derer von Rotenhan"
-                width={40}
-                height={52}
-                className="mb-8 opacity-60"
+                src="/images/logo_clean.png"
+                alt="Schloss Eyrichshof"
+                width={64}
+                height={38}
+                className="mb-8"
               />
               <blockquote className="font-heading text-3xl lg:text-4xl font-normal text-brand leading-snug">
-                Eine Destination für inspirierende Momente — die kleinen und großen, an die Sie
-                sich gerne erinnern.
+                Unseren Gästen inspirierende Momente bieten. Seit 1330 gute Tradition.
               </blockquote>
             </div>
 
@@ -61,19 +46,27 @@ export default function HomePage() {
 
             {/* Right — text */}
             <div className="flex flex-col justify-center pl-0 lg:pl-16 pt-12 lg:pt-0 border-t border-warm-200 lg:border-t-0">
-              <p className="text-[10px] uppercase tracking-[0.22em] text-accent mb-6">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-accent mb-6">
                 Landschloss in Familienbesitz · Seit dem 14. Jahrhundert
               </p>
               <div className="space-y-4 text-warm-600 leading-relaxed text-base">
                 <p>
-                  Eyrichshof liegt im Herzen Frankens. Schon seit mehr als 700 Jahren empfängt man
-                  hier gerne Gäste — heute führt Hermann Freiherr von Rotenhan diese Tradition mit
-                  seinem Team zeitgemäß fort.
+                  Eyrichshof ist ein Landschloss in Familienbesitz im Herzen von Franken. Schon seit
+                  mehr als 700 Jahren empfängt man hier gerne Gäste.
                 </p>
                 <p>
-                  Ob Gartenfest, Winterszeit oder Rösler Open-Air, ob Hochzeitsfeier, Firmenevent
-                  oder ein stiller Aufenthalt in den Ferienwohnungen: Gäste sind hier stets herzlich
-                  willkommen.
+                  Hermann Freiherr von Rotenhan führt diese Tradition mit seinem Team zeitgemäß fort.
+                  Bei Veranstaltungen wie Gartenfest, Winterszeit und Rösler Open-Air sowie bei
+                  Hochzeitsfeiern und in den modern ausgestatteten Ferienwohnungen sind Gäste stets
+                  herzlich willkommen.
+                </p>
+                <p>
+                  Kurzum: Eine Destination für inspirierende Momente — die kleinen und großen, an die
+                  Sie sich gerne erinnern.
+                </p>
+                <p>
+                  Erfahren Sie mehr über Geschichte und Anspruch von Schloss Eyrichshof und tauchen
+                  Sie ein in die vielfältigen Impressionen.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4 mt-10">
@@ -82,6 +75,12 @@ export default function HomePage() {
                   className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors"
                 >
                   Geschichte entdecken →
+                </Link>
+                <Link
+                  href="/landschloss/anspruch"
+                  className="text-xs uppercase tracking-widest font-semibold text-warm-500 hover:text-brand transition-colors"
+                >
+                  Anspruch entdecken →
                 </Link>
                 <Link
                   href="/landschloss/impressionen"
@@ -170,15 +169,15 @@ export default function HomePage() {
             <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/30 to-transparent" />
             <div className="relative z-10 mt-auto p-8 lg:p-10 pb-16 lg:pb-18">
               <div className="flex items-center gap-2 mb-4">
-                <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].dates}</span>
+                <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{events[0].dates}</span>
                 {events[0].tag && (
-                  <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{events[0].tag}</span>
+                  <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{events[0].tag}</span>
                 )}
               </div>
               <h3 className="font-heading text-4xl lg:text-5xl font-normal text-white mb-4 leading-snug">
                 {events[0].title}
               </h3>
-              <p className="text-warm-300 text-sm leading-relaxed max-w-sm">{events[0].description}</p>
+              <p className="text-warm-100 text-sm leading-relaxed max-w-sm">{events[0].description}</p>
             </div>
             <span className="absolute bottom-8 left-8 lg:left-10 z-10 text-xs uppercase tracking-widest font-semibold text-accent">
               Mehr erfahren →
@@ -205,9 +204,9 @@ export default function HomePage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-brand/90 via-brand/20 to-transparent" />
                 <div className="relative z-10 mt-auto p-6 pb-14">
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
+                    <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
                     {event.tag && (
-                      <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
+                      <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
                     )}
                   </div>
                   <h3 className="font-heading text-2xl font-normal text-white leading-snug">
@@ -224,75 +223,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Ferienwohnungen alternatives ────────────────────────────── */}
-
-      {/* Variante A — Vollbild, dunkleres Overlay damit das Bild atmet */}
-      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
-        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante A — Vollbild mit dunklem Overlay (weniger Farbstich)</p>
-      </div>
-      <section className="relative min-h-[520px] flex items-end overflow-hidden">
-        <Image
-          src="/images/hero-ferienwohnungen.jpg"
-          alt="Ferienwohnungen auf Schloss Eyrichshof"
-          fill
-          placeholder="blur"
-          blurDataURL={BLUR_PLACEHOLDER}
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-8 sm:px-14 lg:px-16 xl:px-20 pb-16 lg:pb-20">
-          <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
-          <h2 className="font-heading text-4xl font-normal text-white mb-4 leading-snug">Ferienwohnungen</h2>
-          <p className="text-warm-300 leading-relaxed mb-8 text-base max-w-lg">
-            Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
-            in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
-            Unterfranken von seiner schönsten Seite.
-          </p>
-          <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
-            Wohnungen ansehen
-          </Link>
-        </div>
-      </section>
-
-      {/* Variante B — Split: Textpanel links auf Brandfarbe, Bild rechts */}
-      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
-        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante B — Split: Textpanel links, Bild rechts ungekürzt</p>
-      </div>
-      <section className="overflow-hidden">
-        <div className="grid grid-cols-1 lg:grid-cols-2">
-          <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24" style={{ backgroundColor: 'var(--color-brand)' }}>
-            <div className="max-w-md">
-              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
-              <h2 className="font-heading text-4xl font-normal text-white mb-6 leading-snug">Ferienwohnungen</h2>
-              <p className="text-warm-300 leading-relaxed mb-8 text-base">
-                Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
-                in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
-                Unterfranken von seiner schönsten Seite.
-              </p>
-              <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
-                Wohnungen ansehen
-              </Link>
-            </div>
-          </div>
-          <div className="relative min-h-[400px] lg:min-h-[580px]">
-            <Image
-              src="/images/hero-ferienwohnungen.jpg"
-              alt="Ferienwohnungen auf Schloss Eyrichshof"
-              fill
-              placeholder="blur"
-              blurDataURL={BLUR_PLACEHOLDER}
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Variante C — Collage: 4 Apartment-Bilder als Grid, Text daneben */}
-      <div className="border-t-4 border-accent-yellow bg-brand-dark px-6 py-3">
-        <p className="text-xs uppercase tracking-widest text-accent-yellow font-semibold">Ferienwohnungen Variante C — Apartment-Collage als Grid, Text links</p>
-      </div>
+      {/* ── Ferienwohnungen ──────────────────────────────────────────── */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
           <div>
@@ -309,7 +240,12 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-2 gap-2">
             {apartments.map((apt) => (
-              <div key={apt.id} className="relative overflow-hidden group" style={{ aspectRatio: '4/3' }}>
+              <Link
+                key={apt.id}
+                href={`/ferienwohnungen#${apt.id}`}
+                className="relative overflow-hidden group block"
+                style={{ aspectRatio: '4/3' }}
+              >
                 <Image
                   src={apt.mainImage}
                   alt={apt.name}
@@ -320,9 +256,9 @@ export default function HomePage() {
                   sizes="(max-width: 1024px) 50vw, 25vw"
                 />
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/70 to-transparent p-3">
-                  <span className="text-[10px] uppercase tracking-widest text-white font-medium">{apt.name}</span>
+                  <span className="text-[11px] uppercase tracking-widest text-white font-medium">{apt.name}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -345,11 +281,11 @@ export default function HomePage() {
           <div className="flex items-center px-8 sm:px-14 lg:px-16 xl:px-20 py-16 lg:py-24">
             <div className="max-w-md">
               <Image
-                src="/images/wappen.png"
-                alt="Wappen derer von Rotenhan"
-                width={56}
-                height={72}
-                className="mb-6 opacity-75"
+                src="/images/logo_clean.png"
+                alt="Schloss Eyrichshof"
+                width={90}
+                height={54}
+                className="mb-6"
               />
               <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">700 Jahre Geschichte</p>
               <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">
@@ -384,23 +320,11 @@ export default function HomePage() {
         <div className="max-w-xl mx-auto text-center">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Immer informiert</p>
           <h2 className="font-heading text-4xl font-normal text-warm-50 mb-4">Newsletter</h2>
-          <p className="text-warm-300 text-base mb-8 leading-relaxed">
+          <p className="text-warm-100 text-base mb-8 leading-relaxed">
             Erhalten Sie als Erste Informationen zu kommenden Veranstaltungen, exklusiven Angeboten
             und Neuigkeiten vom Schloss.
           </p>
-          <form className="flex flex-col sm:flex-row gap-3">
-            <input
-              type="email"
-              placeholder="Ihre E-Mail-Adresse"
-              className="flex-1 px-4 py-3 bg-white/10 border border-white/20 text-warm-100 placeholder:text-warm-500 text-sm focus:outline-none focus:border-accent"
-            />
-            <button
-              type="submit"
-              className="px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors shrink-0"
-            >
-              Anmelden
-            </button>
-          </form>
+          <NewsletterInlineForm />
         </div>
       </section>
     </>

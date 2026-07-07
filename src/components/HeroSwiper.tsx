@@ -60,7 +60,7 @@ const slides: Slide[] = [
     eyebrow: '5.–8. November 2026',
     heading: 'Winterszeit',
     subheading: 'auf Schloss Eyrichshof',
-    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
+    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
     primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
     secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
   },

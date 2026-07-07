@@ -1,9 +1,34 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
+import NewsletterForm from '@/components/NewsletterForm'
 
 export const metadata: Metadata = { title: 'Newsletter' }
 
-export default function NewsletterPage() {
+const CONFIRMATION_MESSAGES = {
+  success: {
+    tone: 'success' as const,
+    text: 'Ihre Anmeldung ist bestätigt. Vielen Dank!',
+  },
+  invalid: {
+    tone: 'error' as const,
+    text: 'Dieser Bestätigungslink ist ungültig oder abgelaufen. Bitte melden Sie sich erneut an.',
+  },
+  error: {
+    tone: 'error' as const,
+    text: 'Bei der Bestätigung ist etwas schiefgelaufen. Bitte versuchen Sie es erneut oder kontaktieren Sie uns.',
+  },
+}
+
+export default async function NewsletterPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ confirmed?: string }>
+}) {
+  const { confirmed } = await searchParams
+  const message = confirmed && confirmed in CONFIRMATION_MESSAGES
+    ? CONFIRMATION_MESSAGES[confirmed as keyof typeof CONFIRMATION_MESSAGES]
+    : null
+
   return (
     <>
       <PageHeader
@@ -12,34 +37,18 @@ export default function NewsletterPage() {
         description="Bleiben Sie über Veranstaltungen, Neuigkeiten und besondere Angebote auf Schloss Eyrichshof informiert."
       />
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <form className="space-y-4">
-          <div>
-            <label className="block text-sm font-medium text-warm-700 mb-2" htmlFor="name">
-              Name
-            </label>
-            <input
-              id="name"
-              type="text"
-              className="w-full border border-warm-300 px-4 py-2 focus:outline-none focus:border-accent"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-medium text-warm-700 mb-2" htmlFor="email">
-              E-Mail-Adresse
-            </label>
-            <input
-              id="email"
-              type="email"
-              className="w-full border border-warm-300 px-4 py-2 focus:outline-none focus:border-accent"
-            />
-          </div>
-          <button
-            type="submit"
-            className="w-full py-3 bg-accent hover:bg-accent-hover text-white font-medium uppercase tracking-wide transition-colors"
+        {message && (
+          <p
+            className={`mb-8 text-sm px-4 py-3 border ${
+              message.tone === 'success'
+                ? 'text-brand border-brand/30 bg-brand/5'
+                : 'text-red-600 border-red-200 bg-red-50'
+            }`}
           >
-            Anmelden
-          </button>
-        </form>
+            {message.text}
+          </p>
+        )}
+        <NewsletterForm />
       </div>
     </>
   )

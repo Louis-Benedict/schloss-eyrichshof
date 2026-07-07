@@ -33,13 +33,13 @@ export default function FirmeneventsPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-brand/85 via-brand/30 to-transparent" />
         <div className="absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-black/40 to-transparent" />
         <div className="absolute inset-x-0 bottom-0 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-          <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
+          <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-4">
             Ganzjährig verfügbar
           </span>
           <h1 className="font-heading text-5xl lg:text-6xl font-normal text-white leading-tight">
             Firmenevents
           </h1>
-          <p className="mt-3 text-lg text-warm-200 font-light leading-snug">
+          <p className="mt-3 text-lg text-warm-100 font-normal leading-snug">
             Unvergessliche Events in historischem Rahmen — ganzjährig buchbar
           </p>
         </div>

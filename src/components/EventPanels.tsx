@@ -49,15 +49,15 @@ export default function EventPanels({ events }: { events: EventPanelItem[] }) {
           {/* Bottom content revealed on expand */}
           <div className="absolute inset-x-0 bottom-0 p-6 lg:p-8 translate-y-3 group-hover:translate-y-0 transition-transform duration-500">
             <div className="flex items-center gap-2 mb-4">
-              <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
+              <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium">{event.dates}</span>
               {event.tag && (
-                <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
+                <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-white/20 text-white px-2.5 py-1 font-medium backdrop-blur-sm">{event.tag}</span>
               )}
             </div>
             <h3 className="font-heading text-3xl lg:text-4xl font-normal text-white leading-snug mb-3">
               {event.title}
             </h3>
-            <p className="text-warm-300 text-sm leading-relaxed mb-5 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+            <p className="text-warm-100 text-sm leading-relaxed mb-5 max-w-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
               {event.description}
             </p>
             <span className="text-xs uppercase tracking-widest font-semibold text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-150">

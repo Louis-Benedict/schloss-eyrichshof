@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
 import { events } from '@/data/events'
+import { SHOP_URL } from '@/lib/site'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
@@ -52,13 +53,19 @@ export default function Footer() {
               {[
                 { label: 'Veranstaltungen', href: '/veranstaltungen' },
                 { label: 'Ferienwohnungen', href: '/ferienwohnungen' },
-                { label: 'Shop', href: '/shop' },
+                { label: 'Shop', href: SHOP_URL, external: true },
                 { label: 'Kontakt', href: '/kontakt' },
-              ].map(({ label, href }) => (
+              ].map(({ label, href, external }) => (
                 <li key={href}>
-                  <Link href={href} className="hover:text-accent transition-colors">
-                    {label}
-                  </Link>
+                  {external ? (
+                    <a href={href} target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                      {label}
+                    </a>
+                  ) : (
+                    <Link href={href} className="hover:text-accent transition-colors">
+                      {label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

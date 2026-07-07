@@ -35,7 +35,7 @@ export const events: Event[] = [
     dates: '5.–8. November 2026',
     tag: null,
     description:
-      'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
+      'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
     image: '/images/hero-winterszeit.jpg',
     href: '/veranstaltungen/winterszeit',
   },

@@ -45,7 +45,7 @@ export function ScheduleRow({ entry }: { entry: ScheduleEntry }) {
 
       <div className="flex-1 min-w-0">
         {entry.time && (
-          <p className="text-[10px] uppercase tracking-[0.16em] text-accent font-medium mb-1">
+          <p className="text-[11px] uppercase tracking-[0.16em] text-accent font-medium mb-1">
             {entry.time}
           </p>
         )}
@@ -80,7 +80,7 @@ export function ScheduleRow({ entry }: { entry: ScheduleEntry }) {
           <p className="text-xs text-warm-400 leading-snug">{entry.location}</p>
         )}
         {entry.note && (
-          <p className="text-[10px] uppercase tracking-[0.12em] text-accent mt-1">{entry.note}</p>
+          <p className="text-[11px] uppercase tracking-[0.12em] text-accent mt-1">{entry.note}</p>
         )}
       </div>
     </div>
@@ -102,7 +102,7 @@ export default function GartenfestSchedule({ days }: { days: ScheduleDay[] }) {
             {day.entries.filter((e) => !e.image).map((entry, i) => (
               <div key={i} className="flex items-baseline gap-3 py-3 border-b border-warm-100">
                 {entry.time && (
-                  <span className="text-[10px] uppercase tracking-[0.16em] text-accent font-medium shrink-0">
+                  <span className="text-[11px] uppercase tracking-[0.16em] text-accent font-medium shrink-0">
                     {entry.time}
                   </span>
                 )}

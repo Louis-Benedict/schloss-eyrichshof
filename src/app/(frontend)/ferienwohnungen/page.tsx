@@ -58,12 +58,12 @@ export default function FerienwohnungenPage() {
       />
 
       {/* ── Dekanshaus ──────────────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section id="dekanshaus" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 scroll-mt-[116px]">
         <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-12 lg:gap-20 items-start">
 
           {/* Info panel */}
           <div className="lg:sticky lg:top-32">
-            <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
+            <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
               Ideal für Gruppen
             </span>
             <h2 className="font-heading text-4xl font-normal text-brand mb-8 leading-tight">
@@ -72,11 +72,11 @@ export default function FerienwohnungenPage() {
 
             <dl className="divide-y divide-warm-200 mb-8 text-sm">
               <div className="flex gap-4 py-3">
-                <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
+                <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
                 <dd className="text-warm-700">ca. 80 m²</dd>
               </div>
               <div className="flex gap-4 py-3">
-                <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
+                <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
                 <dd className="text-warm-700">
                   bis 4 Personen
                   <span className="block text-warm-500 text-xs mt-0.5 leading-snug">
@@ -85,7 +85,7 @@ export default function FerienwohnungenPage() {
                 </dd>
               </div>
               <div className="flex gap-4 py-3">
-                <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
+                <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
                 <dd className="text-warm-700">2 Doppelzimmer, 2 Bäder/WC, Wohnküche</dd>
               </div>
             </dl>
@@ -97,7 +97,9 @@ export default function FerienwohnungenPage() {
             </p>
 
             <Link
-              href="/kontakt/fewo-reservierung"
+              href="/ferienwohnungen/dekanshaus/buchen"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
             >
               Jetzt buchen
@@ -114,7 +116,7 @@ export default function FerienwohnungenPage() {
       </section>
 
       {/* ── Zum Brunnen ─────────────────────────────────────────────────── */}
-      <section className="border-t border-warm-200 bg-warm-100">
+      <section id="zum-brunnen" className="border-t border-warm-200 bg-warm-100 scroll-mt-[116px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-20 items-start">
 
@@ -128,7 +130,7 @@ export default function FerienwohnungenPage() {
 
             {/* Info panel — right on desktop */}
             <div className="lg:sticky lg:top-32 lg:order-last">
-              <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
+              <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
                 Ideal für Familien mit Kindern
               </span>
               <h2 className="font-heading text-4xl font-normal text-brand mb-8 leading-tight">
@@ -137,11 +139,11 @@ export default function FerienwohnungenPage() {
 
               <dl className="divide-y divide-warm-200 mb-8 text-sm">
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
                   <dd className="text-warm-700">ca. 65 m²</dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
                   <dd className="text-warm-700">
                     bis 4 Personen
                     <span className="block text-warm-500 text-xs mt-0.5 leading-snug">
@@ -150,7 +152,7 @@ export default function FerienwohnungenPage() {
                   </dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
                   <dd className="text-warm-700">1 Doppelzimmer, 1 Zimmer mit Stockbett, 1 Bad/WC, Wohnküche</dd>
                 </div>
               </dl>
@@ -161,7 +163,9 @@ export default function FerienwohnungenPage() {
               </p>
 
               <Link
-                href="/kontakt/fewo-reservierung"
+                href="/ferienwohnungen/zum-brunnen/buchen"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
               >
                 Jetzt buchen
@@ -172,13 +176,13 @@ export default function FerienwohnungenPage() {
       </section>
 
       {/* ── Brennmeister ────────────────────────────────────────────────── */}
-      <section className="border-t border-warm-200">
+      <section id="brennmeister" className="border-t border-warm-200 scroll-mt-[116px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[340px_1fr] gap-12 lg:gap-20 items-start">
 
             {/* Info panel */}
             <div className="lg:sticky lg:top-32">
-              <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
+              <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
                 Ideal für Paare &amp; kleine Familien
               </span>
               <h2 className="font-heading text-4xl font-normal text-brand mb-8 leading-tight">
@@ -187,15 +191,15 @@ export default function FerienwohnungenPage() {
 
               <dl className="divide-y divide-warm-200 mb-8 text-sm">
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
                   <dd className="text-warm-700">ca. 65 m²</dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
                   <dd className="text-warm-700">bis 4 Personen</dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
                   <dd className="text-warm-700">1 Doppelzimmer, Wohnzimmer mit Ausziehsofa, 1 Bad/WC, Küche</dd>
                 </div>
               </dl>
@@ -207,7 +211,9 @@ export default function FerienwohnungenPage() {
               </p>
 
               <Link
-                href="/kontakt/fewo-reservierung"
+                href="/ferienwohnungen/brennmeister/buchen"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
               >
                 Jetzt buchen
@@ -225,7 +231,7 @@ export default function FerienwohnungenPage() {
       </section>
 
       {/* ── Turm ────────────────────────────────────────────────────────── */}
-      <section className="border-t border-warm-200 bg-warm-100">
+      <section id="turm" className="border-t border-warm-200 bg-warm-100 scroll-mt-[116px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-20 items-start">
 
@@ -239,7 +245,7 @@ export default function FerienwohnungenPage() {
 
             {/* Info panel — right on desktop */}
             <div className="lg:sticky lg:top-32 lg:order-last">
-              <span className="inline-block text-[10px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
+              <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
                 Ideal für Paare
               </span>
               <h2 className="font-heading text-4xl font-normal text-brand mb-8 leading-tight">
@@ -248,11 +254,11 @@ export default function FerienwohnungenPage() {
 
               <dl className="divide-y divide-warm-200 mb-8 text-sm">
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Größe</dt>
                   <dd className="text-warm-700">ca. 26 m²</dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Gäste</dt>
                   <dd className="text-warm-700">
                     2 Personen
                     <span className="block text-warm-500 text-xs mt-0.5 leading-snug">
@@ -261,7 +267,7 @@ export default function FerienwohnungenPage() {
                   </dd>
                 </div>
                 <div className="flex gap-4 py-3">
-                  <dt className="text-[10px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
+                  <dt className="text-[11px] uppercase tracking-widest text-warm-400 w-24 shrink-0 pt-px">Zimmer</dt>
                   <dd className="text-warm-700">1 romantisches Doppelzimmer, 1 Bad/WC mit mittelalterlichem Mosaik</dd>
                 </div>
               </dl>
@@ -273,7 +279,9 @@ export default function FerienwohnungenPage() {
               </p>
 
               <Link
-                href="/kontakt/fewo-reservierung"
+                href="/ferienwohnungen/turm/buchen"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
               >
                 Jetzt buchen
@@ -290,13 +298,13 @@ export default function FerienwohnungenPage() {
           style={{ backgroundColor: 'var(--color-brand)' }}
         >
           <div>
-            <p className="text-[10px] uppercase tracking-[0.16em] text-accent mb-3">
+            <p className="text-[11px] uppercase tracking-[0.16em] text-accent mb-3">
               Jetzt reservieren
             </p>
             <h2 className="font-heading text-3xl font-normal text-white leading-snug">
               Buchen Sie Ihren Aufenthalt auf Schloss Eyrichshof
             </h2>
-            <p className="text-warm-300 mt-3 text-sm max-w-md leading-relaxed">
+            <p className="text-warm-100 mt-3 text-sm max-w-md leading-relaxed">
               Direkt online oder über unser Kontaktformular — wir freuen uns auf Ihren Besuch.
             </p>
           </div>

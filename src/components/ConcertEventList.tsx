@@ -35,7 +35,7 @@ function ConcertEventRow({ event }: { event: ConcertEvent }) {
           href={event.ticketUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full flex items-center justify-center gap-1.5 py-1.5 bg-accent hover:bg-accent-hover text-white text-[10px] uppercase tracking-widest transition-colors"
+          className="w-full flex items-center justify-center gap-1.5 py-1.5 bg-accent hover:bg-accent-hover text-white text-[11px] uppercase tracking-widest transition-colors"
         >
           <IconTicket size={13} stroke={1.75} />
           Tickets

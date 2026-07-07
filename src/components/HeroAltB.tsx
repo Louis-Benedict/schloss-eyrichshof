@@ -44,7 +44,7 @@ const slides = [
     eyebrow: '5.–8. November 2026',
     heading: 'Winterszeit',
     subheading: 'auf Schloss Eyrichshof',
-    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Landschloss Eyrichshof.',
+    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
     primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
     secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
   },
@@ -87,7 +87,7 @@ export default function HeroAltB() {
 
               {/* Solid card — brand-dark, anchored bottom-left */}
               <div className="absolute bottom-0 left-0 w-full lg:w-[480px] bg-brand-dark px-8 lg:px-12 py-8 lg:py-10">
-                <p className="text-[10px] uppercase tracking-[0.22em] text-accent mb-4">
+                <p className="text-[11px] uppercase tracking-[0.22em] text-accent mb-4">
                   {slide.eyebrow}
                 </p>
                 <h2 className="font-heading text-3xl lg:text-4xl font-normal text-white leading-snug mb-2">
