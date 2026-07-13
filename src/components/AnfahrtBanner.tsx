@@ -7,13 +7,13 @@ export default function AnfahrtBanner() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="lg:w-1/2 lg:pr-16 flex flex-col justify-center">
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">
-            Schloss Eyrichshof · 96126 Eyrichshof
+            Schloss Eyrichshof · 96106 Eyrichshof
           </p>
           <h2 className="font-heading text-3xl font-normal text-brand mb-6">Anfahrt & Parken</h2>
           <div className="space-y-4 text-warm-600 text-sm leading-relaxed mb-8">
             <div>
               <p className="text-xs uppercase tracking-widest text-warm-400 mb-1">Adresse</p>
-              <p>Schloss Eyrichshof<br />96126 Eyrichshof<br />Unterfranken, Bayern</p>
+              <p>Schloss Eyrichshof<br />96106 Eyrichshof<br />Unterfranken, Bayern</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-widest text-warm-400 mb-1">Parken</p>

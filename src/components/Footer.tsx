@@ -41,7 +41,7 @@ export default function Footer() {
               ))}
             </div>
             <address className="not-italic text-sm leading-relaxed text-warm-400">
-              96126 Eyrichshof
+              96106 Eyrichshof
               <br />
               Unterfranken, Bayern
             </address>

@@ -37,7 +37,7 @@ export default function SchlossMap() {
 
       L.marker([LAT, LNG], { icon: markerIcon })
         .addTo(map)
-        .bindPopup('<strong>Schloss Eyrichshof</strong><br>96126 Eyrichshof')
+        .bindPopup('<strong>Schloss Eyrichshof</strong><br>96106 Eyrichshof')
         .openPopup()
     }
 
