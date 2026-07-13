@@ -224,48 +224,50 @@ export default function HomePage() {
       </section>
 
       {/* ── Ferienwohnungen ──────────────────────────────────────────── */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
-            <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">Ferienwohnungen</h2>
-            <p className="text-warm-600 leading-relaxed mb-8 text-base">
-              Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
-              in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
-              Unterfranken von seiner schönsten Seite.
-            </p>
-            <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
-              Wohnungen ansehen
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-2">
-            {apartments.map((apt) => (
-              <Link
-                key={apt.id}
-                href={`/ferienwohnungen#${apt.id}`}
-                className="relative overflow-hidden group block"
-                style={{ aspectRatio: '4/3' }}
-              >
-                <Image
-                  src={apt.mainImage}
-                  alt={apt.name}
-                  fill
-                  placeholder="blur"
-                  blurDataURL={BLUR_PLACEHOLDER}
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 50vw, 25vw"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/70 to-transparent p-3">
-                  <span className="text-[11px] uppercase tracking-widest text-white font-medium">{apt.name}</span>
-                </div>
+      <section className="bg-warm-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-20 items-center">
+            <div>
+              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Übernachten im Schloss</p>
+              <h2 className="font-heading text-4xl font-normal text-brand mb-6 leading-snug">Ferienwohnungen</h2>
+              <p className="text-warm-600 leading-relaxed mb-8 text-base">
+                Vier exklusive Ferienwohnungen im historischen Ensemble — moderner Komfort eingebettet
+                in 700 Jahre Geschichte. Erwachen Sie inmitten des Schlossparks und erleben Sie
+                Unterfranken von seiner schönsten Seite.
+              </p>
+              <Link href="/ferienwohnungen" className="inline-block px-6 py-3 bg-accent text-white text-sm uppercase tracking-widest hover:bg-accent-hover transition-colors">
+                Wohnungen ansehen
               </Link>
-            ))}
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {apartments.map((apt) => (
+                <Link
+                  key={apt.id}
+                  href={`/ferienwohnungen#${apt.id}`}
+                  className="relative overflow-hidden group block"
+                  style={{ aspectRatio: '4/3' }}
+                >
+                  <Image
+                    src={apt.mainImage}
+                    alt={apt.name}
+                    fill
+                    placeholder="blur"
+                    blurDataURL={BLUR_PLACEHOLDER}
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-brand-dark/70 to-transparent p-3">
+                    <span className="text-[11px] uppercase tracking-widest text-white font-medium">{apt.name}</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Das Landschloss */}
-      <section className="bg-warm-100 overflow-hidden">
+      <section className="overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative min-h-[360px] lg:min-h-[580px]">
             <Image

@@ -7,7 +7,7 @@ const routes = [
   '',
   '/ferienwohnungen',
   '/ferienwohnungen/dekanshaus/buchen',
-  '/ferienwohnungen/zum-brunnen/buchen',
+  // '/ferienwohnungen/zum-brunnen/buchen',
   '/ferienwohnungen/brennmeister/buchen',
   '/ferienwohnungen/turm/buchen',
   '/kontakt',

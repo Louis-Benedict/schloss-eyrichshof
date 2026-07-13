@@ -38,7 +38,18 @@ const team: { name: string; role: string; src: string; email?: string }[] = [
   },
 ]
 
-function ContactForm({ prefix }: { prefix: string }) {
+const THEMA_OPTIONS = [
+  'gartenfest',
+  'roesler-open-air',
+  'winterszeit',
+  'hochzeiten-feste',
+  'firmenevents',
+  'ferienwohnungen',
+  'shop',
+  'weitere-anliegen',
+] as const
+
+function ContactForm({ prefix, defaultThema }: { prefix: string; defaultThema?: string }) {
   return (
     <form className="space-y-4">
       <h3 className="font-heading text-2xl font-normal text-brand mb-4">Schreiben Sie uns</h3>
@@ -71,7 +82,11 @@ function ContactForm({ prefix }: { prefix: string }) {
       </div>
       <div>
         <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-thema`}>Thema</label>
-        <select id={`${prefix}-thema`} className="w-full border border-warm-300 px-3 py-2 text-sm text-warm-700 bg-warm-50 focus:outline-none focus:border-accent">
+        <select
+          id={`${prefix}-thema`}
+          defaultValue={defaultThema ?? ''}
+          className="w-full border border-warm-300 px-3 py-2 text-sm text-warm-700 bg-warm-50 focus:outline-none focus:border-accent"
+        >
           <option value="">Bitte wählen …</option>
           <option value="gartenfest">Gartenfest</option>
           <option value="roesler-open-air">Rösler Open Air</option>
@@ -113,7 +128,14 @@ function ContactForm({ prefix }: { prefix: string }) {
   )
 }
 
-export default function KontaktPage() {
+export default async function KontaktPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ thema?: string }>
+}) {
+  const { thema } = await searchParams
+  const defaultThema = THEMA_OPTIONS.find((option) => option === thema)
+
   return (
     <>
       {/* Header */}
@@ -168,7 +190,7 @@ export default function KontaktPage() {
             </div>
           </div>
           <div>
-            <ContactForm prefix="b" />
+            <ContactForm prefix="b" defaultThema={defaultThema} />
           </div>
         </div>
       </section>

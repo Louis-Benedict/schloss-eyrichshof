@@ -56,7 +56,7 @@ export default function HochzeitenFestePage() {
             </p>
             <div className="pt-2">
               <Link
-                href="/kontakt"
+                href="/kontakt?thema=hochzeiten-feste"
                 className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-sm uppercase tracking-widest transition-colors"
               >
                 Anfrage stellen

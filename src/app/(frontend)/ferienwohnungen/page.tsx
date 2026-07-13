@@ -18,13 +18,13 @@ const DEKANSHAUS_GALLERY = [
 ]
 
 // ── Zum Brunnen ───────────────────────────────────────────────────────────────
-const ZUM_BRUNNEN_MAIN = '/images/ferienwohnungen/zum-brunnen/main.jpg'
+// const ZUM_BRUNNEN_MAIN = '/images/ferienwohnungen/zum-brunnen/main.jpg'
 
-const ZUM_BRUNNEN_GALLERY = [
-  '/images/ferienwohnungen/zum-brunnen/01.jpg',
-  '/images/ferienwohnungen/zum-brunnen/02.jpg',
-  '/images/ferienwohnungen/zum-brunnen/03.jpg',
-]
+// const ZUM_BRUNNEN_GALLERY = [
+//   '/images/ferienwohnungen/zum-brunnen/01.jpg',
+//   '/images/ferienwohnungen/zum-brunnen/02.jpg',
+//   '/images/ferienwohnungen/zum-brunnen/03.jpg',
+// ]
 
 // ── Turm ──────────────────────────────────────────────────────────────────────
 const TURM_MAIN = '/images/ferienwohnungen/turm/main.jpg'
@@ -115,12 +115,12 @@ export default function FerienwohnungenPage() {
         </div>
       </section>
 
-      {/* ── Zum Brunnen ─────────────────────────────────────────────────── */}
+      {/* ── Zum Brunnen ───────────────────────────────────────────────────
       <section id="zum-brunnen" className="border-t border-warm-200 bg-warm-100 scroll-mt-[116px]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_340px] gap-12 lg:gap-20 items-start">
 
-            {/* Gallery — left on desktop */}
+            Gallery — left on desktop
             <ApartmentGallery
               mainImage={ZUM_BRUNNEN_MAIN}
               mainAlt="Zum Brunnen — Schloss Eyrichshof"
@@ -128,7 +128,7 @@ export default function FerienwohnungenPage() {
               apartmentName="Zum Brunnen"
             />
 
-            {/* Info panel — right on desktop */}
+            Info panel — right on desktop
             <div className="lg:sticky lg:top-32 lg:order-last">
               <span className="inline-block text-[11px] uppercase tracking-[0.16em] bg-accent text-white px-2.5 py-1 font-medium mb-6">
                 Ideal für Familien mit Kindern
@@ -174,6 +174,7 @@ export default function FerienwohnungenPage() {
           </div>
         </div>
       </section>
+      ── end Zum Brunnen ── */}
 
       {/* ── Brennmeister ────────────────────────────────────────────────── */}
       <section id="brennmeister" className="border-t border-warm-200 scroll-mt-[116px]">
