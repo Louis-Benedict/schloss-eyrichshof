@@ -87,7 +87,7 @@ function SlideContent({ slide }: { slide: Slide }) {
 
 export default function HeroAltC() {
   return (
-    <div className="relative">
+    <div className="relative -mt-[116px]">
       <Swiper
         modules={[Autoplay, Navigation, Pagination, EffectFade]}
         effect="fade"
@@ -101,10 +101,10 @@ export default function HeroAltC() {
 
             {/* Mobile — image top, text panel below (mirrors Variant A) */}
             <div
-              className="flex flex-col lg:hidden"
+              className="flex flex-col lg:hidden overflow-hidden"
               style={{ height: 'min(800px, 100svh)' }}
             >
-              <div className="order-1 flex-1 relative min-h-[260px]">
+              <div className="order-1 flex-1 relative">
                 {slide.image && (
                   <Image
                     src={slide.image}
