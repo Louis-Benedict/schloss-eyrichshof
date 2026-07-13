@@ -35,7 +35,7 @@ export const apartments: Apartment[] = [
     bookingUrl:
       'https://tbooking.toubiz.de/GER00020061453866293/tbooking?globalReset=1&serviceIDs%5b%5d=GER00020061462802875',
   },
-  {
+  /* {
     id: 'zum-brunnen',
     name: 'Zum Brunnen',
     tag: 'Ideal für Familien mit Kindern',
@@ -53,7 +53,7 @@ export const apartments: Apartment[] = [
     ],
     bookingUrl:
       'https://tbooking.toubiz.de/GER00020061453866293/tbooking?globalReset=1&serviceIDs%5b%5d=GER00020062018604205',
-  },
+  }, */
   {
     id: 'brennmeister',
     name: 'Brennmeister',
