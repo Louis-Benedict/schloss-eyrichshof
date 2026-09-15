@@ -133,6 +133,31 @@ const sections = [
       },
     ],
   },
+  {
+    heading: '7. Google Tag Manager und Google Analytics',
+    content: [
+      {
+        body: 'Diese Website setzt den Google Tag Manager sowie darüber eingebundenes Google Analytics (GA4) ein, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (nachfolgend „Google"). Beide Dienste werden erst geladen, nachdem Sie der Verwendung von Cookies und Analyse-Tools über unseren Cookie-Hinweis ausdrücklich zugestimmt haben. Rechtsgrundlage ist in diesem Fall ausschließlich Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO in Verbindung mit § 25 Abs. 1 TTDSG.',
+      },
+      {
+        subheading: 'Google Tag Manager',
+        body: 'Der Google Tag Manager ist eine Lösung, mit der wir sogenannte Website-Tags über eine Oberfläche verwalten können. Der Tag Manager selbst, der die Tags implementiert, verarbeitet keine personenbezogenen Daten. In Bezug auf die Verarbeitung personenbezogener Daten wird auf die nachfolgenden Angaben zu Google Analytics verwiesen.',
+      },
+      {
+        subheading: 'Google Analytics (GA4)',
+        body: 'Google Analytics ermöglicht es uns, das Verhalten der Websitebesucher statistisch auszuwerten, etwa welche Seiten wie häufig aufgerufen werden oder über welche Quellen Besucher auf unsere Seite gelangen. Dabei werden unter anderem IP-Adresse, Geräte- und Browserinformationen sowie Ihre Interaktionen auf der Website verarbeitet. Google verarbeitet diese Daten in unserem Auftrag als Auftragsverarbeiter im Sinne von Art. 28 DSGVO. Eine Verarbeitung der Daten erfolgt dabei auch auf Servern in den USA. Google hat sich hierfür den EU-Standardvertragsklauseln der Europäischen Kommission unterworfen, um ein angemessenes Datenschutzniveau für diese Übermittlung sicherzustellen.',
+      },
+      {
+        subheading: 'Widerruf und Widerspruch',
+        body: 'Sie können Ihre Einwilligung zur Nutzung von Google Tag Manager und Google Analytics jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie Ihre Cookie-Einstellungen über unsere Cookie-Richtlinien anpassen. Zusätzlich können Sie die Erfassung durch Google Analytics verhindern, indem Sie das von Google bereitgestellte Browser-Add-on installieren.',
+        link: { label: 'Browser-Add-on zur Deaktivierung von Google Analytics', href: 'https://tools.google.com/dlpage/gaoptout?hl=de' },
+      },
+      {
+        body: 'Weitere Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google.',
+        link: { label: 'Datenschutzerklärung von Google', href: 'https://policies.google.com/privacy?hl=de' },
+      },
+    ],
+  },
 ]
 
 type Block = {

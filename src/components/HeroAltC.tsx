@@ -5,6 +5,7 @@ import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
 import Link from 'next/link'
 import Image from 'next/image'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
+import { WINTERSZEIT_TICKET_URL } from '@/lib/site'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -13,22 +14,22 @@ import 'swiper/css/effect-fade'
 
 const slides = [
   {
-    image: '/images/hero-roesler-open-air.jpg',
-    eyebrow: 'Sommer 2026 · Schloss Eyrichshof',
-    heading: 'Rösler Open Air',
-    subheading: 'Sechs Abende unter freiem Himmel',
-    body: 'Klassik, Jazz und Weltmusik — ein musikalisches Highlight im Schlosspark Eyrichshof mit Künstlern aus aller Welt.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
-    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/roesler-open-air' },
+    image: '/images/hero-winterszeit.jpg',
+    eyebrow: '5.–8. November 2026',
+    heading: 'Winterszeit',
+    subheading: 'auf Schloss Eyrichshof',
+    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
+    primaryCta: { label: 'Tickets buchen', href: WINTERSZEIT_TICKET_URL },
+    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
   },
   {
     image: '/images/hero-schloss.jpg',
     eyebrow: 'Seit über 700 Jahren',
     heading: 'Unvergessliche Momente',
     subheading: 'auf Schloss Eyrichshof',
-    body: 'Ein fränkisches Landschloss mit Geschichte, Gastfreundschaft und Atmosphäre — mitten in der Natur Unterfrankens.',
+    body: 'Ein fränkisches Schloss mit Geschichte, Gastfreundschaft und Atmosphäre — mitten in der Natur Unterfrankens.',
     primaryCta: { label: 'Veranstaltungen', href: '/veranstaltungen' },
-    secondaryCta: { label: 'Das Schloss', href: '/landschloss' },
+    secondaryCta: { label: 'Das Schloss', href: '/schloss' },
   },
   {
     image: '/images/hero-gartenfest.jpg',
@@ -36,17 +37,17 @@ const slides = [
     heading: 'Gartenfest',
     subheading: 'Kunst, Natur und fränkische Gastlichkeit',
     body: 'Über 150 Aussteller, tägliche Livemusik und ein vielfältiges Rahmenprogramm — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
+    primaryCta: { label: 'Impressionen', href: '/veranstaltungen/gartenfest#impressionen' },
     secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/gartenfest' },
   },
   {
-    image: '/images/hero-winterszeit.jpg',
-    eyebrow: '5.–8. November 2026',
-    heading: 'Winterszeit',
-    subheading: 'auf Schloss Eyrichshof',
-    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
-    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
+    image: '/images/hero-roesler-open-air.jpg',
+    eyebrow: 'Sommer 2027 · Schloss Eyrichshof',
+    heading: 'Rösler Open Air',
+    subheading: 'Sechs Abende unter freiem Himmel',
+    body: 'Klassik, Jazz und Weltmusik — ein musikalisches Highlight im Schlosspark Eyrichshof mit Künstlern aus aller Welt.',
+    primaryCta: { label: 'Impressionen', href: '/veranstaltungen/roesler-open-air#impressionen' },
+    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/roesler-open-air' },
   },
 ]
 
@@ -87,7 +88,7 @@ function SlideContent({ slide }: { slide: Slide }) {
 
 export default function HeroAltC() {
   return (
-    <div className="relative -mt-[116px]">
+    <div className="relative -mt-4">
       <Swiper
         modules={[Autoplay, Navigation, Pagination, EffectFade]}
         effect="fade"
@@ -102,7 +103,7 @@ export default function HeroAltC() {
             {/* Mobile — image top, text panel below (mirrors Variant A) */}
             <div
               className="flex flex-col lg:hidden overflow-hidden"
-              style={{ height: 'min(800px, 100svh)' }}
+              style={{ height: 'min(740px, 100svh)' }}
             >
               <div className="order-1 flex-1 relative">
                 {slide.image && (
@@ -118,7 +119,7 @@ export default function HeroAltC() {
                   />
                 )}
               </div>
-              <div className="order-2 bg-cream flex flex-col justify-center px-8 sm:px-12 py-10">
+              <div className="order-2 bg-warm-100 flex flex-col justify-center px-8 sm:px-12 py-10">
                 <SlideContent slide={slide} />
               </div>
             </div>
@@ -126,7 +127,7 @@ export default function HeroAltC() {
             {/* Desktop — full image, floating card left-center */}
             <div
               className="hidden lg:block relative"
-              style={{ height: 'min(800px, 100svh)' }}
+              style={{ height: 'min(740px, 100svh)' }}
             >
               {slide.image && (
                 <Image

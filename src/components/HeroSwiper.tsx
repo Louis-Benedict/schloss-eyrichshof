@@ -5,6 +5,7 @@ import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules'
 import Link from 'next/link'
 import Image from 'next/image'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
+import { WINTERSZEIT_TICKET_URL } from '@/lib/site'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -25,14 +26,14 @@ interface Slide {
 
 const slides: Slide[] = [
   {
-    image: '/images/hero-roesler-open-air.jpg',
-    overlayColor: 'rgba(20, 12, 10, 0.50)',
-    eyebrow: 'Sommer 2026 · Schloss Eyrichshof',
-    heading: 'Rösler Open Air',
-    subheading: 'Sechs Abende unter freiem Himmel',
-    body: 'Klassik, Jazz und Weltmusik — ein musikalisches Highlight im Schlosspark Eyrichshof mit Künstlern aus aller Welt.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
-    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/roesler-open-air' },
+    image: '/images/hero-winterszeit.jpg',
+    overlayColor: 'rgba(10, 14, 30, 0.55)',
+    eyebrow: '5.–8. November 2026',
+    heading: 'Winterszeit',
+    subheading: 'auf Schloss Eyrichshof',
+    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
+    primaryCta: { label: 'Tickets buchen', href: WINTERSZEIT_TICKET_URL },
+    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
   },
   {
     image: '/images/hero-schloss.jpg',
@@ -40,9 +41,9 @@ const slides: Slide[] = [
     eyebrow: 'Seit über 700 Jahren',
     heading: 'Unvergessliche Momente',
     subheading: 'auf Schloss Eyrichshof',
-    body: 'Ein fränkisches Landschloss mit Geschichte, Gastfreundschaft und Atmosphäre — mitten in der Natur Unterfrankens.',
+    body: 'Ein fränkisches Schloss mit Geschichte, Gastfreundschaft und Atmosphäre — mitten in der Natur Unterfrankens.',
     primaryCta: { label: 'Veranstaltungen', href: '/veranstaltungen' },
-    secondaryCta: { label: 'Das Schloss', href: '/landschloss' },
+    secondaryCta: { label: 'Das Schloss', href: '/schloss' },
   },
   {
     image: '/images/hero-gartenfest.jpg',
@@ -51,18 +52,18 @@ const slides: Slide[] = [
     heading: 'Gartenfest',
     subheading: 'Kunst, Natur und fränkische Gastlichkeit',
     body: 'Über 150 Aussteller, tägliche Livemusik und ein vielfältiges Rahmenprogramm — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
+    primaryCta: { label: 'Impressionen', href: '/veranstaltungen/gartenfest#impressionen' },
     secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/gartenfest' },
   },
   {
-    image: '/images/hero-winterszeit.jpg',
-    overlayColor: 'rgba(10, 14, 30, 0.55)',
-    eyebrow: '5.–8. November 2026',
-    heading: 'Winterszeit',
-    subheading: 'auf Schloss Eyrichshof',
-    body: 'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
-    primaryCta: { label: 'Tickets buchen', href: 'https://www.kartenkiosk-bamberg.de' },
-    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/winterszeit' },
+    image: '/images/hero-roesler-open-air.jpg',
+    overlayColor: 'rgba(20, 12, 10, 0.50)',
+    eyebrow: 'Sommer 2027 · Schloss Eyrichshof',
+    heading: 'Rösler Open Air',
+    subheading: 'Sechs Abende unter freiem Himmel',
+    body: 'Klassik, Jazz und Weltmusik — ein musikalisches Highlight im Schlosspark Eyrichshof mit Künstlern aus aller Welt.',
+    primaryCta: { label: 'Impressionen', href: '/veranstaltungen/roesler-open-air#impressionen' },
+    secondaryCta: { label: 'Mehr erfahren', href: '/veranstaltungen/roesler-open-air' },
   },
 ]
 

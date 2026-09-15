@@ -96,14 +96,19 @@ export default function FerienwohnungenPage() {
               acht Personen.
             </p>
 
-            <Link
-              href="/ferienwohnungen/dekanshaus/buchen"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
-            >
-              Jetzt buchen
-            </Link>
+            <div className="flex items-center gap-5">
+              <Link
+                href="/ferienwohnungen/dekanshaus/buchen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
+              >
+                Jetzt buchen
+              </Link>
+              <Link href="/ferienwohnungen/agb" className="text-xs text-warm-600 hover:text-accent underline underline-offset-2 transition-colors">
+                AGB
+              </Link>
+            </div>
           </div>
 
           <ApartmentGallery
@@ -211,14 +216,19 @@ export default function FerienwohnungenPage() {
                 Schlossatmosphäre suchen.
               </p>
 
-              <Link
-                href="/ferienwohnungen/brennmeister/buchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
-              >
-                Jetzt buchen
-              </Link>
+              <div className="flex items-center gap-5">
+                <Link
+                  href="/ferienwohnungen/brennmeister/buchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
+                >
+                  Jetzt buchen
+                </Link>
+                <Link href="/ferienwohnungen/agb" className="text-xs text-warm-600 hover:text-accent underline underline-offset-2 transition-colors">
+                  AGB
+                </Link>
+              </div>
             </div>
 
             <ApartmentGallery
@@ -279,14 +289,19 @@ export default function FerienwohnungenPage() {
                 Gruppen bis 6 Personen.
               </p>
 
-              <Link
-                href="/ferienwohnungen/turm/buchen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
-              >
-                Jetzt buchen
-              </Link>
+              <div className="flex items-center gap-5">
+                <Link
+                  href="/ferienwohnungen/turm/buchen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-accent hover:bg-accent-hover text-white text-xs uppercase tracking-widest font-medium transition-colors"
+                >
+                  Jetzt buchen
+                </Link>
+                <Link href="/ferienwohnungen/agb" className="text-xs text-warm-600 hover:text-accent underline underline-offset-2 transition-colors">
+                  AGB
+                </Link>
+              </div>
             </div>
           </div>
         </div>

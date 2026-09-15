@@ -5,9 +5,13 @@ import { events } from '@/data/events'
 import { SHOP_URL } from '@/lib/site'
 
 const socialLinks = [
-  { icon: IconBrandInstagram, label: 'Instagram', href: '#' },
-  { icon: IconBrandFacebook, label: 'Facebook', href: '#' },
-  { icon: IconBrandYoutube, label: 'YouTube', href: '#' },
+  { icon: IconBrandInstagram, label: 'Instagram', href: 'https://www.instagram.com/schlosseyrichshof' },
+  { icon: IconBrandFacebook, label: 'Facebook', href: 'https://www.facebook.com/eyrichshof' },
+  {
+    icon: IconBrandYoutube,
+    label: 'YouTube',
+    href: 'https://www.youtube.com/results?search_query=Schloss+Eyrichshof&sp=EiG4AQHCARtDaElKdlJEY0FqRTBva2NSMFp3X3gwcUk2NkE%253D',
+  },
 ]
 
 export default function Footer() {
@@ -20,7 +24,7 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5">
               <Image
                 src="/images/logo.png"
-                alt="Eyrichshof — Landschloss der Inspiration"
+                alt="Eyrichshof — Schloss der Inspiration"
                 width={160}
                 height={82}
                 className="h-16 w-auto object-contain brightness-0 invert opacity-90"

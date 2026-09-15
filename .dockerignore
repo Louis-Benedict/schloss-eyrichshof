@@ -1,0 +1,12 @@
+node_modules
+.next
+.git
+.github
+*.log
+.DS_Store
+.env
+.env.*
+!.env.production.example
+Dockerfile
+docker-compose.yml
+letsencrypt

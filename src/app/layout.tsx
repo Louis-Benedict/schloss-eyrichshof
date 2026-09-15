@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     template: '%s | Schloss Eyrichshof',
-    default: 'Schloss Eyrichshof — Landschloss in Unterfranken',
+    default: 'Schloss Eyrichshof in Unterfranken',
   },
   description:
     'Erleben Sie einzigartige Veranstaltungen, historische Ferienwohnungen und unvergessliche Momente auf Schloss Eyrichshof in Unterfranken.',

@@ -13,11 +13,13 @@ export default function SchlossMap() {
 
   useEffect(() => {
     if (!containerRef.current || mapRef.current) return
+    let cancelled = false
 
     async function init() {
       const L = (await import('leaflet')).default
+      if (cancelled || !containerRef.current || mapRef.current) return
 
-      const map = L.map(containerRef.current!, {
+      const map = L.map(containerRef.current, {
         center: [LAT, LNG],
         zoom: 17,
         scrollWheelZoom: false,
@@ -44,6 +46,7 @@ export default function SchlossMap() {
     init()
 
     return () => {
+      cancelled = true
       mapRef.current?.remove()
       mapRef.current = null
     }

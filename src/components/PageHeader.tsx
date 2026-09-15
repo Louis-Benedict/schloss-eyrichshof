@@ -7,7 +7,7 @@ interface PageHeaderProps {
 export default function PageHeader({ eyebrow, title, description }: PageHeaderProps) {
   return (
     <div className="-mt-[116px] bg-brand pt-[116px] pb-14">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-14">
         {eyebrow && (
           <p className="text-[11px] uppercase tracking-[0.16em] text-accent mb-4">{eyebrow}</p>
         )}

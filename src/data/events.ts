@@ -12,7 +12,7 @@ export const events: Event[] = [
   {
     slug: 'gartenfest',
     title: 'Gartenfest',
-    dates: 'Juni 2027',
+    dates: '15.–17. Mai 2027',
     tag: null,
     description:
       'Kunst, Handwerk und fränkische Gastlichkeit — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
@@ -22,8 +22,8 @@ export const events: Event[] = [
   {
     slug: 'roesler-open-air',
     title: 'Rösler Open Air',
-    dates: 'Juli 2027',
-    tag: 'Vorverkauf',
+    dates: '29. Juli – 3. August 2027',
+    tag: null,
     description:
       'Klassik, Jazz und Weltmusik unter freiem Himmel — ein musikalisches Highlight im Schlosspark Eyrichshof.',
     image: '/images/hero-roesler-open-air.jpg',

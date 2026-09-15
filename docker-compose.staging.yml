@@ -1,0 +1,36 @@
+# Staging environment — lives in its own checkout directory on the server
+# (tracking the `staging` branch), separate from the production checkout.
+# No Traefik of its own: it joins the same `schloss-web` network that the
+# production docker-compose.yml's Traefik container watches, so one Traefik
+# instance routes both domains. See DEPLOYMENT.md "Staging environment".
+
+services:
+  app-staging:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NEXT_PUBLIC_SHOP_URL: ${NEXT_PUBLIC_SHOP_URL}
+        NEXT_PUBLIC_GTM_ID: ${NEXT_PUBLIC_GTM_ID}
+    restart: unless-stopped
+    env_file:
+      - .env.staging
+    networks:
+      - web
+    healthcheck:
+      test: ['CMD', 'node', '-e', "fetch('http://localhost:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.schloss-staging.rule=Host(`${STAGING_DOMAIN}`)
+      - traefik.http.routers.schloss-staging.entrypoints=websecure
+      - traefik.http.routers.schloss-staging.tls.certresolver=letsencrypt
+      - traefik.http.services.schloss-staging.loadbalancer.server.port=3000
+
+networks:
+  web:
+    external: true
+    name: schloss-web

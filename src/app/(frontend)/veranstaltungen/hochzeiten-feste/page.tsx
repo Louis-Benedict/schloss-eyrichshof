@@ -1,12 +1,17 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import type { Metadata } from 'next'
+import { IconDownload } from '@tabler/icons-react'
 import AnfahrtBanner from '@/components/AnfahrtBanner'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 
 export const metadata: Metadata = { title: 'Hochzeiten & Feste' }
+
+const downloads = [
+  { label: 'Allgemeine Geschäftsbedingungen', href: '/veranstaltungen/hochzeiten-feste/agb' },
+]
 
 export default function HochzeitenFestePage() {
   return (
@@ -88,6 +93,28 @@ export default function HochzeitenFestePage() {
               alt: `Hochzeiten & Feste Impression ${i + 1}`,
             }))}
           />
+        </div>
+      </section>
+
+      {/* Downloads */}
+      <section className="border-t border-warm-200 py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Hochzeiten & Feste</p>
+          <h2 className="font-heading text-3xl font-normal text-brand mb-6">Downloads</h2>
+          <div className="flex flex-col gap-3">
+            {downloads.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 text-sm text-warm-600 hover:text-accent transition-colors leading-snug w-fit"
+              >
+                <IconDownload size={15} stroke={1.75} className="shrink-0 text-warm-400" />
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

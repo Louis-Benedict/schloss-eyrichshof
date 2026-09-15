@@ -8,19 +8,56 @@ import { events as allEvents } from '@/data/events'
 import { apartments } from '@/data/ferienwohnungen'
 
 export const metadata: Metadata = {
-  title: 'Schloss Eyrichshof — Landschloss in Unterfranken',
+  title: 'Schloss Eyrichshof in Unterfranken',
 }
 
 // Homepage features 3 seasonal events in a specific visual order
-const homepageSlugs = ['roesler-open-air', 'winterszeit', 'gartenfest']
+const homepageSlugs = ['winterszeit', 'gartenfest', 'roesler-open-air']
 const events = homepageSlugs.map(slug => allEvents.find(e => e.slug === slug)!)
 
+function OrnamentDivider() {
+  return (
+    <svg viewBox="0 0 600 24" className="h-5 w-full text-accent/60" fill="none" aria-hidden="true">
+      <path d="M0 12 H255" stroke="currentColor" strokeWidth="1" />
+      <path d="M600 12 H345" stroke="currentColor" strokeWidth="1" />
+      <path
+        d="M255 12 c10 -9 20 -9 25 0 c-10 9 -20 9 -25 0 Z M300 4 l7 8 l-7 8 l-7 -8 Z M345 12 c-10 -9 -20 -9 -25 0 c10 9 20 9 25 0 Z"
+        stroke="currentColor"
+        strokeWidth="1"
+      />
+    </svg>
+  )
+}
 
 export default function HomePage() {
   return (
     <>
       {/* Hero */}
       <HeroAltC />
+
+      {/* ── Kennzahlen ──────────────────────────────────────────────── */}
+      <section className="bg-cream pt-16 sm:pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <OrnamentDivider />
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { value: 'Über 800 Jahre', label: 'Im Familienbesitz derer von Rotenhan' },
+              { value: 'Seit 2004', label: 'Großveranstaltungen im Schlosspark' },
+              { value: 'Seit 2005', label: 'Hochzeitsfeiern im Schloss' },
+              { value: '70.000+', label: 'Besucher jedes Jahr' },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center sm:text-left">
+                <p className="font-heading text-3xl sm:text-4xl font-normal text-brand">{stat.value}</p>
+                <div className="h-px w-10 bg-accent mt-4 mx-auto sm:mx-0" />
+                <p className="mt-4 text-[11px] tracking-[0.22em] uppercase text-warm-500">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-14">
+            <OrnamentDivider />
+          </div>
+        </div>
+      </section>
 
       {/* ── Statement ───────────────────────────────────────────────── */}
       <section>
@@ -47,11 +84,11 @@ export default function HomePage() {
             {/* Right — text */}
             <div className="flex flex-col justify-center pl-0 lg:pl-16 pt-12 lg:pt-0 border-t border-warm-200 lg:border-t-0">
               <p className="text-[11px] uppercase tracking-[0.22em] text-accent mb-6">
-                Landschloss in Familienbesitz · Seit dem 14. Jahrhundert
+                Schloss in Familienbesitz · Seit dem 13. Jahrhundert
               </p>
               <div className="space-y-4 text-warm-600 leading-relaxed text-base">
                 <p>
-                  Eyrichshof ist ein Landschloss in Familienbesitz im Herzen von Franken. Schon seit
+                  Eyrichshof ist ein Schloss im Herzen von Franken. Schon seit
                   mehr als 700 Jahren empfängt man hier gerne Gäste.
                 </p>
                 <p>
@@ -71,19 +108,19 @@ export default function HomePage() {
               </div>
               <div className="flex flex-wrap gap-4 mt-10">
                 <Link
-                  href="/landschloss/geschichte"
+                  href="/schloss/geschichte"
                   className="text-xs uppercase tracking-widest font-semibold text-accent hover:text-accent-hover transition-colors"
                 >
                   Geschichte entdecken →
                 </Link>
                 <Link
-                  href="/landschloss/anspruch"
+                  href="/schloss/anspruch"
                   className="text-xs uppercase tracking-widest font-semibold text-warm-500 hover:text-brand transition-colors"
                 >
                   Anspruch entdecken →
                 </Link>
                 <Link
-                  href="/landschloss/impressionen"
+                  href="/schloss/impressionen"
                   className="text-xs uppercase tracking-widest font-semibold text-warm-500 hover:text-brand transition-colors"
                 >
                   Impressionen →
@@ -266,7 +303,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Das Landschloss */}
+      {/* Das Schloss */}
       <section className="overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2">
           <div className="relative min-h-[360px] lg:min-h-[580px]">
@@ -300,13 +337,13 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link
-                  href="/landschloss/geschichte"
+                  href="/schloss/geschichte"
                   className="inline-block px-6 py-3 bg-brand text-warm-50 text-sm uppercase tracking-widest hover:bg-brand/80 transition-colors text-center"
                 >
                   Geschichte entdecken
                 </Link>
                 <Link
-                  href="/landschloss/impressionen"
+                  href="/schloss/impressionen"
                   className="inline-block px-6 py-3 border border-brand text-sm uppercase tracking-widest text-brand hover:bg-brand hover:text-warm-50 transition-colors text-center"
                 >
                   Impressionen

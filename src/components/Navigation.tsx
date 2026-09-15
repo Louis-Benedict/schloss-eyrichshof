@@ -9,12 +9,12 @@ import { SHOP_URL } from '@/lib/site'
 const navItems = [
   {
     label: 'Das Schloss',
-    href: '/landschloss',
+    href: '/schloss',
     children: [
-      { label: 'Geschichte', href: '/landschloss/geschichte' },
-      { label: 'Anspruch', href: '/landschloss/anspruch' },
-      { label: 'Umgebung', href: '/landschloss/umgebung' },
-      { label: 'Impressionen', href: '/landschloss/impressionen' },
+      { label: 'Geschichte', href: '/schloss/geschichte' },
+      { label: 'Anspruch', href: '/schloss/anspruch' },
+      { label: 'Umgebung', href: '/schloss/umgebung' },
+      { label: 'Impressionen', href: '/schloss/impressionen' },
     ],
   },
   {
@@ -77,7 +77,7 @@ export default function Navigation() {
           <Link href="/" className="shrink-0">
             <Image
               src="/images/logo.png"
-              alt="Eyrichshof — Landschloss der Inspiration"
+              alt="Eyrichshof — Schloss der Inspiration"
               width={210}
               height={108}
               className="h-[60px] w-auto object-contain"

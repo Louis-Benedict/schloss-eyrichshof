@@ -30,7 +30,7 @@ export const ORGANIZATION_JSONLD = {
   logo: `${SITE_URL}/images/logo.png`,
   image: `${SITE_URL}/images/schloss-exterior.jpg`,
   description:
-    'Landschloss in Familienbesitz im Herzen Frankens — Ferienwohnungen, Veranstaltungen und Hochzeiten auf Schloss Eyrichshof.',
+    'Schloss in Familienbesitz im Herzen Frankens — Ferienwohnungen, Veranstaltungen und Hochzeiten auf Schloss Eyrichshof.',
   email: 'info@schlosseyrichshof.de',
   faxNumber: '+49 9531 5736',
   address: ORGANIZATION_ADDRESS,

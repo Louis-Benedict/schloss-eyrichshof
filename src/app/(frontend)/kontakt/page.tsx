@@ -2,131 +2,10 @@ import Image from 'next/image'
 import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import NewsletterInlineForm from '@/components/NewsletterInlineForm'
+import ContactForm from '@/components/ContactForm'
+import { team, THEMA_OPTIONS } from '@/lib/team'
 
 export const metadata: Metadata = { title: 'Kontakt' }
-
-const team: { name: string; role: string; src: string; email?: string }[] = [
-  {
-    name: 'Hermann von Rotenhan',
-    role: 'Eigentümer und Veranstalter',
-    src: '/images/kontakt/01.jpg',
-  },
-  {
-    name: 'Waltraud Boseckert',
-    role: 'Hochzeiten und Feiern',
-    src: '/images/kontakt/02.jpg',
-  },
-  {
-    name: 'Aino Bender',
-    role: 'Winterszeit',
-    src: '/images/kontakt/03.jpg',
-  },
-  {
-    name: 'Angela von Willich',
-    role: 'Gartenfest',
-    src: '/images/kontakt/04.jpg',
-  },
-  {
-    name: 'Nadja Ortlauf',
-    role: 'Marketing',
-    src: '/images/kontakt/05.jpg',
-  },
-  {
-    name: 'Christiane Gründel',
-    role: 'Ferienwohnungen',
-    src: '/images/kontakt/06.jpg',
-  },
-]
-
-const THEMA_OPTIONS = [
-  'gartenfest',
-  'roesler-open-air',
-  'winterszeit',
-  'hochzeiten-feste',
-  'firmenevents',
-  'ferienwohnungen',
-  'shop',
-  'weitere-anliegen',
-] as const
-
-function ContactForm({ prefix, defaultThema }: { prefix: string; defaultThema?: string }) {
-  return (
-    <form className="space-y-4">
-      <h3 className="font-heading text-2xl font-normal text-brand mb-4">Schreiben Sie uns</h3>
-      <div className="space-y-3 text-sm text-warm-600 leading-relaxed mb-6">
-        <p>
-          Ob zu einer unserer Schlossveranstaltungen, einem Aufenthalt in einer unserer
-          Ferienwohnungen, einer privaten Feier oder einfach nur mal so: Wir freuen uns immer
-          über Ihren Besuch — und helfen Ihnen genauso gerne weiter, wenn Sie Fragen oder
-          Feedback für uns haben.
-        </p>
-        <p>
-          In dieser Rubrik finden Sie alle Informationen, um unkompliziert mit uns Kontakt
-          aufzunehmen, uns in den sozialen Medien zu folgen, sich für den kostenlosen Newsletter
-          anzumelden, oder nähere Details zu Anfahrt und Parkmöglichkeiten zu erfahren.
-        </p>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-vorname`}>Vorname</label>
-          <input id={`${prefix}-vorname`} type="text" className="w-full border border-warm-300 px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-        </div>
-        <div>
-          <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-nachname`}>Nachname</label>
-          <input id={`${prefix}-nachname`} type="text" className="w-full border border-warm-300 px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-        </div>
-      </div>
-      <div>
-        <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-email`}>E-Mail</label>
-        <input id={`${prefix}-email`} type="email" className="w-full border border-warm-300 px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-      </div>
-      <div>
-        <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-thema`}>Thema</label>
-        <select
-          id={`${prefix}-thema`}
-          defaultValue={defaultThema ?? ''}
-          className="w-full border border-warm-300 px-3 py-2 text-sm text-warm-700 bg-warm-50 focus:outline-none focus:border-accent"
-        >
-          <option value="">Bitte wählen …</option>
-          <option value="gartenfest">Gartenfest</option>
-          <option value="roesler-open-air">Rösler Open Air</option>
-          <option value="winterszeit">Winterszeit</option>
-          <option value="hochzeiten-feste">Hochzeiten &amp; Feste</option>
-          <option value="firmenevents">Firmenevents</option>
-          <option value="ferienwohnungen">Ferienwohnungen</option>
-          <option value="shop">Shop</option>
-          <option value="weitere-anliegen">Weitere Anliegen</option>
-        </select>
-      </div>
-      <div>
-        <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-betreff`}>Betreff</label>
-        <input id={`${prefix}-betreff`} type="text" className="w-full border border-warm-300 px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-      </div>
-      <div>
-        <label className="block text-xs font-medium text-warm-700 mb-1.5" htmlFor={`${prefix}-nachricht`}>Nachricht</label>
-        <textarea id={`${prefix}-nachricht`} rows={5} className="w-full border border-warm-300 px-3 py-2 text-sm focus:outline-none focus:border-accent" />
-      </div>
-      <div className="flex items-start gap-3">
-        <input
-          id={`${prefix}-datenschutz`}
-          type="checkbox"
-          required
-          className="mt-0.5 shrink-0 accent-accent"
-        />
-        <label htmlFor={`${prefix}-datenschutz`} className="text-xs text-warm-600 leading-relaxed">
-          Ich habe die{' '}
-          <a href="/datenschutz" className="underline underline-offset-2 hover:text-accent transition-colors">
-            Datenschutzerklärung
-          </a>{' '}
-          gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung meiner Anfrage zu.
-        </label>
-      </div>
-      <button type="submit" className="w-full py-2.5 bg-accent hover:bg-accent-hover text-white text-xs font-medium uppercase tracking-wide transition-colors">
-        Nachricht senden
-      </button>
-    </form>
-  )
-}
 
 export default async function KontaktPage({
   searchParams,
@@ -134,7 +13,7 @@ export default async function KontaktPage({
   searchParams: Promise<{ thema?: string }>
 }) {
   const { thema } = await searchParams
-  const defaultThema = THEMA_OPTIONS.find((option) => option === thema)
+  const defaultThema = THEMA_OPTIONS.find((option) => option.value === thema)?.value
 
   return (
     <>
@@ -179,18 +58,13 @@ export default async function KontaktPage({
                   <div className="min-w-0">
                     <p className="font-heading text-xl text-brand leading-snug">{person.name}</p>
                     <p className="text-[11px] uppercase tracking-[0.18em] text-warm-500 mt-1">{person.role}</p>
-                    {person.email && (
-                      <a href={`mailto:${person.email}`} className="inline-block mt-2 text-xs text-accent hover:text-accent-hover transition-colors truncate">
-                        {person.email}
-                      </a>
-                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
           <div>
-            <ContactForm prefix="b" defaultThema={defaultThema} />
+            <ContactForm defaultThema={defaultThema} />
           </div>
         </div>
       </section>
