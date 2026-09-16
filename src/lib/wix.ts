@@ -37,11 +37,13 @@ export async function createPendingMarketingConsent(email: string): Promise<{ id
     method: 'POST',
     headers,
     body: JSON.stringify({
-      details: { type: 'EMAIL', email },
-      state: 'PENDING',
-      lastConfirmationActivity: {
-        source: 'FORM',
-        optInLevel: 'DOUBLE_CONFIRMATION',
+      marketingConsent: {
+        details: { type: 'EMAIL', email },
+        state: 'PENDING',
+        lastConfirmationActivity: {
+          source: 'FORM',
+          optInLevel: 'DOUBLE_CONFIRMATION',
+        },
       },
     }),
   })
