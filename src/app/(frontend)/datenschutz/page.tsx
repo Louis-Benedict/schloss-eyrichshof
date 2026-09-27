@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'Datenschutz' }
+export const metadata: Metadata = {
+  title: 'Datenschutz',
+  description:
+    'Datenschutzerklärung von Schloss Eyrichshof: Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.',
+}
 
 const sections = [
   {

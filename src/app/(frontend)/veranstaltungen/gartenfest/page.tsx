@@ -10,7 +10,11 @@ import JsonLd from '@/components/JsonLd'
 import { SITE_URL } from '@/lib/site'
 import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
-export const metadata: Metadata = { title: 'Gartenfest' }
+export const metadata: Metadata = {
+  title: 'Gartenfest',
+  description:
+    'Kunst, Handwerk und fränkische Gastlichkeit — das beliebteste Open-Air-Erlebnis auf dem Schlossgelände.',
+}
 
 const gartenfestJsonLd = {
   '@context': 'https://schema.org',

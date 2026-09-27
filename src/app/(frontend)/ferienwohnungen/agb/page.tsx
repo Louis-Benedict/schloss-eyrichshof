@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'AGB Ferienwohnungen' }
+export const metadata: Metadata = { title: 'AGB Ferienwohnungen', robots: { index: false, follow: true } }
 
 export default function AgbFerienwohnungenPage() {
   return (

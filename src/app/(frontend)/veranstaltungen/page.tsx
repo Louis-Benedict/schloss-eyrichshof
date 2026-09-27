@@ -5,7 +5,11 @@ import PageHeader from '@/components/PageHeader'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { events } from '@/data/events'
 
-export const metadata: Metadata = { title: 'Veranstaltungen' }
+export const metadata: Metadata = {
+  title: 'Veranstaltungen',
+  description:
+    'Veranstaltungen auf Schloss Eyrichshof: Gartenfest, Winterszeit, Rösler Open Air und mehr, das ganze Jahr über.',
+}
 
 export default function VeranstaltungenPage() {
   const [hero, ...rest] = events

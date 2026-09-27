@@ -4,7 +4,7 @@ import { apartments } from '@/data/ferienwohnungen'
 
 const apartment = apartments.find((apt) => apt.id === 'turm')!
 
-export const metadata: Metadata = { title: `${apartment.name} buchen` }
+export const metadata: Metadata = { title: `${apartment.name} buchen`, robots: { index: false, follow: true } }
 
 export default function TurmBuchenPage() {
   return (

@@ -1,7 +1,11 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'Cookie-Richtlinien' }
+export const metadata: Metadata = {
+  title: 'Cookie-Richtlinien',
+  description:
+    'Cookie-Richtlinien von Schloss Eyrichshof: welche Cookies verwendet werden und wie Sie diese in Ihrem Browser verwalten können.',
+}
 
 const browserLinks = [
   { label: 'Cookie-Einstellungen in Firefox', href: 'https://support.mozilla.org/de/kb/cookies-erlauben-und-ablehnen' },

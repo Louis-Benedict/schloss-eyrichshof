@@ -1,7 +1,10 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'Impressum' }
+export const metadata: Metadata = {
+  title: 'Impressum',
+  description: 'Impressum von Schloss Eyrichshof gemäß § 5 TMG: Anbieterkennzeichnung, Kontaktdaten und rechtliche Angaben.',
+}
 
 export default function ImpressumPage() {
   return (
