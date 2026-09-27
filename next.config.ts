@@ -38,13 +38,9 @@ const nextConfig: NextConfig = {
       // Shop läuft künftig auf einer eigenen Subdomain, nicht mehr unter /shop auf dieser Domain
       { source: '/shop', destination: 'https://www.shop.schlosseyrichshof.de/shop', permanent: true },
       { source: '/shop/:path*', destination: 'https://www.shop.schlosseyrichshof.de/shop/:path*', permanent: true },
-      // Alte Jahres-/Formular-/Kopie-Duplikate auf die aktuelle Übersichtsseite
-      { source: '/gartenfest-formular2024', destination: '/veranstaltungen/gartenfest', permanent: true },
-      { source: '/gartenfest-formular2025', destination: '/veranstaltungen/gartenfest', permanent: true },
-      { source: '/gartenfest-formular2026', destination: '/veranstaltungen/gartenfest', permanent: true },
-      { source: '/winterszeit-formular2024', destination: '/veranstaltungen/winterszeit', permanent: true },
-      { source: '/winterszeit-formular2025', destination: '/veranstaltungen/winterszeit', permanent: true },
-      { source: '/winterszeit-formular2026', destination: '/veranstaltungen/winterszeit', permanent: true },
+      // Alte Kopie-Duplikate auf die aktuelle Übersichtsseite
+      // -formular202x-URLs sind bewusst NICHT hier gelistet: die fallen durch
+      // auf not-found.tsx und werden 1:1 an die alte Shop-Domain weitergereicht.
       { source: '/copy-of-winterszeit', destination: '/veranstaltungen/winterszeit', permanent: true },
       { source: '/kopie-von-kopie-von-winterszeit', destination: '/veranstaltungen/winterszeit', permanent: true },
       // Alte Einzel-Event-Seiten (kein Äquivalent auf der neuen Seite) auf die passende Übersichtsseite
