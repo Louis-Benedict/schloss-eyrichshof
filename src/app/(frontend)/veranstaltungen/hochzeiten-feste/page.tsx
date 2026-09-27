@@ -7,7 +7,11 @@ import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 
-export const metadata: Metadata = { title: 'Hochzeiten & Feste' }
+export const metadata: Metadata = {
+  title: 'Hochzeiten & Feste',
+  description:
+    'Hochzeiten und Feste auf Schloss Eyrichshof: historische Räumlichkeiten, erfahrenes Partnernetzwerk und freie oder kirchliche Trauung.',
+}
 
 const downloads = [
   { label: 'Allgemeine Geschäftsbedingungen', href: '/veranstaltungen/hochzeiten-feste/agb' },

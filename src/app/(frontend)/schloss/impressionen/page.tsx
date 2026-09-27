@@ -4,7 +4,11 @@ import PageHeader from '@/components/PageHeader'
 import ImageGallery from '@/components/ImageGallery'
 import SchlossNav from '@/components/SchlossNav'
 
-export const metadata: Metadata = { title: 'Impressionen' }
+export const metadata: Metadata = {
+  title: 'Impressionen',
+  description:
+    'Bildergalerien von Rösler Open Air, Gartenfest, Winterszeit und Hochzeiten & Feste auf Schloss Eyrichshof.',
+}
 
 const sections = [
   {

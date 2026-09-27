@@ -5,7 +5,11 @@ import NewsletterInlineForm from '@/components/NewsletterInlineForm'
 import ContactForm from '@/components/ContactForm'
 import { team, THEMA_OPTIONS } from '@/lib/team'
 
-export const metadata: Metadata = { title: 'Kontakt' }
+export const metadata: Metadata = {
+  title: 'Kontakt',
+  description:
+    'Kontaktieren Sie das Team von Schloss Eyrichshof, für Veranstaltungen, Hochzeiten, Ferienwohnungen oder allgemeine Anfragen.',
+}
 
 export default async function KontaktPage({
   searchParams,

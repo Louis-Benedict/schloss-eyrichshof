@@ -10,7 +10,11 @@ import JsonLd from '@/components/JsonLd'
 import { SITE_URL, WINTERSZEIT_TICKET_URL } from '@/lib/site'
 import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
-export const metadata: Metadata = { title: 'Winterszeit' }
+export const metadata: Metadata = {
+  title: 'Winterszeit',
+  description:
+    'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
+}
 
 const winterszeitJsonLd = {
   '@context': 'https://schema.org',
@@ -151,7 +155,7 @@ export default function WinterzeitPage() {
               >
                 Tickets kaufen
               </a>
-              <p className="text-xs text-warm-500 text-center mb-6">Kinder bis 12 Jahre haben gratis Eintritt.</p>
+              <p className="text-xs text-warm-500 text-center mb-6">Kinder bis 15 Jahre haben gratis Eintritt.</p>
 
               {/* Navigation */}
               <div className="border-t border-warm-200 pt-5 mb-5">
@@ -224,7 +228,7 @@ export default function WinterzeitPage() {
         <p className="text-xs uppercase tracking-[0.22em] text-accent mb-4">Dabei sein</p>
         <h2 className="font-heading text-3xl font-normal text-warm-50 mb-6">Tickets sichern</h2>
         <p className="text-warm-100 text-sm mb-8 max-w-md mx-auto leading-relaxed">
-          Tagestickets sind im Vorverkauf erhältlich. Kinder bis 12 Jahre haben gratis Eintritt.
+          Tagestickets sind im Vorverkauf erhältlich. Kinder bis 15 Jahre haben gratis Eintritt.
         </p>
         <a
           href={WINTERSZEIT_TICKET_URL}

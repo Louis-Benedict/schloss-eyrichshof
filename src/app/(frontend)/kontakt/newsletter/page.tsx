@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import NewsletterForm from '@/components/NewsletterForm'
 
-export const metadata: Metadata = { title: 'Newsletter' }
+export const metadata: Metadata = {
+  title: 'Newsletter',
+  description:
+    'Bleiben Sie über Veranstaltungen, Neuigkeiten und besondere Angebote auf Schloss Eyrichshof informiert.',
+}
 
 const CONFIRMATION_MESSAGES = {
   success: {

@@ -3,7 +3,11 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import ApartmentGallery from '@/components/ApartmentGallery'
 
-export const metadata: Metadata = { title: 'Ferienwohnungen' }
+export const metadata: Metadata = {
+  title: 'Ferienwohnungen',
+  description:
+    'Drei historische Ferienwohnungen auf Schloss Eyrichshof: Dekanshaus, Brennmeister und Turm, modern ausgestattet für 2 bis 6 Gäste.',
+}
 
 // ── Dekanshaus ────────────────────────────────────────────────────────────────
 const DEKANSHAUS_MAIN = '/images/ferienwohnungen/dekanshaus/main.jpg'

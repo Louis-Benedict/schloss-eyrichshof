@@ -3,7 +3,11 @@ import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import SchlossNav from '@/components/SchlossNav'
 
-export const metadata: Metadata = { title: 'Anspruch' }
+export const metadata: Metadata = {
+  title: 'Anspruch',
+  description:
+    'Schloss Eyrichshof, im Herzen von Franken, ist eine Destination für inspirierende Momente – die kleinen und großen, an die Sie sich gerne erinnern. Hermann Freiherr von Rotenhan führt mehr als 700 Jahre Tradition zeitgemäß fort: mit Veranstaltungen, Hochzeitsfeiern und modernen Ferienwohnungen.',
+}
 
 export default function AnspruchPage() {
   return (
