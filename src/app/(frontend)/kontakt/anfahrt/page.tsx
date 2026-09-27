@@ -2,7 +2,11 @@ import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 import SchlossMapWrapper from '@/components/SchlossMapWrapper'
 
-export const metadata: Metadata = { title: 'Anfahrt & Parken' }
+export const metadata: Metadata = {
+  title: 'Anfahrt & Parken',
+  description:
+    'Anfahrt zu Schloss Eyrichshof in Ebern: mit dem Auto über die B 279, oder per Bahn ab Bamberg, inklusive Parkhinweisen.',
+}
 
 export default function AnfahrtPage() {
   return (

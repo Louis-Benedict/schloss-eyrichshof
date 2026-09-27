@@ -14,7 +14,11 @@ const impressionen = [
   alt: `Firmenevents Impression`,
 }))
 
-export const metadata: Metadata = { title: 'Firmenevents' }
+export const metadata: Metadata = {
+  title: 'Firmenevents',
+  description:
+    'Firmenevents auf Schloss Eyrichshof: Workshops, Team-Building, Firmenfeiern und Workation in historischem Rahmen, ganzjährig buchbar.',
+}
 
 export default function FirmeneventsPage() {
   return (

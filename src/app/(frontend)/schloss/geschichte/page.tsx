@@ -4,7 +4,11 @@ import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import SchlossNav from '@/components/SchlossNav'
 
-export const metadata: Metadata = { title: 'Geschichte' }
+export const metadata: Metadata = {
+  title: 'Geschichte',
+  description:
+    'Die Geschichte von Schloss Eyrichshof: von der ersten urkundlichen Erwähnung 1330 bis zu Dreharbeiten für die Netflix-Serie „The Empress".',
+}
 
 const CHRONIK: Array<{ jahr: string; text: string }> = [
   {

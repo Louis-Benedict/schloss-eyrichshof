@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'AGB Hochzeiten & Feste' }
+export const metadata: Metadata = { title: 'AGB Hochzeiten & Feste', robots: { index: false, follow: true } }
 
 export default function AgbHochzeitenFestePage() {
   return (

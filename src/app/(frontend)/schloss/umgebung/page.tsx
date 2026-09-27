@@ -3,7 +3,11 @@ import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import SchlossNav from '@/components/SchlossNav'
 
-export const metadata: Metadata = { title: 'Umgebung' }
+export const metadata: Metadata = {
+  title: 'Umgebung',
+  description:
+    'Ausflugsziele rund um Schloss Eyrichshof: Bamberg, Würzburg, Bad Kissingen, Vierzehnheiligen, Bayreuth und Coburg.',
+}
 
 const destinations = [
   {

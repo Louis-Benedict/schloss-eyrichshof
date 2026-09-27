@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import PageHeader from '@/components/PageHeader'
 
-export const metadata: Metadata = { title: 'AGB Winterszeit' }
+export const metadata: Metadata = { title: 'AGB Winterszeit', robots: { index: false, follow: true } }
 
 export default function AgbWinterszeitPage() {
   return (

@@ -4,7 +4,11 @@ import type { Metadata } from 'next'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import { schlossPages } from '@/data/schloss'
 
-export const metadata: Metadata = { title: 'Das Schloss' }
+export const metadata: Metadata = {
+  title: 'Das Schloss',
+  description:
+    'Schloss Eyrichshof im Herzen von Franken: seit mehr als 700 Jahren in Familienbesitz derer von Rotenhan, heute Veranstaltungsort und Ferienwohnungen.',
+}
 
 export default function SchlossPage() {
   return (

@@ -10,7 +10,11 @@ import JsonLd from '@/components/JsonLd'
 import { SITE_URL, WINTERSZEIT_TICKET_URL } from '@/lib/site'
 import { ORGANIZATION_PLACE, ORGANIZATION_REF } from '@/lib/organization'
 
-export const metadata: Metadata = { title: 'Winterszeit' }
+export const metadata: Metadata = {
+  title: 'Winterszeit',
+  description:
+    'Premium-Aussteller, feine Kulinarik und winterliche Atmosphäre im historischen Ambiente des Schloss Eyrichshof.',
+}
 
 const winterszeitJsonLd = {
   '@context': 'https://schema.org',
