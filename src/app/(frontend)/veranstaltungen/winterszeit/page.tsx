@@ -51,12 +51,63 @@ const beschreibung = {
     'Uhus, Adler, Falken und mehr: Der Greifvogelschutz Palmenhorst e.V. präsentiert beeindruckende Greifvögel hautnah. Informieren Sie sich über Artenschutz, Haltung und die faszinierende Biologie dieser Tiere.',
   karussell:
     'Nostalgischer Fahrspaß für die Kleinsten: Das klassische Karussell dreht seine fröhlichen Runden und zaubert strahlende Kindergesichter.',
+  dudelsack:
+    'Dem Dudelsack gehört seine Leidenschaft. Sowohl optisch als auch akustisch eine Augenweide. Wir begrüßen den Dudelsackspieler Detlef Purucker aus Tambach.',
+  walkingAct:
+    'Mit riesigen Schritten bahnt sich der kostümierte Stelzenläufer einen Weg durch die Menge und sorgt mit waghalsiger Eleganz für Aufsehen.',
+  jonglage:
+    'Ein handfestes Jonglageprogramm kombiniert mit Balanceakrobatik, Tempo und Komik. Die spektakulären, zum Teil auch irrwitzigen Einlagen bringen das Publikum zum Staunen, Lachen, Mitfiebern oder Nachdenken.',
+  bruderDuo:
+    'Das Bruder-Duo ist Harmonie und Lebendigkeit. Jugendlicher Übermut und Klugheit der Erfahrung. Helle Begeisterung und reine Poesie. Einheit und Verschiedenheit. Das Bruder Duo ist Musik.\n\nDr. Georg Bruder ist Musiker, Philosoph und Lebensberater. Er erhielt seine musikalische Ausbildung bei Jean-Claude Haerrig vom Orchestre philharmonique de Strasbourg. Er arbeitete im Rahmen zahlreicher Meisterkurse im Bereich Kammermusik.\n\nGemeinsam mit seinem Sohn Anton Bruder (erster Musikunterricht mit 6 Jahren, Förderklasse der Städt. Musikschule München bei Ursula Schneeberger. Seit 2019 ist er Schüler von Nino Gurevich, Besuch zahlreicher Meisterkurse der Kammermusik)',
+  lichterzug:
+    'Wenn es dunkel wird dürfen unsere Kleinsten am Lichterzug teilnehmen. Mit musikalischer Begleitung und dem Funkeln der Lichter im Schlosshof.',
+  ledFeuershow:
+    'Der Spasskoffer präsentiert hochwertige Feuerartistik mit atemberaubenden Effekten, die Menschen jeden Alters in ihren Bann ziehen.',
+  multimediashow:
+    'Eine multimediale Show aus Geschichte, Musik, Licht und Feuer von ca. 15 Minuten auf der Parkwiese.',
+  jagdhornblaeser:
+    'Freuen Sie sich auf diesen wunderbaren musikalischen Höhepunkt! Die traditionelle Bläsergruppe des Bayerischen Jagdverbandes e.V. pflegt aktiv die jagdliche Brauchtumskultur.',
+  bakerLueddicke:
+    'Frei von jeglichem musikalischen Schubladendenken und in keinster Weise durch die Instrumentierung mit zwei akustischen Gitarren limitiert, entfalten sich Suzan und Dennis stilistisch in alle erdenklichen Richtungen. Wer die beiden auf der Bühne erlebt, spürt die besondere Leidenschaft, die sie verbindet und durch die sich die beiden seit nunmehr 16 Jahren immer wieder neu erfinden.\n\nKein Wunder also, dass dieses Duo seine Zuhörer mit eigenen Songs und erfrischend spritzigen Interpretationen quer durch alle Musikgenres begeistert und sie einlädt auf eine Reise durch Jazz, R’n’B, Pop, Rock, Alternative, Latin, Soul und Reggae.',
+  alphorn:
+    'Lauschen Sie den Klängen dieser alpinen Tradition.\n\nMit ihren meterlangen Holzinstrumenten erzeugen die Musiker eine unverwechselbare Atmosphäre, die unter die Haut geht. Lassen Sie sich von den traditionellen Melodien verzaubern und genießen Sie einen Moment voller Heimatgefühl, Ruhe und musikalischer Handwerkskunst.',
+  bettinaMeiners:
+    'Die junge Sopranistin Bettina Meiners war Preisträgerin beim Duschek-Gesangswettbewerb 2019 der Tschechischen Mozartgemeinde in Prag. Darüber hinaus war sie als Solistin bei namhaften Festivals zu hören wie zum Beispiel Musik und Kirche (Sterzing), Musiksommer zwischen Inn und Salzach (Kloster Seeon), der Konzertreihe Musik in fränkischen Schlössern, der Konzertreihe Meisterinterpreten Dippoldiswalde und der Barocknacht in der Salzburger Residenz.\n\nLieder von Schubert, Strauss und Mozart werden in ihren Konzerten erklingen, am Klavier begleitet von Ivo Schwinn.\n\nFreuen Sie sich auf diesen Programmhöhepunkt!',
+  fabianRieger:
+    'Perfekt inszeniert auf Musik gehen gekonnte Jonglagen und Feuerartistiken eine spektakuläre Verbindung mit Feuereffekten und Lichteffekten ein. Fabian Rieger präsentiert gekonnt die Kombination aus Licht- und Feuershow.',
+  droptune:
+    'Nach Auflösung der Kultband „Number Nine“ 2015, bei der Peter Hahner Jahre spielte, fing er an, als Freelancer zu fungieren. Dann im Duo mit Vanessa Chase, eine außergewöhnliche Sängerin mit Charisma. Qualität und professioneller Sound wird groß geschrieben. Wir freuen uns auf die Beiden!',
+  alphornBaunach:
+    'Die Alphornbläser sind eine feste Sparte und ein besonderes Aushängeschild des Musikvereins Stadtkapelle Baunach e.V., wir freuen uns darauf, sie abermals auf Schloss Eyrichshof zu begrüßen.',
+  macDaniels:
+    '„Mac Daniel’s“ steht für eine Zeitreise durch die Musikgenres verschiedener Jahrzehnte. Gespielt wird, was gefällt. Von der zuckersüßen Bon-Jovi-Ballade und dem Pink-Floyd-Klassiker bis zum schweißtreibenden Journey-Rocker …',
+}
+
+// Photos from the client's "Programmfotos WZ26" package (resized to max 1200 px)
+const bildPfad = '/images/winterszeit/programm'
+const bild = {
+  alphornblaeser: `${bildPfad}/alphornblaeser.jpg`,
+  alphornBaunach: `${bildPfad}/alphornblaeser-baunach.jpg`,
+  bettinaMeiners: `${bildPfad}/bettina-meiners.jpg`,
+  bakerLueddicke: `${bildPfad}/baker-lueddicke.jpg`,
+  fuehrung: `${bildPfad}/fuehrung.jpg`,
+  bruderDuo: `${bildPfad}/bruder-duo.jpg`,
+  chor: `${bildPfad}/chor-la-musica.jpg`,
+  comedyJonglage: `${bildPfad}/comedy-jonglage.jpg`,
+  droptune: `${bildPfad}/droptune.jpg`,
+  fabianRieger: `${bildPfad}/fabian-rieger.jpg`,
+  karussell: `${bildPfad}/karussell.jpg`,
+  lichterzug: `${bildPfad}/lichterzug.jpg`,
+  mm: `${bildPfad}/mm.jpg`,
+  macDaniels: `${bildPfad}/mac-daniels.jpg`,
+  suchspiel: `${bildPfad}/suchspiel.jpg`,
+  schlossInFlammen: `${bildPfad}/schloss-in-flammen.jpg`,
 }
 
 const ganztags: ScheduleEntry[] = [
-  { title: 'Suchspiel für Kinder', location: 'Schlosshof' },
+  { title: 'Suchspiel für Kinder', location: 'Schlosshof', image: bild.suchspiel },
   { title: 'Greifvogelschutz Palmenhorst e.V.', location: 'Tennisplatz', image: '/images/gartenfest/greifvogelschutz.jpg', description: beschreibung.greifvogelschutz },
-  { title: 'Karussell', location: 'Tennisplatz', image: '/images/gartenfest/kinderkarussel.jpg', description: beschreibung.karussell },
+  { title: 'Karussell', location: 'Tennisplatz', image: bild.karussell, description: beschreibung.karussell },
   {
     title: 'Kunstausstellung im Nordflügel',
     image: '/images/gartenfest/kunst-im-schloss.jpg',
@@ -66,10 +117,12 @@ const ganztags: ScheduleEntry[] = [
 
 const gespensterjagd = (time: string): ScheduleEntry => ({ time, title: 'Gespensterjagd', location: 'Dachboden', image: '/images/gartenfest/gespenster-fuehrung.jpg', description: beschreibung.gespensterjagd })
 const lichterzug = (time: string): ScheduleEntry => ({ time, title: 'Lichterzug', location: 'Schlosshof' })
-const feuershow = (time: string): ScheduleEntry => ({
+const multimediashow = (time: string): ScheduleEntry => ({
   time,
-  title: 'Feuershow „Schloss in Flammen"',
-  location: 'Außengelände',
+  title: 'Multimediashow „Schloss in Flammen"',
+  location: 'Parkwiese',
+  image: bild.schlossInFlammen,
+  description: beschreibung.multimediashow,
 })
 const basteln = (time: string): ScheduleEntry => ({
   time,
@@ -85,31 +138,67 @@ const tage: ScheduleDay[] = [
     datum: '5. November 2026',
     entries: [
       { time: '14:00 Uhr', title: 'Ladies Day: Die Winterszeit öffnet ihre Tore.' },
-      { time: '13:30 Uhr', title: 'Sektempfang', location: 'Schlosshof' },
       {
         time: '14:00, 15:00 Uhr',
         title: 'Schottische Weisen – Dudelsack mit Detlef Purucker',
         location: 'Außengelände',
+        description:
+          beschreibung.dudelsack,
       },
-      { time: '15:00 Uhr', title: 'Spasskoffer: Walking Act', location: 'Schlosshof' },
-      { time: '15:00 Uhr', title: 'Führung Schlossensemble', location: 'Treffpunkt Kirche', image: '/images/gartenfest/fuehrung-geschichte.jpg', description: beschreibung.fuehrung },
+      {
+        time: '15:00 Uhr',
+        title: 'Spasskoffer: Walking Act',
+        location: 'Schlosshof',
+        description:
+          beschreibung.walkingAct,
+      },
+      { time: '15:00 Uhr', title: 'Führung Schlossensemble', location: 'Treffpunkt Kirche', image: bild.fuehrung, description: beschreibung.fuehrung },
       gespensterjagd('15:00, 17:00, 19:00 Uhr'),
       {
         time: '16:00 Uhr',
         title: 'Chor La Musica – Lieder zum Mitsingen',
-        location: 'Außengelände, ca. 30 Min., bei gutem Wetter (Alternative: Kirche)',
+        location: 'Freitreppe des Schlosses, bei schlechtem Wetter: Kirche',
+        image: bild.chor,
+        description:
+          'Musik verbindet. Wir stimmen mit dem Eichelsdorfer Chor La Musica ein und singen gemeinsam wunderschöne und allseits bekannte Melodien.',
       },
       basteln('16:00 Uhr'),
-      { time: '16:30 Uhr', title: 'Spasskoffer: Comedy Jonglage', location: 'Schlosshof' },
-      { time: '17:00 Uhr', title: 'Bruder-Duo – Klassik', location: 'Hausern' },
-      lichterzug('17:00 Uhr'),
-      { time: '18:00 Uhr', title: 'Spasskoffer: LED-Feuershow', location: 'Schlosshof' },
-      { time: '19:00, 20:00, 21:00 Uhr', title: 'M & M – Best of Rock & Pop', location: 'Schlosshof' },
-      feuershow('20:00 Uhr'),
+      {
+        time: '16:30 Uhr',
+        title: 'Spasskoffer: Comedy Jonglage',
+        location: 'Schlosshof',
+        image: bild.comedyJonglage,
+        description: beschreibung.jonglage,
+      },
+      {
+        time: '17:00 Uhr',
+        title: 'Bruder-Duo – Klassik',
+        location: 'Hausern',
+        image: bild.bruderDuo,
+        description: beschreibung.bruderDuo,
+      },
+      { ...lichterzug('17:00 Uhr'), image: bild.lichterzug, description: beschreibung.lichterzug },
+      {
+        time: '18:00 Uhr',
+        title: 'Spasskoffer: LED-Feuershow',
+        location: 'Schlosshof',
+        description:
+          beschreibung.ledFeuershow,
+      },
+      {
+        time: '19:00 – 21:00 Uhr',
+        title: 'M & M – Best of Rock & Pop',
+        location: 'Schlosshof',
+        image: bild.mm,
+        description: 'Best of Rock & Pop – Das Duo M&M steht für handgemachte, authentische Musik.',
+      },
+      multimediashow('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
-    notes: ['Ladies Day: Ermäßigter Eintritt für alle Damen.'],
+    notes: [
+      'Ladies Day: Alle Damen erwartet neben vergünstigtem Eintritt zahlreiche Überraschungen. Eine große Tombola mit spannenden Preisen und besonderen kulinarischen Highlights runden diesen Tag ab. Männer sind natürlich ebenso willkommen!',
+    ],
   },
   {
     wochentag: 'Freitag',
@@ -121,21 +210,51 @@ const tage: ScheduleDay[] = [
         time: '14:00, 16:00 Uhr',
         title: 'Schottische Weisen – Dudelsack mit Detlef Purucker',
         location: 'Außengelände',
+        description: beschreibung.dudelsack,
       },
-      { time: '14:30 Uhr', title: 'Spasskoffer: Comedy Jonglage', location: 'Schlosshof' },
-      { time: '15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: '/images/gartenfest/fuehrung-geschichte.jpg', description: beschreibung.fuehrung },
-      { time: '15:30 Uhr', title: 'Spasskoffer: Walking Act', location: 'Schlosshof' },
-      basteln('16:00 Uhr'),
-      { time: '16:00 Uhr', title: 'Bruder-Duo – Klassik', location: 'Hausern' },
-      lichterzug('17:00 Uhr'),
-      { time: '17:45 Uhr', title: 'Spasskoffer: LED-Feuershow', location: 'Schlosshof' },
-      { time: '18:30 Uhr', title: 'Jagdhornbläser Ebern', location: 'Schlosshof' },
       {
-        time: '19:00, 20:00 Uhr',
-        title: 'Baker & Lüddicke – accoustic unlimitated',
+        time: '14:30 Uhr',
+        title: 'Spasskoffer: Comedy Jonglage',
         location: 'Schlosshof',
+        image: bild.comedyJonglage,
+        description: beschreibung.jonglage,
       },
-      feuershow('20:00 Uhr'),
+      { time: '15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
+      {
+        time: '15:30 Uhr',
+        title: 'Spasskoffer: Walking Act',
+        location: 'Schlosshof',
+        description: beschreibung.walkingAct,
+      },
+      basteln('16:00 Uhr'),
+      {
+        time: '16:00 Uhr',
+        title: 'Bruder-Duo – Klassik',
+        location: 'Hausern',
+        image: bild.bruderDuo,
+        description: beschreibung.bruderDuo,
+      },
+      { ...lichterzug('17:00 Uhr'), image: bild.lichterzug, description: beschreibung.lichterzug },
+      {
+        time: '17:45 Uhr',
+        title: 'Spasskoffer: LED-Feuershow',
+        location: 'Schlosshof',
+        description: beschreibung.ledFeuershow,
+      },
+      {
+        time: '18:30 Uhr',
+        title: 'Jagdhornbläser Ebern',
+        location: 'Schlosshof',
+        description: beschreibung.jagdhornblaeser,
+      },
+      {
+        time: '19:00 – 20:00 Uhr',
+        title: 'Baker & Lüddicke',
+        location: 'Schlosshof',
+        image: bild.bakerLueddicke,
+        description: beschreibung.bakerLueddicke,
+      },
+      multimediashow('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -147,22 +266,38 @@ const tage: ScheduleDay[] = [
     entries: [
       { time: '11:00 Uhr', title: 'Die Winterszeit öffnet ihre Tore.' },
       gespensterjagd('12:00, 14:00, 16:00, 18:00 Uhr'),
-      { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: '/images/gartenfest/fuehrung-geschichte.jpg', description: beschreibung.fuehrung },
+      { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
       {
         time: '14:00 Uhr',
-        title: 'Alphornbläser Hassberge: Polkas, Märsche und Modernes',
+        title: 'Alphornbläser Hassberge: Polkas, Märsche und Moderne',
         location: 'Schlosshof',
+        image: bild.alphornblaeser,
+        description: beschreibung.alphorn,
       },
       basteln('15:00 Uhr'),
       {
         time: '16:00 Uhr',
         title: 'Bettina Meiners – Opernarien und klassische Lieder',
         location: 'Hausern',
+        image: bild.bettinaMeiners,
+        description: beschreibung.bettinaMeiners,
       },
-      lichterzug('17:00 Uhr'),
-      { time: '17:45 Uhr', title: 'Fabian Rieger: Fire & Light Show', location: 'Schlosshof' },
-      { time: '18:30, 20:00 Uhr', title: 'Droptune: Pop & Rock', location: 'Schlosshof' },
-      feuershow('20:00 Uhr'),
+      { ...lichterzug('17:00 Uhr'), image: bild.lichterzug, description: beschreibung.lichterzug },
+      {
+        time: '17:45 Uhr',
+        title: 'Fabian Rieger: Fire & Light Show',
+        location: 'Schlosshof',
+        image: bild.fabianRieger,
+        description: beschreibung.fabianRieger,
+      },
+      {
+        time: '18:30 – 20:00 Uhr',
+        title: 'Droptune: Pop & Rock',
+        location: 'Schlosshof',
+        image: bild.droptune,
+        description: beschreibung.droptune,
+      },
+      multimediashow('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -174,22 +309,38 @@ const tage: ScheduleDay[] = [
     entries: [
       { time: '11:00 Uhr', title: 'Die Winterszeit öffnet ihre Tore.' },
       gespensterjagd('11:00, 13:00, 15:00 Uhr'),
-      { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: '/images/gartenfest/fuehrung-geschichte.jpg', description: beschreibung.fuehrung },
+      { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
       {
         time: '13:00 Uhr',
         title: 'Alphornbläser Musikverein Stadtkapelle Baunach – „Winterklänge & Alphornzauber"',
         location: 'Schlosshof',
+        image: bild.alphornBaunach,
+        description: beschreibung.alphornBaunach,
       },
       basteln('15:00 Uhr'),
       {
         time: '15:00 Uhr',
         title: 'Bettina Meiners – Opernarien und klassische Lieder',
         location: 'Hausern',
+        image: bild.bettinaMeiners,
+        description: beschreibung.bettinaMeiners,
       },
-      { time: '16:00, 18:30 Uhr', title: 'Pop und Rock mit Mac Daniel’s', location: 'Schlosshof' },
-      lichterzug('16:45 Uhr'),
-      { time: '17:30 Uhr', title: 'Fabian Rieger: Fire & Light Show', location: 'Schlosshof' },
-      feuershow('18:30 Uhr'),
+      {
+        time: '16:00 – 18:30 Uhr',
+        title: 'Pop und Rock mit Mac Daniel’s',
+        location: 'Schlosshof',
+        image: bild.macDaniels,
+        description: beschreibung.macDaniels,
+      },
+      { ...lichterzug('16:45 Uhr'), image: bild.lichterzug, description: beschreibung.lichterzug },
+      {
+        time: '17:30 Uhr',
+        title: 'Fabian Rieger: Fire & Light Show',
+        location: 'Schlosshof',
+        image: bild.fabianRieger,
+        description: beschreibung.fabianRieger,
+      },
+      multimediashow('18:30 Uhr'),
       { time: '19:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -211,26 +362,6 @@ const oeffnungszeiten = [
   { tag: 'Sonntag', datum: '08.11.2026', zeit: '11:00 – 19:00 Uhr' },
 ]
 
-const programmHintergruende = [
-  { key: 'programm', label: 'Original: Hero-Bild', src: '/images/hero-winterszeit.jpg' },
-  { key: 'programm-a', label: 'Bild A: YMP_9403', src: '/images/winterszeit/programm-hintergrund-9403.jpg' },
-  { key: 'programm-b', label: 'Bild B: YMP_9555', src: '/images/winterszeit/programm-hintergrund-9555.jpg' },
-  { key: 'programm-c', label: 'Bild C: YMP_9653', src: '/images/winterszeit/programm-hintergrund-9653.jpg' },
-  { key: 'programm-d', label: 'Variante D: einfarbig, ohne Bild', src: null, light: false },
-  {
-    key: 'programm-e',
-    label: 'Variante E: weiße Panels und Buttons (Bild A)',
-    src: '/images/winterszeit/programm-hintergrund-9403.jpg',
-    light: true,
-  },
-  {
-    key: 'programm-g',
-    label: 'Variante G: Tabelle (Bild A)',
-    src: '/images/winterszeit/programm-hintergrund-9403.jpg',
-    table: true,
-  },
-]
-
 const quickLinks = [
   { label: 'Programm', href: '#programm' },
   { label: 'Impressionen', href: '#impressionen' },
@@ -244,8 +375,8 @@ const sidebarDownloads = [
     href: 'https://fa0fbbbc-fafb-462b-82ef-c729955a50b4.usrfiles.com/ugd/fa0fbb_b89bbba776d8484cb4b62b6b0375cec7.pdf',
     disabled: false,
   },
-  { label: 'Programm Winterszeit', href: null, disabled: true },
-  { label: 'Ausstellerliste Winterszeit', href: null, disabled: true },
+  { label: 'Programm Winterszeit', href: '/downloads/programm-winterszeit-2026.pdf', disabled: false },
+  { label: 'Ausstellerliste Winterszeit', href: '/downloads/ausstellerliste-winterszeit-2026.pdf', disabled: false },
   {
     label: 'Allgemeine Geschäftsbedingungen',
     href: '/veranstaltungen/winterszeit/agb',
@@ -428,35 +559,25 @@ export default function WinterzeitPage() {
         </div>
       </div>
 
-      {/* Programm — one copy per background image (temporary, for comparison) */}
-      {programmHintergruende.map((v, i) => (
-        <section
-          key={v.key}
-          id={i === 0 ? 'programm' : undefined}
-          className="relative overflow-hidden py-20 lg:py-24"
-          style={v.src ? undefined : { backgroundColor: 'var(--color-brand)' }}
-        >
-          {v.src && (
-            <Image
-              src={v.src}
-              alt=""
-              fill
-              placeholder="blur"
-              blurDataURL={BLUR_PLACEHOLDER}
-              className="object-cover brightness-60"
-              sizes="100vw"
-            />
-          )}
-          <span className="absolute top-3 left-3 z-10 bg-white text-brand text-xs px-2 py-1">{v.label}</span>
-          <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 lg:mb-12">
-              <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Winterszeit 2026</p>
-              <h2 className="font-heading text-4xl font-normal text-warm-50">Programm</h2>
-            </div>
-            <ProgrammTabs days={tage} idPrefix={v.key} light={v.light} table={v.table} />
+      {/* Programm */}
+      <section id="programm" className="relative overflow-hidden py-20 lg:py-24">
+        <Image
+          src="/images/winterszeit/programm-hintergrund.jpg"
+          alt=""
+          fill
+          placeholder="blur"
+          blurDataURL={BLUR_PLACEHOLDER}
+          className="object-cover brightness-60"
+          sizes="100vw"
+        />
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 lg:mb-12">
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Winterszeit 2026</p>
+            <h2 className="font-heading text-4xl font-normal text-warm-50">Programm</h2>
           </div>
-        </section>
-      ))}
+          <ProgrammTabs days={tage} />
+        </div>
+      </section>
 
       {/* Ganztags */}
       <section id="ganztags" className="bg-warm-100 py-20 lg:py-24">

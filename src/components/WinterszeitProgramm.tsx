@@ -2,21 +2,20 @@
 
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import Image from 'next/image'
-import { IconChevronRight, IconX } from '@tabler/icons-react'
+import { IconBuildingCastle, IconChevronRight, IconX } from '@tabler/icons-react'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import type { ScheduleDay, ScheduleEntry } from '@/components/GartenfestSchedule'
 
-// Winterszeit "Programm" section (dark background): one tab per day, entries in chronological order.
+// Winterszeit "Programm" section (dark background): one tab per day, table Zeit | Programm | Ort,
+// click on a row opens a modal with image and description.
 
 const noopSubscribe = () => () => {}
 
-// "15:00, 17:00 Uhr" -> ["15:00 Uhr", "17:00 Uhr"], one per line
-function Times({ time, onLight = false }: { time?: string; onLight?: boolean }) {
+// Time(s) in the modal: "15:00, 17:00 Uhr" -> one per line
+function Times({ time }: { time?: string }) {
   if (!time) return null
   return (
-    <div
-      className={`shrink-0 w-20 sm:w-24 border-l-2 border-accent pl-2.5 text-sm font-medium leading-snug ${onLight ? 'text-brand' : 'text-warm-50'}`}
-    >
+    <div className="border-l-2 border-accent pl-2.5 text-sm font-medium leading-snug text-brand">
       {time
         .replace(/\s*Uhr$/, '')
         .split(/,\s*/)
@@ -40,82 +39,6 @@ function split(day: ScheduleDay) {
   return { notices, closing, timed }
 }
 
-function Thumb({ entry }: { entry: ScheduleEntry }) {
-  if (!entry.image) return null
-  return (
-    <div className="relative shrink-0 w-14 h-14 overflow-hidden">
-      <Image
-        src={entry.image}
-        alt={entry.title}
-        fill
-        placeholder="blur"
-        blurDataURL={BLUR_PLACEHOLDER}
-        className="object-cover"
-        sizes="56px"
-      />
-    </div>
-  )
-}
-
-function TabRow({
-  entry,
-  onSelect,
-  light,
-}: {
-  entry: ScheduleEntry
-  onSelect: (e: ScheduleEntry) => void
-  light: boolean
-}) {
-  const content = (
-    <>
-      <Times time={entry.time} onLight={light} />
-      <div className="flex-1 min-w-0">
-        <p className={`font-body text-base font-normal leading-snug ${light ? 'text-brand' : 'text-warm-50'}`}>
-          {entry.title}
-        </p>
-        <p className={`text-xs leading-snug mt-0.5 ${light ? 'text-warm-500' : 'text-warm-200'}`}>{entry.location}</p>
-      </div>
-      <Thumb entry={entry} />
-      {entry.description && (
-        <IconChevronRight size={16} className={`shrink-0 mt-0.5 ${light ? 'text-warm-400' : 'text-warm-200'}`} />
-      )}
-    </>
-  )
-
-  return (
-    <li className={`break-inside-avoid border-b ${light ? 'border-warm-200' : 'border-white/10'}`}>
-      {entry.description ? (
-        <button
-          onClick={() => onSelect(entry)}
-          aria-haspopup="dialog"
-          className={`w-full text-left flex items-start gap-4 py-3 cursor-pointer transition-colors ${light ? 'hover:bg-warm-100' : 'hover:bg-white/5'}`}
-        >
-          {content}
-        </button>
-      ) : (
-        <div className="flex items-start gap-4 py-3">{content}</div>
-      )}
-    </li>
-  )
-}
-
-// Highlighted opening / closing time
-function NoticeRow({ entry, light }: { entry: ScheduleEntry; light: boolean }) {
-  return (
-    <li
-      className={`break-inside-avoid -mx-3 px-3 py-3 my-2 flex items-start gap-4 ${light ? 'bg-warm-100' : 'bg-white/10'}`}
-    >
-      <Times time={entry.time} onLight={light} />
-      <p
-        className={`flex-1 min-w-0 font-body text-base font-normal leading-snug ${light ? 'text-brand' : 'text-warm-50'}`}
-      >
-        {entry.title}
-      </p>
-    </li>
-  )
-}
-
-// ── Table layout (dark only): Zeit | Programm | Ort ─────────────────────────
 const TABLE_GRID =
   'grid grid-cols-[minmax(0,1fr)_1.25rem] md:grid-cols-[15rem_minmax(0,1fr)_11rem_1.25rem] md:gap-x-6 px-4'
 
@@ -133,7 +56,7 @@ function TableHeader() {
   return (
     <div
       role="row"
-      className={`hidden md:grid md:grid-cols-[15rem_minmax(0,1fr)_11rem_1.25rem] md:gap-x-6 px-4 pb-3 border-b-2 border-white/20 text-[11px] uppercase tracking-[0.16em] text-warm-200`}
+      className="hidden md:grid md:grid-cols-[15rem_minmax(0,1fr)_11rem_1.25rem] md:gap-x-6 px-4 pb-3 border-b-2 border-white/20 text-[11px] uppercase tracking-[0.16em] text-warm-200"
     >
       <span role="columnheader">Zeit</span>
       <span role="columnheader">Programm</span>
@@ -145,19 +68,20 @@ function TableHeader() {
   )
 }
 
-// Highlighted opening / closing time, spans the full table width
+// Opening / closing time: centered divider with accent rules on both sides and a castle gate icon
 function TableNotice({ entry }: { entry: ScheduleEntry }) {
   return (
-    <div
-      role="row"
-      className="grid grid-cols-1 md:grid-cols-[15rem_minmax(0,1fr)] md:gap-x-6 items-center px-4 py-3 md:min-h-14 my-2 bg-white/10"
-    >
-      <div role="cell">
-        <TimesInline time={entry.time} />
-      </div>
-      <p role="cell" className="font-body text-base font-normal text-warm-50 leading-snug">
-        {entry.title}
+    <div role="row" className="flex items-center gap-4 my-4 px-4">
+      <span aria-hidden className="h-px flex-1 bg-accent/70" />
+      <p role="cell" className="flex items-center gap-2.5 text-center text-sm uppercase tracking-[0.18em] text-warm-50">
+        <IconBuildingCastle size={20} stroke={1.75} className="shrink-0 text-accent" />
+        <span className="font-medium">{entry.time?.replace(/\s*Uhr$/, '')} Uhr</span>
+        <span aria-hidden className="text-accent">
+          ·
+        </span>
+        <span>{entry.title.replace(/\.$/, '')}</span>
       </p>
+      <span aria-hidden className="h-px flex-1 bg-accent/70" />
     </div>
   )
 }
@@ -236,11 +160,13 @@ function EntryModal({ entry, onClose }: { entry: ScheduleEntry | null; onClose: 
           )}
           <div className="p-6">
             <div className="mb-2">
-              <Times time={entry.time} onLight />
+              <Times time={entry.time} />
             </div>
             <p className="font-body text-2xl font-normal text-brand leading-snug">{entry.title}</p>
             {entry.location && <p className="text-xs text-warm-500 leading-snug mt-1">{entry.location}</p>}
-            {entry.description && <p className="text-warm-600 text-sm leading-relaxed mt-4">{entry.description}</p>}
+            {entry.description && (
+              <p className="text-warm-600 text-sm leading-relaxed mt-4 whitespace-pre-line">{entry.description}</p>
+            )}
           </div>
           <button
             onClick={onClose}
@@ -255,17 +181,7 @@ function EntryModal({ entry, onClose }: { entry: ScheduleEntry | null; onClose: 
   )
 }
 
-export default function ProgrammTabs({
-  days,
-  idPrefix = 'programm',
-  light = false,
-  table = false,
-}: {
-  days: ScheduleDay[]
-  idPrefix?: string
-  light?: boolean
-  table?: boolean
-}) {
+export default function ProgrammTabs({ days }: { days: ScheduleDay[] }) {
   // During the event the tab of the current day is preselected (client only, no hydration mismatch).
   const todayIndex = useSyncExternalStore(
     noopSubscribe,
@@ -282,7 +198,6 @@ export default function ProgrammTabs({
   const [picked, setPicked] = useState<number | null>(null)
   const [selected, setSelected] = useState<ScheduleEntry | null>(null)
   const active = picked ?? todayIndex
-  const setActive = setPicked
 
   return (
     <div>
@@ -291,16 +206,14 @@ export default function ProgrammTabs({
           <button
             key={d.datum}
             role="tab"
-            id={`${idPrefix}-tab-${i}`}
+            id={`programm-tab-${i}`}
             aria-selected={i === active}
-            aria-controls={`${idPrefix}-panel-${i}`}
-            onClick={() => setActive(i)}
+            aria-controls={`programm-panel-${i}`}
+            onClick={() => setPicked(i)}
             className={`py-3 px-2 text-center border cursor-pointer transition-colors ${
               i === active
                 ? 'bg-accent border-accent text-white'
-                : light
-                  ? 'bg-white border-white text-brand hover:bg-warm-100'
-                  : 'bg-brand-dark border-white/20 text-warm-100 hover:bg-brand hover:border-white/50'
+                : 'bg-brand-dark border-white/20 text-warm-100 hover:bg-brand hover:border-white/50'
             }`}
           >
             <span className="block font-heading text-lg leading-tight">
@@ -322,44 +235,30 @@ export default function ProgrammTabs({
           return (
             <div
               key={d.datum}
-              id={`${idPrefix}-panel-${i}`}
+              id={`programm-panel-${i}`}
               role="tabpanel"
-              aria-labelledby={`${idPrefix}-tab-${i}`}
+              aria-labelledby={`programm-tab-${i}`}
               inert={!isActive}
-              className={`col-start-1 row-start-1 p-6 sm:p-8 ${light ? 'bg-white' : 'bg-brand-dark'} ${isActive ? '' : 'invisible'}`}
+              className={`col-start-1 row-start-1 p-6 sm:p-8 bg-brand-dark ${isActive ? '' : 'invisible'}`}
             >
               {d.notes.map((note, k) => (
-                <p key={k} className={`text-xs italic mb-1 ${light ? 'text-warm-500' : 'text-warm-200'}`}>
+                <p key={k} className="text-xs italic mb-1 text-warm-200">
                   {note}
                 </p>
               ))}
 
-              {table ? (
-                <div role="table" aria-label={`Programm ${d.wochentag}`} className="mt-6">
-                  <TableHeader />
-                  {notices.map((n, k) => (
-                    <TableNotice key={k} entry={n} />
-                  ))}
-                  {timed.map((e, k) => (
-                    <TableRow key={k} entry={e} onSelect={setSelected} />
-                  ))}
-                  {closing.map((n, k) => (
-                    <TableNotice key={k} entry={n} />
-                  ))}
-                </div>
-              ) : (
-                <ul className="mt-6 lg:columns-2 lg:gap-x-14">
-                  {notices.map((n, k) => (
-                    <NoticeRow key={k} entry={n} light={light} />
-                  ))}
-                  {timed.map((e, k) => (
-                    <TabRow key={k} entry={e} onSelect={setSelected} light={light} />
-                  ))}
-                  {closing.map((n, k) => (
-                    <NoticeRow key={k} entry={n} light={light} />
-                  ))}
-                </ul>
-              )}
+              <div role="table" aria-label={`Programm ${d.wochentag}`} className="mt-6">
+                <TableHeader />
+                {notices.map((n, k) => (
+                  <TableNotice key={k} entry={n} />
+                ))}
+                {timed.map((e, k) => (
+                  <TableRow key={k} entry={e} onSelect={setSelected} />
+                ))}
+                {closing.map((n, k) => (
+                  <TableNotice key={k} entry={n} />
+                ))}
+              </div>
             </div>
           )
         })}
