@@ -6,7 +6,7 @@ import AnfahrtBanner from '@/components/AnfahrtBanner'
 import { BLUR_PLACEHOLDER } from '@/lib/image'
 import ImageGallery from '@/components/ImageGallery'
 import ProgrammTabs from '@/components/WinterszeitProgramm'
-import { ScheduleRow, type ScheduleEntry, type ScheduleDay } from '@/components/GartenfestSchedule'
+import type { ScheduleEntry, ScheduleDay } from '@/components/GartenfestSchedule'
 import VeranstaltungenNav from '@/components/VeranstaltungenNav'
 import JsonLd from '@/components/JsonLd'
 import { SITE_URL, WINTERSZEIT_TICKET_URL } from '@/lib/site'
@@ -109,6 +109,12 @@ const ganztags: ScheduleEntry[] = [
   { title: 'Greifvogelschutz Palmenhorst e.V.', location: 'Tennisplatz', image: '/images/gartenfest/greifvogelschutz.jpg', description: beschreibung.greifvogelschutz },
   { title: 'Karussell', location: 'Tennisplatz', image: bild.karussell, description: beschreibung.karussell },
   {
+    title: 'Der Schmied am Feuer',
+    location: 'Schmiede, Freitag – Sonntag',
+    image: '/images/gartenfest/schmiedearbeiten.jpg',
+    description: 'Zuschauen & selbst schmieden.',
+  },
+  {
     title: 'Kunstausstellung im Nordflügel',
     image: '/images/gartenfest/kunst-im-schloss.jpg',
     location: '„Masterpieces" – Portraits von Alice Kiehn | „Photos mit viel Phon" von Helmut Ölschlegel',
@@ -117,9 +123,9 @@ const ganztags: ScheduleEntry[] = [
 
 const gespensterjagd = (time: string): ScheduleEntry => ({ time, title: 'Gespensterjagd', location: 'Dachboden', image: '/images/gartenfest/gespenster-fuehrung.jpg', description: beschreibung.gespensterjagd })
 const lichterzug = (time: string): ScheduleEntry => ({ time, title: 'Lichterzug', location: 'Schlosshof' })
-const multimediashow = (time: string): ScheduleEntry => ({
+const inszenierung = (time: string): ScheduleEntry => ({
   time,
-  title: 'Multimediashow „Schloss in Flammen"',
+  title: 'Inszenierung „Schloss in Flammen"',
   location: 'Parkwiese',
   image: bild.schlossInFlammen,
   description: beschreibung.multimediashow,
@@ -192,7 +198,7 @@ const tage: ScheduleDay[] = [
         image: bild.mm,
         description: 'Best of Rock & Pop – Das Duo M&M steht für handgemachte, authentische Musik.',
       },
-      multimediashow('20:00 Uhr'),
+      inszenierung('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -254,7 +260,7 @@ const tage: ScheduleDay[] = [
         image: bild.bakerLueddicke,
         description: beschreibung.bakerLueddicke,
       },
-      multimediashow('20:00 Uhr'),
+      inszenierung('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -297,7 +303,7 @@ const tage: ScheduleDay[] = [
         image: bild.droptune,
         description: beschreibung.droptune,
       },
-      multimediashow('20:00 Uhr'),
+      inszenierung('20:00 Uhr'),
       { time: '21:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -340,7 +346,7 @@ const tage: ScheduleDay[] = [
         image: bild.fabianRieger,
         description: beschreibung.fabianRieger,
       },
-      multimediashow('18:30 Uhr'),
+      inszenierung('18:30 Uhr'),
       { time: '19:00 Uhr', title: 'Die Winterszeit schließt ihre Tore.' },
     ],
     ganztags,
@@ -583,12 +589,36 @@ export default function WinterzeitPage() {
       <section id="ganztags" className="bg-warm-100 py-20 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 lg:mb-12">
-            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">An allen vier Tagen</p>
+            <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Während der Winterszeit</p>
             <h2 className="font-heading text-4xl font-normal text-brand">Ganztags</h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10">
-            {ganztags.map((entry, i) => (
-              <ScheduleRow key={i} entry={entry} />
+            {ganztags.map((entry) => (
+              <div
+                key={entry.title}
+                className="py-5 flex gap-5 sm:gap-6 border-b border-warm-200 last:border-0"
+              >
+                {entry.image && (
+                  <div className="relative shrink-0 w-[120px] h-[120px] sm:w-[180px] sm:h-[180px] overflow-hidden">
+                    <Image
+                      src={entry.image}
+                      alt={entry.title}
+                      fill
+                      placeholder="blur"
+                      blurDataURL={BLUR_PLACEHOLDER}
+                      className="object-cover"
+                      sizes="180px"
+                    />
+                  </div>
+                )}
+                <div className="flex-1 min-w-0">
+                  <h3 className="font-heading text-xl font-normal text-brand leading-snug mb-2">{entry.title}</h3>
+                  {entry.description && (
+                    <p className="text-warm-600 text-sm leading-relaxed mb-2">{entry.description}</p>
+                  )}
+                  {entry.location && <p className="text-xs text-warm-500 leading-snug">{entry.location}</p>}
+                </div>
+              </div>
             ))}
           </div>
         </div>
