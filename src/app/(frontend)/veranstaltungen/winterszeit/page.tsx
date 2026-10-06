@@ -64,7 +64,7 @@ const beschreibung = {
   ledFeuershow:
     'Der Spasskoffer präsentiert hochwertige Feuerartistik mit atemberaubenden Effekten, die Menschen jeden Alters in ihren Bann ziehen.',
   multimediashow:
-    'Eine multimediale Show aus Geschichte, Musik, Licht und Feuer von ca. 15 Minuten auf der Parkwiese.',
+    'Die Inszenierung „Schloss in Flammen“ ist eine außergewöhnliche, moderne Inszenierung aus Licht, Text, Musik & Pyrotechnik.\n\nBeteiligt: Sprecher: Wolfram und Hermann von Rotenhan (Text); Tontechnik und Musik: Joachim Höfler, Fa.jH Pyrodesign; Feuerwerk: Dr. Markus Blomenhofer, Blomenhofer Pyrotechnik\n\nEs geht im weitesten Sinne um Schloss Eyrichshof und seine Entstehungsgeschichte. Lassen Sie sich überraschen!',
   jagdhornblaeser:
     'Freuen Sie sich auf diesen wunderbaren musikalischen Höhepunkt! Die traditionelle Bläsergruppe des Bayerischen Jagdverbandes e.V. pflegt aktiv die jagdliche Brauchtumskultur.',
   bakerLueddicke:
@@ -630,7 +630,7 @@ export default function WinterzeitPage() {
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Winterszeit 2026</p>
           <h2 className="font-heading text-3xl font-normal text-brand mb-10">Impressionen</h2>
           <ImageGallery
-            images={Array.from({ length: 15 }, (_, i) => ({
+            images={Array.from({ length: 26 }, (_, i) => ({
               src: `/images/winterszeit/impressionen/${String(i + 1).padStart(2, '0')}.jpg`,
               alt: `Winterszeit Impression ${i + 1}`,
             }))}
