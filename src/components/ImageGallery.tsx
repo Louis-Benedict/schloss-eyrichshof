@@ -84,7 +84,8 @@ function Lightbox({
   )
 }
 
-export default function ImageGallery({ images }: { images: GalleryImage[] }) {
+// portrait: from sm up the tiles are 3:4 instead of square, so portrait photos keep their heads
+export default function ImageGallery({ images, portrait = false }: { images: GalleryImage[]; portrait?: boolean }) {
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   return (
@@ -94,8 +95,7 @@ export default function ImageGallery({ images }: { images: GalleryImage[] }) {
           <button
             key={i}
             onClick={() => setLightboxIndex(i)}
-            className="group relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-            style={{ aspectRatio: '1/1' }}
+            className={`group relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent aspect-square${portrait ? ' sm:aspect-[3/4]' : ''}`}
             aria-label={`Bild ${i + 1} vergrößern`}
           >
             <Image

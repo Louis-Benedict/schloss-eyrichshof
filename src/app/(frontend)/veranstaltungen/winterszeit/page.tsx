@@ -95,8 +95,10 @@ const bild = {
   chor: `${bildPfad}/chor-la-musica.jpg`,
   comedyJonglage: `${bildPfad}/comedy-jonglage.jpg`,
   droptune: `${bildPfad}/droptune.jpg`,
+  dudelsack: `${bildPfad}/dudelsack.jpg`,
   fabianRieger: `${bildPfad}/fabian-rieger.jpg`,
   karussell: `${bildPfad}/karussell.jpg`,
+  kunstausstellung: `${bildPfad}/kunstausstellung.jpg`,
   lichterzug: `${bildPfad}/lichterzug.jpg`,
   mm: `${bildPfad}/mm.jpg`,
   macDaniels: `${bildPfad}/mac-daniels.jpg`,
@@ -116,7 +118,7 @@ const ganztags: ScheduleEntry[] = [
   },
   {
     title: 'Kunstausstellung im Nordflügel',
-    image: '/images/gartenfest/kunst-im-schloss.jpg',
+    image: bild.kunstausstellung,
     location: '„Masterpieces" – Portraits von Alice Kiehn | „Photos mit viel Phon" von Helmut Ölschlegel',
   },
 ]
@@ -148,8 +150,8 @@ const tage: ScheduleDay[] = [
         time: '14:00, 15:00 Uhr',
         title: 'Schottische Weisen – Dudelsack mit Detlef Purucker',
         location: 'Außengelände',
-        description:
-          beschreibung.dudelsack,
+        image: bild.dudelsack,
+        description: beschreibung.dudelsack,
       },
       {
         time: '15:00 Uhr',
@@ -216,6 +218,7 @@ const tage: ScheduleDay[] = [
         time: '14:00, 16:00 Uhr',
         title: 'Schottische Weisen – Dudelsack mit Detlef Purucker',
         location: 'Außengelände',
+        image: bild.dudelsack,
         description: beschreibung.dudelsack,
       },
       {
@@ -630,6 +633,7 @@ export default function WinterzeitPage() {
           <p className="text-xs uppercase tracking-[0.22em] text-accent mb-3">Winterszeit 2026</p>
           <h2 className="font-heading text-3xl font-normal text-brand mb-10">Impressionen</h2>
           <ImageGallery
+            portrait
             images={Array.from({ length: 26 }, (_, i) => ({
               src: `/images/winterszeit/impressionen/${String(i + 1).padStart(2, '0')}.jpg`,
               alt: `Winterszeit Impression ${i + 1}`,

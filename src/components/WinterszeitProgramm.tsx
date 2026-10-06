@@ -146,14 +146,14 @@ function EntryModal({ entry, onClose }: { entry: ScheduleEntry | null; onClose: 
       {entry && (
         <div>
           {entry.image && (
-            <div className="relative aspect-[4/3] w-full">
+            <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full">
               <Image
                 src={entry.image}
                 alt={entry.title}
                 fill
                 placeholder="blur"
                 blurDataURL={BLUR_PLACEHOLDER}
-                className="object-cover"
+                className="object-cover sm:object-top"
                 sizes="480px"
               />
             </div>
