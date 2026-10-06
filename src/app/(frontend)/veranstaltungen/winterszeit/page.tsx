@@ -119,7 +119,7 @@ const ganztags: ScheduleEntry[] = [
   {
     title: 'Kunstausstellung im Nordflügel',
     image: bild.kunstausstellung,
-    location: '„Masterpieces" – Portraits von Alice Kiehn | „Photos mit viel Phon" von Helmut Ölschlegel',
+    description: '„Masterpieces" – Portraits von Alice Kiehn | „Photos mit viel Phon" von Helmut Ölschlegel',
   },
 ]
 
@@ -318,7 +318,7 @@ const tage: ScheduleDay[] = [
     entries: [
       { time: '11:00 Uhr', title: 'Die Winterszeit öffnet ihre Tore.' },
       gespensterjagd('11:00, 13:00, 15:00 Uhr'),
-      { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
+      { time: '13:30, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
       {
         time: '13:00 Uhr',
         title: 'Alphornbläser Musikverein Stadtkapelle Baunach – „Winterklänge & Alphornzauber"',
@@ -378,6 +378,12 @@ const quickLinks = [
   { label: 'Hinweise für Reisegruppen', href: '#reisegruppen' },
 ]
 
+// Reihenfolge der Impressionen-Galerie (zufällig gemischt, bewusst fest)
+const impressionenReihenfolge = [
+  27, 3, 22, 10, 34, 36, 9, 5, 21, 1, 17, 24, 31, 30, 28, 4, 20, 29, 33, 8, 25, 12, 18, 14, 13, 6, 16, 35, 32, 23,
+  26, 15, 11, 2, 19, 7,
+]
+
 const sidebarDownloads = [
   {
     label: 'Flyer Winterszeit',
@@ -385,7 +391,6 @@ const sidebarDownloads = [
     disabled: false,
   },
   { label: 'Programm Winterszeit', href: '/downloads/programm-winterszeit-2026.pdf', disabled: false },
-  { label: 'Ausstellerliste Winterszeit', href: '/downloads/ausstellerliste-winterszeit-2026.pdf', disabled: false },
   {
     label: 'Allgemeine Geschäftsbedingungen',
     href: '/veranstaltungen/winterszeit/agb',
@@ -452,42 +457,34 @@ export default function WinterzeitPage() {
         <div className="lg:flex lg:gap-14">
           <div className="flex-1 min-w-0 space-y-5">
             <p className="text-warm-600 leading-relaxed text-base">
-              Stimmungsvolles Ambiente, Genuss und Glücksmomente – das alles erwartete unsere Besucher
-              auch zur diesjährigen Winterszeit vom 05. – 08. November 2026 auf Schloss Eyrichshof.
+              Wenn der Schlosspark in festliches Licht taucht und erste Funken den Himmel erhellen, beginnt auf Schloss Eyrichshof eine Winterszeit der besonderen Art. Vom 5. bis 8. November 2026 öffnet die Winterszeit zum 10. Mal ihre Tore – und das wird gefeiert!
             </p>
             <p className="text-warm-600 leading-relaxed text-base">
-              In vorweihnachtlicher Atmosphäre kann man durch die historischen Hallen und das zauberhaft
-              illuminierte Gelände des Schlosses flanieren und sich vom hochwertigen Angebot an Mode,
-              Schmuck und Wohnaccessoires inspirieren lassen.
+              Ein ganzes Jahrzehnt voller Atmosphäre, Begegnungen und unvergesslicher Momente findet in diesem Jahr seinen glanzvollen Höhepunkt: kraftvoll, lebendig und voller Magie.
             </p>
             <p className="text-warm-600 leading-relaxed text-base">
-              Unseren Besuchern wird ein erlesenes Sortiment rund um Lifestyle, Handwerk und Kulinarik
-              geboten.
+              Über 140 sorgfältig ausgewählte Aussteller präsentieren Mode, Schmuck, feines Handwerk, Wohnideen und Lifestyle-Produkte – eindrucksvoll inszeniert in den historischen Stallungen, der Orangerie und unter freiem Himmel auf dem weitläufigen Gelände.
             </p>
             <p className="text-warm-600 leading-relaxed text-base">
-              Wie auch im letzten Jahr, starten wir die Winterszeit am Donnerstag, den 05. November mit
-              einem „Ladies Day“. Auf alle Damen wartet ermäßigter Eintritt und viele Überraschungen
-              (Männer sind natürlich ebenso herzlich Willkommen!).
+              Hier wird entdeckt, gestaunt und erlebt: Zwischen lodernden Feuerstellen, eindrucksvollen Kulissen und pulsierendem Treiben entfaltet sich eine Winterszeit, die alle Sinne anspricht. Kulinarisch reicht das Angebot von fränkischen Spezialitäten bis hin zu internationalen Highlights – herzhaft, süß und auch echt fränkisch.
             </p>
             <p className="text-warm-600 leading-relaxed text-base">
-              Ein Rahmenprogramm voller Kunst, Musik und Kultur rundet die Veranstaltung ab und auch auf
-              unsere kleinen Besucher warten wieder Gespensterführungen auf dem Dachboden des Schlosses,
-              Laternenbasteln und ein märchenhaftes Suchspiel auf dem Schlossgelände.
+              Das Rahmenprogramm 2026 setzt besondere Akzente: tägliche Livemusik, spektakuläre Feuershows, eine stimmungsvolle Inzenierung "Schloss in Flammen" auf der Parkwiese an jedem Abend sowie ein vielseitiges Kinderprogramm sorgen für Begeisterung bei Groß und Klein. Auch Kunst- und Kulturliebhaber dürfen sich auf besondere Entdeckungen freuen.
             </p>
             <p className="text-warm-600 leading-relaxed text-base">
-              Wir freuen uns jetzt schon auf diese vorweihnachtliche Zeit – heuer nochmal ganz
-              besonders – denn dies ist die <strong className="text-brand font-medium">10. Winterszeit!</strong>
+              Der Donnerstag steht erneut ganz im Zeichen des „Ladies Day“. Ein Erlebnis voller Glanz und unvergesslicher Augenblicke.
             </p>
 
             <div className="pt-6">
               <h2 className="font-heading text-xl font-normal text-brand mb-4">Öffnungszeiten der Winterszeit</h2>
-              <p className="text-warm-600 leading-relaxed text-base">
+              <dl className="grid grid-cols-[auto_1fr] gap-x-6 text-warm-600 leading-relaxed text-base">
                 {oeffnungszeiten.map((o) => (
-                  <span key={o.tag} className="block">
-                    {o.tag}, {o.datum}: <span className="text-brand font-medium">{o.zeit}</span>
-                  </span>
+                  <div key={o.tag} className="contents">
+                    <dt>{o.tag}, {o.datum}:</dt>
+                    <dd className="text-brand font-medium">{o.zeit}</dd>
+                  </div>
                 ))}
-              </p>
+              </dl>
             </div>
           </div>
 
@@ -634,9 +631,9 @@ export default function WinterzeitPage() {
           <h2 className="font-heading text-3xl font-normal text-brand mb-10">Impressionen</h2>
           <ImageGallery
             portrait
-            images={Array.from({ length: 26 }, (_, i) => ({
-              src: `/images/winterszeit/impressionen/${String(i + 1).padStart(2, '0')}.jpg`,
-              alt: `Winterszeit Impression ${i + 1}`,
+            images={impressionenReihenfolge.map((n) => ({
+              src: `/images/winterszeit/impressionen/${String(n).padStart(2, '0')}.jpg`,
+              alt: `Winterszeit Impression ${n}`,
             }))}
           />
         </div>

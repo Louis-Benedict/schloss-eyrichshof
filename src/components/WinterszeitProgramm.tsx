@@ -9,7 +9,7 @@ import type { ScheduleDay, ScheduleEntry } from '@/components/GartenfestSchedule
 // Winterszeit "Programm" section (dark background): one tab per day, table Zeit | Programm | Ort,
 // click on a row opens a modal with image and description.
 
-const noopSubscribe = () => () => {}
+const noopSubscribe = () => () => { }
 
 // Time(s) in the modal: "15:00, 17:00 Uhr" -> one per line
 function Times({ time }: { time?: string }) {
@@ -90,9 +90,8 @@ function TableRow({ entry, onSelect }: { entry: ScheduleEntry; onSelect: (e: Sch
   return (
     <div
       role="row"
-      className={`group relative ${TABLE_GRID} gap-y-0.5 items-center py-3 md:min-h-14 border-b border-white/10 odd:bg-white/5 ${
-        entry.description ? 'hover:bg-white/10 transition-colors' : ''
-      }`}
+      className={`group relative ${TABLE_GRID} gap-y-0.5 items-center py-3 md:min-h-14 border-b border-white/10 odd:bg-white/5 ${entry.description ? 'hover:bg-white/10 transition-colors' : ''
+        }`}
     >
       <div role="cell" className="col-start-1 md:col-start-auto">
         <TimesInline time={entry.time} />
@@ -210,11 +209,10 @@ export default function ProgrammTabs({ days }: { days: ScheduleDay[] }) {
             aria-selected={i === active}
             aria-controls={`programm-panel-${i}`}
             onClick={() => setPicked(i)}
-            className={`py-3 px-2 text-center border cursor-pointer transition-colors ${
-              i === active
-                ? 'bg-accent border-accent text-white'
-                : 'bg-brand-dark border-white/20 text-warm-100 hover:bg-brand hover:border-white/50'
-            }`}
+            className={`py-3 px-2 text-center border cursor-pointer transition-colors ${i === active
+              ? 'bg-accent border-accent text-white'
+              : 'bg-brand-dark border-white/20 text-warm-100 hover:bg-brand hover:border-white/50'
+              }`}
           >
             <span className="block font-heading text-lg leading-tight">
               <span className="sm:hidden">{d.wochentag.slice(0, 2)}</span>
@@ -242,7 +240,7 @@ export default function ProgrammTabs({ days }: { days: ScheduleDay[] }) {
               className={`col-start-1 row-start-1 p-6 sm:p-8 bg-brand-dark ${isActive ? '' : 'invisible'}`}
             >
               {d.notes.map((note, k) => (
-                <p key={k} className="text-xs italic mb-1 text-warm-200">
+                <p key={k} className="text-sm italic mb-1 text-warm-200">
                   {note}
                 </p>
               ))}

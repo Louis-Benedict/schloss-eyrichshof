@@ -1,10 +1,11 @@
 import Link from 'next/link'
-import { IconBrandInstagram, IconBrandFacebook } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandFacebook, IconBrandTiktok } from '@tabler/icons-react'
 import { SHOP_URL } from '@/lib/site'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: 'https://www.instagram.com/schlosseyrichshof' },
   { icon: IconBrandFacebook, label: 'Facebook', href: 'https://www.facebook.com/eyrichshof' },
+  { icon: IconBrandTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@schloss.eyrichsho' },
 ]
 
 export default function TopBar() {

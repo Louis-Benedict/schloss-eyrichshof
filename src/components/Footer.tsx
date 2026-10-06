@@ -1,12 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube } from '@tabler/icons-react'
+import { IconBrandInstagram, IconBrandFacebook, IconBrandYoutube, IconBrandTiktok } from '@tabler/icons-react'
 import { events } from '@/data/events'
 import { SHOP_URL } from '@/lib/site'
 
 const socialLinks = [
   { icon: IconBrandInstagram, label: 'Instagram', href: 'https://www.instagram.com/schlosseyrichshof' },
   { icon: IconBrandFacebook, label: 'Facebook', href: 'https://www.facebook.com/eyrichshof' },
+  { icon: IconBrandTiktok, label: 'TikTok', href: 'https://www.tiktok.com/@schloss.eyrichsho' },
   {
     icon: IconBrandYoutube,
     label: 'YouTube',
