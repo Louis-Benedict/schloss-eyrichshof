@@ -213,7 +213,7 @@ const tage: ScheduleDay[] = [
     datum: '6. November 2026',
     entries: [
       { time: '14:00 Uhr', title: 'Die Winterszeit öffnet ihre Tore.' },
-      gespensterjagd('12:00, 15:00, 17:00, 19:00 Uhr'),
+      gespensterjagd('15:00, 17:00, 19:00 Uhr'),
       {
         time: '14:00, 16:00 Uhr',
         title: 'Schottische Weisen – Dudelsack mit Detlef Purucker',
@@ -274,7 +274,7 @@ const tage: ScheduleDay[] = [
     datum: '7. November 2026',
     entries: [
       { time: '11:00 Uhr', title: 'Die Winterszeit öffnet ihre Tore.' },
-      gespensterjagd('12:00, 14:00, 16:00, 18:00 Uhr'),
+      gespensterjagd('14:00, 16:00, 18:00 Uhr'),
       { time: '13:00, 15:00 Uhr', title: 'Führung Schlossensemble (außen)', location: 'Außengelände', image: bild.fuehrung, description: beschreibung.fuehrung },
       {
         time: '14:00 Uhr',
