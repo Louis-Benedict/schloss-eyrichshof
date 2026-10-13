@@ -55,16 +55,15 @@ function Lightbox({
       </button>
 
       <div
-        className="relative w-full max-w-4xl max-h-[85vh] mx-16"
+        className="relative w-full h-[82vh] max-w-[1400px] mx-12 sm:mx-20"
         onClick={(e) => e.stopPropagation()}
-        style={{ aspectRatio: '1/1' }}
       >
         <Image
           src={images[current].src}
           alt={images[current].alt ?? ''}
           fill
           className="object-contain"
-          sizes="90vw"
+          sizes="100vw"
           priority
         />
       </div>
@@ -95,7 +94,7 @@ export default function ImageGallery({ images, portrait = false }: { images: Gal
           <button
             key={i}
             onClick={() => setLightboxIndex(i)}
-            className={`group relative overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent aspect-square${portrait ? ' sm:aspect-[3/4]' : ''}`}
+            className={`group relative block w-full overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-accent ${portrait ? 'aspect-square sm:aspect-[3/4]' : 'aspect-square'}`}
             aria-label={`Bild ${i + 1} vergrößern`}
           >
             <Image
