@@ -6,7 +6,8 @@ const nextConfig: NextConfig = {
     '/*': ['node_modules/sharp/**/*'],
   },
   images: {
-    formats: ['image/avif', 'image/webp'],
+    // AVIF-Encoding ist auf dem Self-Hosted-Server bei kaltem Cache zu langsam (Galerie: 36 Bilder parallel → Timeouts)
+    formats: ['image/webp'],
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2560, 3840],
   },
   async redirects() {
