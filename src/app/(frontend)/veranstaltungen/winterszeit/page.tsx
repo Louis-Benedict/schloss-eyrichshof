@@ -391,6 +391,8 @@ const sidebarDownloads = [
     disabled: false,
   },
   { label: 'Programm Winterszeit', href: '/downloads/programm-winterszeit-2026.pdf', disabled: false },
+  { label: 'Ausstellerliste Winterszeit', href: '/downloads/ausstellerliste-winterszeit-2026.pdf', disabled: false },
+  { label: 'Gastronomieliste Winterszeit', href: '/downloads/gastronomieliste-winterszeit-2026.pdf', disabled: false },
   {
     label: 'Allgemeine Geschäftsbedingungen',
     href: '/veranstaltungen/winterszeit/agb',
