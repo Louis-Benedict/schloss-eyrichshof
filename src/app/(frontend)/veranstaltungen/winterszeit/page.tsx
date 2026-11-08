@@ -390,7 +390,6 @@ const sidebarDownloads = [
     href: 'https://fa0fbbbc-fafb-462b-82ef-c729955a50b4.usrfiles.com/ugd/fa0fbb_b89bbba776d8484cb4b62b6b0375cec7.pdf',
     disabled: false,
   },
-  { label: 'Programm Winterszeit', href: '/downloads/programm-winterszeit-2026.pdf', disabled: false },
   { label: 'Ausstellerliste Winterszeit', href: '/downloads/ausstellerliste-winterszeit-2026.pdf', disabled: false },
   { label: 'Gastronomieliste Winterszeit', href: '/downloads/gastronomieliste-winterszeit-2026.pdf', disabled: false },
   {
